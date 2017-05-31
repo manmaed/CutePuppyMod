@@ -7,14 +7,12 @@ import manmaed.cutepuppymod.entity.CPMEntitys;
 import manmaed.cutepuppymod.items.CPMItems;
 import manmaed.cutepuppymod.libs.LogHelper;
 import manmaed.cutepuppymod.libs.Reference;
-import manmaed.cutepuppymod.libs.util.CraftingHandler;
+import manmaed.cutepuppymod.libs.util.EventHandler;
 import manmaed.cutepuppymod.libs.util.RecipeHandler;
-import manmaed.cutepuppymod.libs.util.SimpleConfig;
 import manmaed.cutepuppymod.proxy.CommonProxy;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -36,23 +34,49 @@ public class CutePuppyMod {
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
 	public static CommonProxy proxy;
-    public static boolean puppy = true;
-    public static SimpleConfig config;
+/*    public static boolean puppy = true;
+    public static SimpleConfig config;*/
 	public static CreativeTabs tabsCMP = new CPMCreativeTab(CreativeTabs.getNextID());
     private static boolean devenv = false;
-    private static boolean beta = true;
-    private static boolean release = false;
+    private static boolean beta = false;
+    private static boolean release = true;
 
+    //Config
+    public static Configuration configFile;
+    public static boolean disablesixpuppy = false;
+
+    public static void syncConfig() {
+        //disablesixpuppy = configFile.getBoolean("My Config Integer", Configuration.CATEGORY_GENERAL, myConfigInteger, 0, Integer.MAX_VALUE, "An Integer!");
+        //myConfigString = configFile.getString("My Config String", Configuration.CATEGORY_GENERAL, myConfigString, "A String!");
+        disablesixpuppy = configFile.getBoolean("Disable Sixkiller Puppy?", Configuration.CATEGORY_GENERAL, disablesixpuppy, "Setting to ture will disable spawns of Sixkiller Puppys");
+
+        if(configFile.hasChanged())
+            configFile.save();
+    }
 
 	//public static CraftingHandler CraftingHandler = new teamhamster.hamsterwheel.libs.util.CraftingHandler();
 	//                                     new Achievement([ID], [NAME], [X COORD], [Y COORD], [ICON (BLOCK/ITEM ITSELF)], [ACHIEVEMENT REQUIRED]
 
 	//EventManager eventmanager = new EventManager();
 
+
+    /*@SubscribeEvent
+    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
+        if(eventArgs.getModID().equals(Reference.MOD_ID)) {
+            LogHelper.fatal("Hello");
+            syncConfig();
+        }
+    }*/
+
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
-        config = new SimpleConfig(Reference.MOD_ID, new Configuration(event.getSuggestedConfigurationFile())) {
+        configFile = new Configuration(event.getSuggestedConfigurationFile());
+        syncConfig();
+
+
+        /*config = new SimpleConfig(Reference.MOD_ID, new Configuration(event.getSuggestedConfigurationFile())) {
             @Override
             public void loadConfig() {
                 puppy = getConfig().getBoolean("puppy", Configuration.CATEGORY_GENERAL, puppy, I18n.translateToLocal(Reference.PUPPY));
@@ -60,7 +84,7 @@ public class CutePuppyMod {
                     getConfig().save();
             }
         };
-        config.loadConfig();
+        config.loadConfig();*/
         proxy.preInit();
 
         CPMBlocks.load();
@@ -78,11 +102,11 @@ public class CutePuppyMod {
 	@Mod.EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-        Minecraft.getMinecraft().
+       // Minecraft.getMinecraft().
         //ClientProxy.render();
         //proxy.init();
         //proxy.registerRenderers();
-		FMLCommonHandler.instance().bus().register(new CraftingHandler());
+		FMLCommonHandler.instance().bus().register(new EventHandler());
 		//GameRegistry.registerWorldGenerator(eventmanager, 0);
 		//NetworkRegistry.registerGuiHandler(this, guiHandlerPLC);
 	}

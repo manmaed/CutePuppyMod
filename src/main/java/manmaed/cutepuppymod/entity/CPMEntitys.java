@@ -1,5 +1,6 @@
 package manmaed.cutepuppymod.entity;
 
+import manmaed.cutepuppymod.CutePuppyMod;
 import manmaed.cutepuppymod.libs.util.EntityHelper;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
@@ -49,8 +50,11 @@ public class CPMEntitys
 		//Custom
 		EntityRegistry.addSpawn(EntityStevePuppy.class, 10, 1, 4, EnumCreatureType.CREATURE, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND);
         EntityRegistry.addSpawn(EntityHerobrinePuppy.class, 3, 1, 1, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND);
-        EntityRegistry.addSpawn(EntitySixPuppy.class, 3, 1, 1, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND);
         EntityRegistry.addSpawn(EntityEnderPuppy.class, 9, 1, 4, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND, Biomes.SKY);
+
+		if(!CutePuppyMod.disablesixpuppy){
+			EntityRegistry.addSpawn(EntitySixPuppy.class, 3, 1, 1, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND);
+		}
 
 		//EntitySpawnPlacementRegistry.setPlacementType(EntityHerobrinePuppy.class, EntityLiving.SpawnPlacementType.ON_GROUND);
 

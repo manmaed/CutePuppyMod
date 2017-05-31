@@ -5,7 +5,7 @@ import manmaed.cutepuppymod.items.CPMItems;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
-public class CraftingHandler {
+public class EventHandler {
 
 	@SubscribeEvent
 	public void Smelting(PlayerEvent.ItemSmeltedEvent event)
@@ -28,4 +28,10 @@ public class CraftingHandler {
         if(event.pickedUp.getEntityItem().getItem()== CPMItems.endercore)
             event.player.addStat(Achievements.killEnderPuppy, 1);
     }
+/*	@SubscribeEvent
+	public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
+		if(eventArgs.getModID().equals(Reference.MOD_ID)) {
+			CutePuppyMod.syncConfig();
+		}
+	}*/
 }
