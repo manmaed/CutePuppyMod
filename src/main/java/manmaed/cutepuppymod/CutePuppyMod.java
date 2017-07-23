@@ -9,6 +9,7 @@ import manmaed.cutepuppymod.items.CPMItems;
 import manmaed.cutepuppymod.libs.Reference;
 import manmaed.cutepuppymod.libs.iChun;
 import manmaed.cutepuppymod.libs.util.RecipeHandler;
+import manmaed.cutepuppymod.libs.util.RegistryHelper;
 import manmaed.cutepuppymod.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
@@ -26,12 +27,16 @@ public class CutePuppyMod {
 
   @Mod.Instance(Reference.MOD_ID)
   public static CutePuppyMod instance;
-
-  public static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
+    public static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
+    private static RegistryHelper registryHelper;
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
 	public static CommonProxy proxy;
 	public static CreativeTabs tabsCMP = new CPMCreativeTab(CreativeTabs.getNextID());
+
+    public static RegistryHelper getRegistryHelper() {
+        return registryHelper;
+    }
 
 
 	@Mod.EventHandler
@@ -40,12 +45,8 @@ public class CutePuppyMod {
         ConfigManager.loadConfig(new Configuration(event.getSuggestedConfigurationFile()));
         proxy.preInit();
 
-        CPMBlocks.load();
-        CPMItems.RegisterItem();
-        if(event.getSide().isClient())
-        {
-            CPMItems.RenderItem();
-        }
+        CPMBlocks.RegisterBlocks();
+        CPMItems.RegisterItems();
         RecipeHandler.addRecipes();
         CPMEntitys.Load();
         proxy.renderInformation();
