@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "cutepuppymod:itemtab"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.root.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.root.description"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "iron_tools": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "cutepuppymod:itemtab"
+          }
+        ]
+      }
+    }
+  }
+}

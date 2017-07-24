@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "cutepuppymod:bluepuppycore"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.petrockspawn.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.petrockspawn.description"
+    }
+  },
+  "parent": "cutepuppymod:cutepuppymod/root",
+  "criteria": {
+    "petrockspawn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "cutepuppymod:bluepuppycore"
+          }
+        ]
+      }
+    }
+  }
+}

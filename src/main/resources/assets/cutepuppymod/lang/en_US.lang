@@ -35,17 +35,17 @@ item.BanHammer.name=SixKillers Ban Hammer
 
 # Entitys
 ## Colord Puppys
-entity.cutepuppymod.RedPuppy.name=Red Puppy
-entity.cutepuppymod.GreenPuppy.name=Green Puppy
-entity.cutepuppymod.YellowPuppy.name=Yellow Puppy
-entity.cutepuppymod.BluePuppy.name=Blue Puppy
-entity.cutepuppymod.PurplePuppy.name=Purple Puppy
+entity.RedPuppy.name=Red Puppy
+entity.GreenPuppy.name=Green Puppy
+entity.YellowPuppy.name=Yellow Puppy
+entity.BluePuppy.name=Blue Puppy
+entity.PurplePuppy.name=Purple Puppy
 ## Custom Puppys
-entity.cutepuppymod.SixPuppy.name=Sixkillers Puppy
-entity.cutepuppymod.StevePuppy.name=Steves Puppy
-entity.cutepuppymod.HerobrinePuppy.name=Herobrines Puppy
-entity.cutepuppymod.HazardPuppy.name=Mr_Hazaeds Puppy
-entity.cutepuppymod.EnderPuppy.name=Ender Puppy
+entity.SixPuppy.name=Sixkillers Puppy
+entity.StevePuppy.name=Steves Puppy
+entity.HerobrinePuppy.name=Herobrines Puppy
+entity.HazardPuppy.name=Mr_Hazaeds Puppy
+entity.EnderPuppy.name=Ender Puppy
 
 # CreativeTabs
 creativePuppyTab.name=Puppy's Tab

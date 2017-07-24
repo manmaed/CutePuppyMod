@@ -54,7 +54,7 @@ public class CPMEntitys
         EntityRegistry.addSpawn(EntityEnderPuppy.class, 9, 1, 4, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND, Biomes.SKY);
 
 		if(!ConfigManager.instance.disablesixpuppy){
-			EntityRegistry.addSpawn(EntitySixPuppy.class, 3, 1, 1, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND);
+			EntityRegistry.addSpawn(EntitySixPuppy.class, 1, 0, 1, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.RIVER, Biomes.TAIGA, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.SWAMPLAND);
 		}
 
 		//EntitySpawnPlacementRegistry.setPlacementType(EntityHerobrinePuppy.class, EntityLiving.SpawnPlacementType.ON_GROUND);

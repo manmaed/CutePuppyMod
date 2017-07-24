@@ -1,5 +1,7 @@
 package manmaed.cutepuppymod.entity;
 
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
 import manmaed.cutepuppymod.items.CPMItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -46,7 +48,8 @@ public class EntityEnderPuppy extends EntityMob {
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(8, new EntityAILookIdle(this));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.targetTasks.addTask(1, new EntityEnderPuppy.AIFindPlayer(this));
+        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false, new Class[0]));
     }
 
     /*@Override
@@ -223,7 +226,7 @@ public class EntityEnderPuppy extends EntityMob {
     /**
      * Returns the sound this mob makes when it is hurt.
      */
-    protected SoundEvent getHurtSound()
+    protected SoundEvent getHurtSound(DamageSource p_184601_1_)
     {
 
         return SoundEvents.ENTITY_WOLF_HURT;
@@ -240,6 +243,114 @@ public class EntityEnderPuppy extends EntityMob {
     protected void dropFewItems(boolean par1, int par2) {
         if (this.rand.nextInt(8) == 0) {
             this.dropItem(CPMItems.endercore, 1);
+        }
+    }
+    static class AIFindPlayer extends EntityAINearestAttackableTarget<EntityPlayer>
+    {
+        private final EntityEnderPuppy enderpup;
+        /** The player */
+        private EntityPlayer player;
+        private int aggroTime;
+        private int teleportTime;
+
+        public AIFindPlayer(EntityEnderPuppy entityEnderPuppy)
+        {
+            super(entityEnderPuppy, EntityPlayer.class, false);
+            this.enderpup = entityEnderPuppy;
+        }
+
+        /**
+         * Returns whether the EntityAIBase should begin execution.
+         */
+        public boolean shouldExecute()
+        {
+            double d0 = this.getTargetDistance();
+            this.player = this.enderpup.world.getNearestAttackablePlayer(this.enderpup.posX, this.enderpup.posY, this.enderpup.posZ, d0, d0, (Function)null, new Predicate<EntityPlayer>()
+            {
+                public boolean apply(@Nullable EntityPlayer p_apply_1_)
+                {
+                    return p_apply_1_ != null && EntityEnderPuppy.AIFindPlayer.this.enderpup.shouldAttackPlayer(p_apply_1_);
+                }
+            });
+            return this.player != null;
+        }
+
+        /**
+         * Execute a one shot task or start executing a continuous task
+         */
+        public void startExecuting()
+        {
+            this.aggroTime = 5;
+            this.teleportTime = 0;
+        }
+
+        /**
+         * Reset the task's internal state. Called when this task is interrupted by another one
+         */
+        public void resetTask()
+        {
+            this.player = null;
+            super.resetTask();
+        }
+
+        /**
+         * Returns whether an in-progress EntityAIBase should continue executing
+         */
+        public boolean shouldContinueExecuting()
+        {
+            if (this.player != null)
+            {
+                if (!this.enderpup.shouldAttackPlayer(this.player))
+                {
+                    return false;
+                }
+                else
+                {
+                    this.enderpup.faceEntity(this.player, 10.0F, 10.0F);
+                    return true;
+                }
+            }
+            else
+            {
+                return this.targetEntity != null && ((EntityPlayer)this.targetEntity).isEntityAlive() ? true : super.shouldContinueExecuting();
+            }
+        }
+
+        /**
+         * Keep ticking a continuous task that has already been started
+         */
+        public void updateTask()
+        {
+            if (this.player != null)
+            {
+                if (--this.aggroTime <= 0)
+                {
+                    this.targetEntity = this.player;
+                    this.player = null;
+                    super.startExecuting();
+                }
+            }
+            else
+            {
+                if (this.targetEntity != null)
+                {
+                    if (this.enderpup.shouldAttackPlayer((EntityPlayer)this.targetEntity))
+                    {
+                        if (((EntityPlayer)this.targetEntity).getDistanceSqToEntity(this.enderpup) < 16.0D)
+                        {
+                            this.enderpup.teleportRandomly();
+                        }
+
+                        this.teleportTime = 0;
+                    }
+                    else if (((EntityPlayer)this.targetEntity).getDistanceSqToEntity(this.enderpup) > 256.0D && this.teleportTime++ >= 30 && this.enderpup.teleportToEntity(this.targetEntity))
+                    {
+                        this.teleportTime = 0;
+                    }
+                }
+
+                super.updateTask();
+            }
         }
     }
 }
