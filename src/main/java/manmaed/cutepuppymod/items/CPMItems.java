@@ -1,6 +1,8 @@
 package manmaed.cutepuppymod.items;
 
 import manmaed.cutepuppymod.CutePuppyMod;
+import manmaed.cutepuppymod.items.puppydrops.*;
+import manmaed.cutepuppymod.items.swords.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -35,51 +37,50 @@ public class CPMItems {
 		//Init'ing
 
 		//Colored Drops
-		/*bluecore = new BluePuppyCore();//
+		bluecore = new BluePuppyCore();
 		purplecore = new PurplePuppyCore();
-		redcore = new RedPuppyCore();//
-		yellowcore = new YellowPuppyCore();//
-		greencore = new GreenPuppyCore();//
-        endercore = new EnderCore();//*/
+		redcore = new RedPuppyCore();
+		yellowcore = new YellowPuppyCore();
+		greencore = new GreenPuppyCore();
+        endercore = new EnderCore();
 
 
         //Swords
-        /*bluesword = new BluePuppySword(Item.ToolMaterial.IRON);//
-        greensword = new GreenPuppySword(Item.ToolMaterial.IRON);//
-        yellowsword = new YellowPuppySword(Item.ToolMaterial.IRON);//
-        purplesword = new PurplePuppySword(Item.ToolMaterial.IRON);//
-        banhammer = new BanHammer(banhammermeterial);//
-        redsword = new RedPuppySword(Item.ToolMaterial.IRON);//
-*/
+        bluesword = new BluePuppySword(Item.ToolMaterial.IRON);
+        greensword = new GreenPuppySword(Item.ToolMaterial.IRON);
+        yellowsword = new YellowPuppySword(Item.ToolMaterial.IRON);
+        purplesword = new PurplePuppySword(Item.ToolMaterial.IRON);
+        banhammer = new BanHammer(banhammermeterial);
+        redsword = new RedPuppySword(Item.ToolMaterial.IRON);
 
 		//Other Things
 		iconfortab = new ItemTab();
-/*        mic = new FreddysMic(Item.ToolMaterial.WOOD);*/
+        mic = new FreddysMic(Item.ToolMaterial.WOOD);
 
 
 
 		//Registering
         //Colored Pup Drops
-        /*CutePuppyMod.getRegistryHelper().registerItem(bluecore);
+        CutePuppyMod.getRegistryHelper().registerItem(bluecore);
         CutePuppyMod.getRegistryHelper().registerItem(greencore);
         CutePuppyMod.getRegistryHelper().registerItem(purplecore);
         CutePuppyMod.getRegistryHelper().registerItem(redcore);
         CutePuppyMod.getRegistryHelper().registerItem(yellowcore);
-        CutePuppyMod.getRegistryHelper().registerItem(endercore);*/
+        CutePuppyMod.getRegistryHelper().registerItem(endercore);
 
 
         //Others
         CutePuppyMod.getRegistryHelper().registerItem(iconfortab);
-        /*CutePuppyMod.getRegistryHelper().registerItem(mic);*/
+        CutePuppyMod.getRegistryHelper().registerItem(mic);
 
 
         //Swords
-        /*CutePuppyMod.getRegistryHelper().registerItem(bluesword);
+        CutePuppyMod.getRegistryHelper().registerItem(bluesword);
         CutePuppyMod.getRegistryHelper().registerItem(greensword);
         CutePuppyMod.getRegistryHelper().registerItem(purplesword);
         CutePuppyMod.getRegistryHelper().registerItem(redsword);
         CutePuppyMod.getRegistryHelper().registerItem(yellowsword);
-        CutePuppyMod.getRegistryHelper().registerItem(banhammer);*/
+        CutePuppyMod.getRegistryHelper().registerItem(banhammer);
         /*RegistryHelper.RegisterItem(bluesword, BluePuppySword.getName());
         RegistryHelper.RegisterItem(greensword, GreenPuppySword.getName());
         RegistryHelper.RegisterItem(purplesword, PurplePuppySword.getName());
@@ -88,23 +89,23 @@ public class CPMItems {
         RegistryHelper.RegisterItem(banhammer, BanHammer.getName());*/
 
         //Cores
-       /* bluecore.setRegistryName("BluePuppyCore");
-        greencore.setRegistryName("GreenPuppyCore");
-        purplecore.setRegistryName("1");
-        redcore.setRegistryName("2");
-        yellowcore.setRegistryName("3");
-        endercore.setRegistryName("4");
-*/
+        bluecore.setRegistryName(BluePuppyCore.getName());
+        greencore.setRegistryName(GreenPuppyCore.getName());
+        purplecore.setRegistryName(PurplePuppyCore.getName());
+        redcore.setRegistryName(RedPuppyCore.getName());
+        yellowcore.setRegistryName(YellowPuppyCore.getName());
+        endercore.setRegistryName(EnderCore.getName());
+
         //Others
-        iconfortab.setRegistryName("Names");
-      /*  mic.setRegistryName("mic");*/
+        iconfortab.setRegistryName(ItemTab.getName());
+        mic.setRegistryName(FreddysMic.getName());
 
         //Swords + BanHammer
-        /*bluesword.setRegistryName(BluePuppySword.getName().toString());
-        greensword.setRegistryName(GreenPuppySword.getName().toString());
-        purplesword.setRegistryName(PurplePuppySword.getName().toString());
-        redsword.setRegistryName(RedPuppySword.getName().toString());
-        yellowsword.setRegistryName(YellowPuppySword.getName().toString());
-        banhammer.setRegistryName(BanHammer.getName().toString());*/
+        bluesword.setRegistryName(BluePuppySword.getName());
+        greensword.setRegistryName(GreenPuppySword.getName());
+        purplesword.setRegistryName(PurplePuppySword.getName());
+        redsword.setRegistryName(RedPuppySword.getName());
+        yellowsword.setRegistryName(YellowPuppySword.getName());
+        banhammer.setRegistryName(BanHammer.getName());
     }
 }

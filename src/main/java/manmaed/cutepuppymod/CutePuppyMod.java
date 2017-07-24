@@ -43,7 +43,8 @@ public class CutePuppyMod {
 	public void preInit(FMLPreInitializationEvent event) {
 
         ConfigManager.loadConfig(new Configuration(event.getSuggestedConfigurationFile()));
-        proxy.preInit();
+        registryHelper = new RegistryHelper(event);
+
 
         CPMBlocks.RegisterBlocks();
         CPMItems.RegisterItems();

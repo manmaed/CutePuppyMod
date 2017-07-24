@@ -7,13 +7,6 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
 
-    public void preInit() {
-
-    }
-    public void init() {
-
-    }
-
     public void renderInformation() {
 
 		//Color Puppys
