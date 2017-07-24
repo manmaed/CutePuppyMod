@@ -1,10 +1,5 @@
 package manmaed.cutepuppymod.libs.util;
 
-import manmaed.cutepuppymod.items.CPMItems;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 public class RecipeHandler {
 
 	/**
@@ -21,7 +16,7 @@ public class RecipeHandler {
 	* All other chars can be any item assigned.
 	*/
 		//Spawn Egg :D
-		GameRegistry.addRecipe(new ItemStack(CPMItems.redsword),
+		/*GameRegistry.addRecipe(new ItemStack(CPMItems.redsword),
                 " R ",
                 " R ",
                 " S ",
@@ -55,6 +50,6 @@ public class RecipeHandler {
 		
 		
 		
-		//GameRegistry.addSmelting(PLCItems.spawnstevepuppy, new ItemStack(PLCItems.spawnherobrinepuppy), 1);*/
-	}
+		//GameRegistry.addSmelting(PLCItems.spawnstevepuppy, new ItemStack(PLCItems.spawnherobrinepuppy), 1);*//*
+	*/}
 }

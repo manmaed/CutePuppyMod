@@ -110,19 +110,19 @@ public class EntityEnderPuppy extends EntityMob {
 
         super.notifyDataManagerChange(key);
     }
-    public static void func_189763_b(DataFixer p_189763_0_)
+    public static void registerFixesEnderPup(DataFixer fixer)
     {
-        EntityLiving.func_189752_a(p_189763_0_, "EnderPuppy");
+        EntityLiving.registerFixesMob(fixer, EntityEnderPuppy.class);
     }
 
     /**
-     * Checks to see if this enderman should be attacking this player
+     * Checks to see if this Entity should be attacking this player
      */
     private boolean shouldAttackPlayer(EntityPlayer player)
     {
-        ItemStack itemstack = player.inventory.armorInventory[3];
+        ItemStack itemstack = player.inventory.armorInventory.get(3);
 
-        if (itemstack != null && itemstack.getItem() == Item.getItemFromBlock(Blocks.PUMPKIN))
+        if (itemstack.getItem() == Item.getItemFromBlock(Blocks.PUMPKIN))
         {
             return false;
         }
@@ -155,12 +155,12 @@ public class EntityEnderPuppy extends EntityMob {
     {
         if (this.isWet())
         {
-            this.attackEntityFrom(DamageSource.drown, 1.0F);
+            this.attackEntityFrom(DamageSource.DROWN, 1.0F);
         }
 
         if (this.world.isDaytime() && this.ticksExisted >= this.targetChangeTime + 600)
         {
-            float f = this.getBrightness(1.0F);
+            float f = this.getBrightness();
 
             if (f > 0.5F && this.world.canSeeSky(new BlockPos(this)) && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F)
             {
@@ -191,9 +191,9 @@ public class EntityEnderPuppy extends EntityMob {
         Vec3d vec3d = new Vec3d(this.posX - p_70816_1_.posX, this.getEntityBoundingBox().minY + (double)(this.height / 2.0F) - p_70816_1_.posY + (double)p_70816_1_.getEyeHeight(), this.posZ - p_70816_1_.posZ);
         vec3d = vec3d.normalize();
         double d0 = 16.0D;
-        double d1 = this.posX + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.xCoord * 16.0D;
-        double d2 = this.posY + (double)(this.rand.nextInt(16) - 8) - vec3d.yCoord * 16.0D;
-        double d3 = this.posZ + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.zCoord * 16.0D;
+        double d1 = this.posX + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.x * 16.0D;
+        double d2 = this.posY + (double)(this.rand.nextInt(16) - 8) - vec3d.y * 16.0D;
+        double d3 = this.posZ + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.z * 16.0D;
         return this.teleportTo(d1, d2, d3);
     }
 

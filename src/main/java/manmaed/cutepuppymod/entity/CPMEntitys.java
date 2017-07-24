@@ -1,7 +1,7 @@
 package manmaed.cutepuppymod.entity;
 
-import manmaed.cutepuppymod.CutePuppyMod;
 import manmaed.cutepuppymod.config.ConfigManager;
+import manmaed.cutepuppymod.libs.Textures;
 import manmaed.cutepuppymod.libs.util.EntityHelper;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
@@ -20,17 +20,17 @@ public class CPMEntitys
 
 		int id = 1;
 		//Colored
-		EntityHelper.registerEntity(EntityPuppy.class, "GreenPuppy", id++, 0x3cff00, 0x3cff00);
-		EntityHelper.registerEntity(EntityRedPuppy.class, "RedPuppy", id++, 0xffb2b2, 0xf80000);
-		EntityHelper.registerEntity(EntityBluePuppy.class, "BluePuppy", id++, 0x00ffff, 0x3cafaf);
-		EntityHelper.registerEntity(EntityPurplePuppy.class, "PurplePuppy", id++, 0x713cfb, 0x4600ff);
-		EntityHelper.registerEntity(EntityYellowPuppy.class, "YellowPuppy", id++, 0xfcff00, 0x000000);
+		EntityHelper.registerEntity(Textures.MODEL_GREEN_PUPPY, EntityPuppy.class, "GreenPuppy", id++, 0x3cff00, 0x3cff00);
+		EntityHelper.registerEntity(Textures.MODEL_RED_PUPPY, EntityRedPuppy.class, "RedPuppy", id++, 0xffb2b2, 0xf80000);
+		EntityHelper.registerEntity(Textures.MODEL_BLUE_PUPPY, EntityBluePuppy.class, "BluePuppy", id++, 0x00ffff, 0x3cafaf);
+		EntityHelper.registerEntity(Textures.MODEL_PURPLE_PUPPY, EntityPurplePuppy.class, "PurplePuppy", id++, 0x713cfb, 0x4600ff);
+		EntityHelper.registerEntity(Textures.MODEL_YELLOW_PUPPY, EntityYellowPuppy.class, "YellowPuppy", id++, 0xfcff00, 0x000000);
 		//Custom
 		//EntityHelper.registerEntity(EntityHazardPuppy.class, "HazardPuppy");
-		EntityHelper.registerEntity(EntitySixPuppy.class, "SixPuppy", id++, 0x935a33, 0x633b22);
-		EntityHelper.registerEntity(EntityStevePuppy.class, "StevePuppy", id++, 0x004192, 0x220092);
-		EntityHelper.registerEntity(EntityHerobrinePuppy.class, "HerobrinePuppy", id++, 0xFFFFFF, 0xd4d4d4);
-        EntityHelper.registerEntity(EntityEnderPuppy.class, "EnderPuppy", id++, 0x151515, 0x000000);
+		EntityHelper.registerEntity(Textures.MODEL_SIX_PUPPY, EntitySixPuppy.class, "SixPuppy", id++, 0x935a33, 0x633b22);
+		EntityHelper.registerEntity(Textures.MODEL_STEVE_PUPPY, EntityStevePuppy.class, "StevePuppy", id++, 0x004192, 0x220092);
+		EntityHelper.registerEntity(Textures.MODEL_HEROBRINE_PUPPY, EntityHerobrinePuppy.class, "HerobrinePuppy", id++, 0xFFFFFF, 0xd4d4d4);
+        EntityHelper.registerEntity(Textures.MODEL_ENDER_PUPPY, EntityEnderPuppy.class, "EnderPuppy", id++, 0x151515, 0x000000);
 
 		/**
 		 * Add a spawn entry for the supplied entity in the supplied {@link Biomes} list

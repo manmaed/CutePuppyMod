@@ -1,6 +1,7 @@
 package manmaed.cutepuppymod.libs.util.events;
 
 import manmaed.cutepuppymod.CutePuppyMod;
+import manmaed.cutepuppymod.libs.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -17,14 +18,11 @@ public class EventItemRegister
 
     @SubscribeEvent
     public void registerItems(RegistryEvent.Register<Item> event) {
-        //LogHelper.info("Starting ItemBlock registering for " + Reference.MOD_ID + "...");
         for (Block block : CutePuppyMod.getRegistryHelper().getRegisteredBlocks()) {
-            //LogHelper.debug("Registering ItemBlock... " + block.getUnlocalizedName());
             event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
         }
-        //LogHelper.info("Finished ItemBlock registering for " + Reference.MOD_ID);
         for (Item item : CutePuppyMod.getRegistryHelper().getRegisteredItems()) {
-            //event.getRegistry().register(new Item().setRegistryName(item.getRegistryName()));
+            LogHelper.info("Registering: " + item.getUnlocalizedName());
             event.getRegistry().register(item);
         }
     }
