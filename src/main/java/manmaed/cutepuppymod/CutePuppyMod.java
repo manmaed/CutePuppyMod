@@ -6,6 +6,7 @@ import manmaed.cutepuppymod.config.ConfigManager;
 import manmaed.cutepuppymod.creativetab.CPMCreativeTab;
 import manmaed.cutepuppymod.entity.CPMEntitys;
 import manmaed.cutepuppymod.items.CPMItems;
+import manmaed.cutepuppymod.libs.LogHelper;
 import manmaed.cutepuppymod.libs.Reference;
 import manmaed.cutepuppymod.libs.iChun;
 import manmaed.cutepuppymod.libs.util.RecipeHandler;
@@ -15,6 +16,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -59,11 +61,26 @@ public class CutePuppyMod {
 	{
 	    //Stuff
 	}
+    private static boolean devenvsign = false;
+    private static boolean invalsign = false;
+
+    @Mod.EventHandler
+    public void onInvalidFingerprint(FMLFingerprintViolationEvent event) {
+        if (event.isDirectory()) {
+            devenvsign = true;
+            iChun.setbools();
+        }
+    }
 	
 	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
-	    iChun.RuniChunMagic();
-	}
+	public void postInit(FMLPostInitializationEvent event) {
+        iChun.RuniChunMagic();
+        if (devenvsign) {
+            LogHelper.info(Reference.NO_FINGERPRINT_MESSAGE);
+        }
+        if (invalsign) {
+            LogHelper.warn(Reference.INVALID_FINGERPRINT_MESSAGE);
+        }
+    }
 }
 

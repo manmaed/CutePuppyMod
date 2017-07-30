@@ -14,9 +14,9 @@ public class EntityHelper {
 
      }
 */
-public static void registerEntity(ResourceLocation texture, Class<? extends Entity> entityClass, String entityName, int id, int eggPrimary, int eggSecondary) {
+public static void registerEntity(ResourceLocation registryName, Class<? extends Entity> entityClass, String entityName, int id, int eggPrimary, int eggSecondary) {
 
-    EntityRegistry.registerModEntity(texture, entityClass, entityName, id, CutePuppyMod.instance, 64, 3, true, eggPrimary, eggSecondary);
+    EntityRegistry.registerModEntity(registryName, entityClass, entityName, id, CutePuppyMod.instance, 64, 3, true, eggPrimary, eggSecondary);
     //LogHelper.info("README: " + entityClass + " " + entityName + " " + id);
 
  }

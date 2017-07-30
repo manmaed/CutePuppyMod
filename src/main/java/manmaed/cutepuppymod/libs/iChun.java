@@ -1,8 +1,5 @@
 package manmaed.cutepuppymod.libs;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
-
 /**
  * Created by manmaed on 23/07/2017.
  */
@@ -11,17 +8,13 @@ public class iChun {
     private static boolean devenv = false;
     private static boolean beta = false;
     private static boolean release = true;
-    private static boolean devenvsign = false;
-    private static boolean invalsign = false;
 
-    @Mod.EventHandler
-    public void onInvalidFingerprint(FMLFingerprintViolationEvent event) {
-        if (event.isDirectory()) {
-            devenv = true;
-            devenvsign = true;
-            beta = false;
-            release = false;
-        }
+
+    public static void setbools() {
+        devenv = true;
+        beta = false;
+        release = false;
+
     }
 
     public static void RuniChunMagic() {
@@ -39,12 +32,6 @@ public class iChun {
 
             LogHelper.fatal("If you can see this msg in a Release build manmaed forgot to turn the boolean off");
             LogHelper.fatal("Please Report This!");
-            if (devenvsign) {
-                LogHelper.info(Reference.NO_FINGERPRINT_MESSAGE);
-            }
-        }
-        if (invalsign) {
-            LogHelper.warn(Reference.INVALID_FINGERPRINT_MESSAGE);
         }
     }
 

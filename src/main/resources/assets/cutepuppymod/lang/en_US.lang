@@ -50,11 +50,17 @@ entity.EnderPuppy.name=Ender Puppy
 # CreativeTabs
 creativePuppyTab.name=Puppy's Tab
 
+# Advancements
+advancements.cutepuppymod.root.title=CutePuppyMod
+advancements.cutepuppymod.root.description=Go Find CutePuppys
+advancements.cutepuppymod.puppykiller.title=A Puppy Killer
+advancements.cutepuppymod.puppykiller.description=Kill Puppy
+
 # Other Things
-achievement.puppyachievements.name = Puppy Achievements
-achievement.puppykiller=A Puppy Killer
-achievement.enderpuppy=Ender Puppys
-achievement.enderpuppy.desc=Find the Endermans Puppys!
-achievement.puppykiller.desc=Kill a Red Puppy
-achievement.killedbosspuppy=I Killed an Op!
-achievement.killedbosspuppy.desc=Kill The Boss Puppy
+
+
+advancements.puppyachievements.name = Puppy Achievements
+advancements.enderpuppy=Ender Puppys
+advancements.enderpuppy.desc=Find the Endermans Puppys!
+advancements.killedbosspuppy=I Killed an Op!
+advancements.killedbosspuppy.desc=Kill The Boss Puppy

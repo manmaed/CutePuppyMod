@@ -15,14 +15,7 @@
   },
   "criteria": {
     "iron_tools": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "cutepuppymod:itemtab"
-          }
-        ]
-      }
+      "trigger": "minecraft:inventory_changed"
     }
   }
 }

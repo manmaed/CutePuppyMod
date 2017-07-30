@@ -1,6 +1,8 @@
 package manmaed.cutepuppymod.entity;
 
+import manmaed.cutepuppymod.client.render.entity.RenderRedPuppy;
 import manmaed.cutepuppymod.config.ConfigManager;
+import manmaed.cutepuppymod.items.puppydrops.RedPuppyCore;
 import manmaed.cutepuppymod.libs.Textures;
 import manmaed.cutepuppymod.libs.util.EntityHelper;
 import net.minecraft.entity.EnumCreatureType;
@@ -30,7 +32,7 @@ public class CPMEntitys
 		EntityHelper.registerEntity(Textures.MODEL_SIX_PUPPY, EntitySixPuppy.class, "SixPuppy", id++, 0x935a33, 0x633b22);
 		EntityHelper.registerEntity(Textures.MODEL_STEVE_PUPPY, EntityStevePuppy.class, "StevePuppy", id++, 0x004192, 0x220092);
 		EntityHelper.registerEntity(Textures.MODEL_HEROBRINE_PUPPY, EntityHerobrinePuppy.class, "HerobrinePuppy", id++, 0xFFFFFF, 0xd4d4d4);
-        EntityHelper.registerEntity(Textures.MODEL_ENDER_PUPPY, EntityEnderPuppy.class, "EnderPuppy", id++, 0x151515, 0x000000);
+        EntityHelper.registerEntity(, EntityEnderPuppy.class, "EnderPuppy", id++, 0x151515, 0x000000);
 
 		/**
 		 * Add a spawn entry for the supplied entity in the supplied {@link Biomes} list
