@@ -10,7 +10,7 @@ public class iChun {
     private static boolean release = true;
 
 
-    public static void setbools() {
+    public static void setdev() {
         devenv = true;
         beta = false;
         release = false;

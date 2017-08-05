@@ -16,15 +16,15 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:textures/entity/bluepuppy.png"
+          "type": "cutepuppymod:bluepuppy"
         }
       }
     },
-    "redouooy": {
+    "redpuppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:textures/entity/redpuppy.png"
+          "type": "cutepuppymod:redpuppy"
         }
       }
     },
@@ -32,7 +32,7 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:textures/entity/greenpuppy.png"
+          "type": "cutepuppymod:greenpuppy"
         }
       }
     },
@@ -40,7 +40,7 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:textures/entity/purplepuppy.png"
+          "type": "cutepuppymod:purplepuppy"
         }
       }
     },
@@ -48,7 +48,7 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:textures/entity/yellowpuppy.png"
+          "type": "cutepuppymod:yellowpuppy"
         }
       }
     }

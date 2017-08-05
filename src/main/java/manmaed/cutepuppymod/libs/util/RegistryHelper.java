@@ -40,12 +40,4 @@ public class RegistryHelper {
 	{
 		this.items.add(item);
 	}
-	public ArrayList<Entity> getRegisteredIEntitys()
-	{
-		return entitys;
-	}
-	public void registerEntity(Entity entity)
-	{
-		this.entitys.add(entity);
-	}
 }

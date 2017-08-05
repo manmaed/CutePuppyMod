@@ -49,9 +49,14 @@ entity.HazardPuppy.name=Mr_Hazaeds Hound
 # CreativeTabs
 creativeTab.name=Hound's Tab
 
-# Other Things
-achievement.puppyachievements.name = Hound Achievements
-achievement.puppykiller=A Hound Killer
-achievement.puppykiller.desc=Kill a Hound
-achievement.killedbosspuppy=I Killed an Op!
-achievement.killedbosspuppy.desc=Murder th' cap'n Hound
+# Advancements
+advancements.cutepuppymod.root.title=CutePuppyMod
+advancements.cutepuppymod.root.description=Go Find CutePuppys
+advancements.cutepuppymod.killpuppy.title=How could ye?
+advancements.cutepuppymod.killpuppy.description=Murder a Hound
+advancements.cutepuppymod.killedbosspuppy.title=I Murdered th' cap'n Hound!
+advancements.cutepuppymod.killedbosspuppy.description=Murder th' cap'n Hound
+advancements.cutepuppymod.enderpuppy.title=Ender Hound
+advancements.cutepuppymod.enderpuppy.description=Murder th' cap'n Hound
+advancements.cutepuppymod.killherobrine.title=Herobrine Removed
+advancements.cutepuppymod.killherobrine.description=Herobrine Removed

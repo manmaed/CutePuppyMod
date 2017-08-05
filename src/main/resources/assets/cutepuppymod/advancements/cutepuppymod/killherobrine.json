@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:barrier"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.herobrine.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.herobrine.description"
+    }
+  },
+  "parent": "cutepuppymod:cutepuppymod/killpuppy",
+  "criteria": {
+    "killed_herobrineuppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:herobrinepuppy"
+        }
+      }
+    }
+  }
+}

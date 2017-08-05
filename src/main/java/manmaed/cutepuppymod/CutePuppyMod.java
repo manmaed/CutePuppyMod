@@ -68,7 +68,7 @@ public class CutePuppyMod {
     public void onInvalidFingerprint(FMLFingerprintViolationEvent event) {
         if (event.isDirectory()) {
             devenvsign = true;
-            iChun.setbools();
+            iChun.setdev();
         }
     }
 	
