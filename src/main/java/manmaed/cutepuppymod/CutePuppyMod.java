@@ -1,6 +1,5 @@
 package manmaed.cutepuppymod;
 
-import manmaed.cutepuppymod.achievements.Achievements;
 import manmaed.cutepuppymod.block.CPMBlocks;
 import manmaed.cutepuppymod.config.ConfigManager;
 import manmaed.cutepuppymod.creativetab.CPMCreativeTab;
@@ -9,7 +8,6 @@ import manmaed.cutepuppymod.items.CPMItems;
 import manmaed.cutepuppymod.libs.LogHelper;
 import manmaed.cutepuppymod.libs.Reference;
 import manmaed.cutepuppymod.libs.iChun;
-import manmaed.cutepuppymod.libs.util.RecipeHandler;
 import manmaed.cutepuppymod.libs.util.RegistryHelper;
 import manmaed.cutepuppymod.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
@@ -50,10 +48,8 @@ public class CutePuppyMod {
 
         CPMBlocks.RegisterBlocks();
         CPMItems.RegisterItems();
-        RecipeHandler.addRecipes();
         CPMEntitys.Load();
         proxy.renderInformation();
-        Achievements.Load();
 
     }
 	@Mod.EventHandler
