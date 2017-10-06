@@ -24,5 +24,6 @@ public class Textures {
     public static final ResourceLocation MODEL_BAN_HAMMER = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "BanHammer.png");
     public static final ResourceLocation MODEL_ENDER_PUPPY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "EnderPuppy.png");;
     public static final ResourceLocation MODEL_HOLDER_PUPPY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "PuppyHolder.png");;
+    public static final ResourceLocation MODEL_SIX_PUPPY_XMAS = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "SixPuppyxmas.png");
 
 }

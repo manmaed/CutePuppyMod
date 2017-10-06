@@ -1,5 +1,6 @@
 package manmaed.cutepuppymod.client.render.entity;
 
+import manmaed.cutepuppymod.CutePuppyMod;
 import manmaed.cutepuppymod.client.render.model.ModelSixPuppy;
 import manmaed.cutepuppymod.entity.EntitySixPuppy;
 import manmaed.cutepuppymod.libs.Textures;
@@ -13,8 +14,6 @@ import javax.annotation.Nonnull;
 
 public class RenderSixPuppy extends RenderLiving<EntitySixPuppy>
 {
-
-	private ResourceLocation mobTexture = Textures.MODEL_SIX_PUPPY;
 	public static final Factory FACTORY = new Factory();
 
 	public RenderSixPuppy(RenderManager rendermanagerIn) {
@@ -23,7 +22,7 @@ public class RenderSixPuppy extends RenderLiving<EntitySixPuppy>
 	@Override
 	@Nonnull
 	protected ResourceLocation getEntityTexture(@Nonnull EntitySixPuppy entity) {
-		return mobTexture;
+		return CutePuppyMod.christmas ? Textures.MODEL_SIX_PUPPY_XMAS : (Textures.MODEL_SIX_PUPPY);
 	}
 
 	public static class Factory implements IRenderFactory<EntitySixPuppy> {

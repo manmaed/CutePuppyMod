@@ -21,6 +21,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
 public class CutePuppyMod {
@@ -29,6 +33,7 @@ public class CutePuppyMod {
   public static CutePuppyMod instance;
     public static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
     private static RegistryHelper registryHelper;
+    public static boolean christmas;
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
 	public static CommonProxy proxy;
@@ -41,6 +46,17 @@ public class CutePuppyMod {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int month = localDate.getMonthValue();
+
+        if(month == 12){
+            christmas = true;
+            LogHelper.info("Its Christmas!:" + " " + christmas);
+        }
+
+
 
         ConfigManager.loadConfig(new Configuration(event.getSuggestedConfigurationFile()));
         registryHelper = new RegistryHelper(event);
@@ -76,6 +92,9 @@ public class CutePuppyMod {
         }
         if (invalsign) {
             LogHelper.warn(Reference.INVALID_FINGERPRINT_MESSAGE);
+        }
+        if (christmas) {
+            LogHelper.warn("Christmas Hats are On!");
         }
     }
 }
