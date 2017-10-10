@@ -34,6 +34,8 @@ public class CutePuppyMod {
     public static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
     private static RegistryHelper registryHelper;
     public static boolean christmas;
+    public static boolean halloween;
+    public static boolean manmaedbday;
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
 	public static CommonProxy proxy;
@@ -46,16 +48,23 @@ public class CutePuppyMod {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
         Date date = new Date();
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         int month = localDate.getMonthValue();
+        int day = localDate.getDayOfMonth();
 
+        if(month == 06 && day == 30) {
+            manmaedbday = true;
+            LogHelper.info("Happy Birthday manmaed!");
+        }
+        if(month == 10){
+            halloween = true;
+            LogHelper.info("Its Halloween!:" + " " + halloween);
+        }
         if(month == 12){
             christmas = true;
             LogHelper.info("Its Christmas!:" + " " + christmas);
         }
-
 
 
         ConfigManager.loadConfig(new Configuration(event.getSuggestedConfigurationFile()));
@@ -81,6 +90,9 @@ public class CutePuppyMod {
         if (event.isDirectory()) {
             devenvsign = true;
             iChun.setdev();
+        }
+        if(!event.isDirectory()) {
+            invalsign = true;
         }
     }
 	

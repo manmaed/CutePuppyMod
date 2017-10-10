@@ -86,12 +86,7 @@ public class ModelPuppy extends ModelBase
       EarL.setTextureSize(64, 32);
       EarL.mirror = true;
       setRotation(EarL, 0F, 0F, 0.1745329F);
-      /*ThePinkThing = new ModelRenderer(this, 16, 10);
-      ThePinkThing.addBox(-1F, -0.5F, -2F, 2, 1, 2);
-     ThePinkThing.setRotationPoint(0F, -1.5F, -1.5F);
-      ThePinkThing.setTextureSize(64, 32);
-      ThePinkThing.mirror = true;
-      setRotation(ThePinkThing, 0.2617994F, 0F, 0F);*/
+
       ThePinkThing = new ModelRenderer(this, 16, 10);
       ThePinkThing.addBox(-0.5F, -3.3F, -1.5F, 1, 1, 2);
       //ThePinkThing.setRotationPoint(0.5F, 19F, -4F);

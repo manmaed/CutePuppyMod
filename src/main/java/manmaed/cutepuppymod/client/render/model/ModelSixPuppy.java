@@ -124,6 +124,7 @@ public class ModelSixPuppy extends ModelBase
       Ban.setTextureSize(64, 32);
       Ban.mirror = true;
 
+      //xmas hat
       HatBottem = new ModelRenderer(this, 36, 17);
       HatBottem.addBox(-3F, -7F, -3.5F, 6, 1, 6);
       HatBottem.setRotationPoint(0F, 1F, 0F);
@@ -161,8 +162,6 @@ public class ModelSixPuppy extends ModelBase
       Hatp5.mirror = true;
       setRotation(Hatp5, 1.169371F, 0F, 0F);
       ballball = new ModelRenderer(this, 31, 7);
-
-      // L/R , Back, Up
       ballball.addBox(-1F, -3F, 5F, 2, 2, 2);
       ballball.setRotationPoint(0F, -2.5F, 1.8F);
       ballball.setTextureSize(64, 32);
