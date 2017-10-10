@@ -49,7 +49,7 @@ public class EntityYellowPuppy extends EntityAnimal
     
     public EntityYellowPuppy spawnBabyAnimal(EntityAgeable par1EntityAgeable)
     {
-        return new EntityYellowPuppy(this.worldObj);
+        return new EntityYellowPuppy(this.world);
     }
 
     protected SoundEvent getAmbientSound()

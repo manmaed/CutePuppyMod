@@ -1,136 +1,114 @@
 package manmaed.cutepuppymod;
 
-import manmaed.cutepuppymod.achievements.Achievements;
 import manmaed.cutepuppymod.block.CPMBlocks;
+import manmaed.cutepuppymod.config.ConfigManager;
 import manmaed.cutepuppymod.creativetab.CPMCreativeTab;
 import manmaed.cutepuppymod.entity.CPMEntitys;
 import manmaed.cutepuppymod.items.CPMItems;
 import manmaed.cutepuppymod.libs.LogHelper;
 import manmaed.cutepuppymod.libs.Reference;
-import manmaed.cutepuppymod.libs.util.EventHandler;
-import manmaed.cutepuppymod.libs.util.RecipeHandler;
+import manmaed.cutepuppymod.libs.iChun;
+import manmaed.cutepuppymod.libs.util.RegistryHelper;
 import manmaed.cutepuppymod.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, certificateFingerprint = "@FINGERPRINT@")
 
 public class CutePuppyMod {
 
   @Mod.Instance(Reference.MOD_ID)
   public static CutePuppyMod instance;
-
-  public static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
-
-	//private GuiHandlerPLC guiHandlerPLC = new GuiHandlerPLC();
+    public static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
+    private static RegistryHelper registryHelper;
+    public static boolean christmas;
+    public static boolean halloween;
+    public static boolean manmaedbday;
+    private static final String FINGERPRINT = "@FINGERPRINT@";
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
 	public static CommonProxy proxy;
-/*    public static boolean puppy = true;
-    public static SimpleConfig config;*/
 	public static CreativeTabs tabsCMP = new CPMCreativeTab(CreativeTabs.getNextID());
-    private static boolean devenv = false;
-    private static boolean beta = false;
-    private static boolean release = true;
 
-    //Config
-    public static Configuration configFile;
-    public static boolean disablesixpuppy = false;
-
-    public static void syncConfig() {
-        //disablesixpuppy = configFile.getBoolean("My Config Integer", Configuration.CATEGORY_GENERAL, myConfigInteger, 0, Integer.MAX_VALUE, "An Integer!");
-        //myConfigString = configFile.getString("My Config String", Configuration.CATEGORY_GENERAL, myConfigString, "A String!");
-        disablesixpuppy = configFile.getBoolean("Disable Sixkiller Puppy?", Configuration.CATEGORY_GENERAL, disablesixpuppy, "Setting to ture will disable spawns of Sixkiller Puppys");
-
-        if(configFile.hasChanged())
-            configFile.save();
+    public static RegistryHelper getRegistryHelper() {
+        return registryHelper;
     }
-
-	//public static CraftingHandler CraftingHandler = new teamhamster.hamsterwheel.libs.util.CraftingHandler();
-	//                                     new Achievement([ID], [NAME], [X COORD], [Y COORD], [ICON (BLOCK/ITEM ITSELF)], [ACHIEVEMENT REQUIRED]
-
-	//EventManager eventmanager = new EventManager();
-
-
-    /*@SubscribeEvent
-    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-        if(eventArgs.getModID().equals(Reference.MOD_ID)) {
-            LogHelper.fatal("Hello");
-            syncConfig();
-        }
-    }*/
 
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int month = localDate.getMonthValue();
+        int day = localDate.getDayOfMonth();
 
-        configFile = new Configuration(event.getSuggestedConfigurationFile());
-        syncConfig();
-
-
-        /*config = new SimpleConfig(Reference.MOD_ID, new Configuration(event.getSuggestedConfigurationFile())) {
-            @Override
-            public void loadConfig() {
-                puppy = getConfig().getBoolean("puppy", Configuration.CATEGORY_GENERAL, puppy, I18n.translateToLocal(Reference.PUPPY));
-                if (getConfig().hasChanged())
-                    getConfig().save();
-            }
-        };
-        config.loadConfig();*/
-        proxy.preInit();
-
-        CPMBlocks.load();
-        CPMItems.RegisterItem();
-        if(event.getSide().isClient())
-        {
-            CPMItems.RenderItem();
+        if(month == 06 && day == 30) {
+            manmaedbday = true;
+            LogHelper.info("Happy Birthday manmaed!");
         }
-        RecipeHandler.addRecipes();
+        if(month == 10){
+            halloween = true;
+            /*LogHelper.info("Its Halloween!:" + " " + halloween);*/
+        }
+        if(month == 12){
+            christmas = true;
+            /*LogHelper.info("Its Christmas!:" + " " + christmas);*/
+        }
+
+
+        ConfigManager.loadConfig(new Configuration(event.getSuggestedConfigurationFile()));
+        registryHelper = new RegistryHelper(event);
+
+
+        CPMBlocks.RegisterBlocks();
+        CPMItems.RegisterItems();
         CPMEntitys.Load();
         proxy.renderInformation();
-        Achievements.Load();
 
     }
 	@Mod.EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-       // Minecraft.getMinecraft().
-        //ClientProxy.render();
-        //proxy.init();
-        //proxy.registerRenderers();
-		FMLCommonHandler.instance().bus().register(new EventHandler());
-		//GameRegistry.registerWorldGenerator(eventmanager, 0);
-		//NetworkRegistry.registerGuiHandler(this, guiHandlerPLC);
+	    //Stuff
 	}
+    private static boolean devenvsign = false;
+    private static boolean invalsign = false;
+
+    @Mod.EventHandler
+    public void onInvalidFingerprint(FMLFingerprintViolationEvent event) {
+        if (event.isDirectory()) {
+            devenvsign = true;
+            iChun.setdev();
+        }
+        if(!event.isDirectory()) {
+            invalsign = true;
+        }
+    }
 	
 	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
-        if (release) {
-            LogHelper.info("Lets hope it does not shoot fire and blow up");
-            LogHelper.info("-iChun 2015");
-            LogHelper.info("yes that is in evey mod manmaed makes!");
-}
-        if (beta) {
-            LogHelper.info("Lets hope it does not shoot fire and blow up");
-            LogHelper.info("-iChun 2015");
-            LogHelper.warn("This is a Beta Release so it may shoot fire and blow up!");
+	public void postInit(FMLPostInitializationEvent event) {
+        iChun.RuniChunMagic();
+        if (devenvsign) {
+            LogHelper.info(Reference.NO_FINGERPRINT_MESSAGE);
         }
-        if (devenv) {
-
-            LogHelper.fatal("If you can see this msg in a Release build manmaed forgot to turn the boolean off");
-            LogHelper.fatal("Please Report This!");
+        if (invalsign) {
+            LogHelper.warn(Reference.INVALID_FINGERPRINT_MESSAGE);
         }
-        //LogHelper.info(CPMItems.banhammer.getUnlocalizedName());
-
-	}
+        if (manmaedbday) {
+            LogHelper.fatal("Please inform manmaed of this error: Happy Birthday!");
+        }
+    }
 }
 

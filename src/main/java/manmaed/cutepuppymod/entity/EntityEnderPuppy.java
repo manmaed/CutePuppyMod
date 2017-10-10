@@ -1,5 +1,7 @@
 package manmaed.cutepuppymod.entity;
 
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
 import manmaed.cutepuppymod.items.CPMItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -46,7 +48,8 @@ public class EntityEnderPuppy extends EntityMob {
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(8, new EntityAILookIdle(this));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.targetTasks.addTask(1, new EntityEnderPuppy.AIFindPlayer(this));
+        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false, new Class[0]));
     }
 
     /*@Override
@@ -96,33 +99,33 @@ public class EntityEnderPuppy extends EntityMob {
             this.lastCreepySound = this.ticksExisted;
 
             if (!this.isSilent()) {
-                this.worldObj.playSound(this.posX, this.posY + (double) this.getEyeHeight(), this.posZ, SoundEvents.ENTITY_ENDERMEN_STARE, this.getSoundCategory(), 2.5F, 1.0F, false);
+                this.world.playSound(this.posX, this.posY + (double) this.getEyeHeight(), this.posZ, SoundEvents.ENTITY_ENDERMEN_STARE, this.getSoundCategory(), 2.5F, 1.0F, false);
             }
         }
     }
 
     public void notifyDataManagerChange(DataParameter<?> key)
     {
-        if (SCREAMING.equals(key) && this.worldObj.isRemote)
+        if (SCREAMING.equals(key) && this.world.isRemote)
         {
             this.playEnderPuppySound();
         }
 
         super.notifyDataManagerChange(key);
     }
-    public static void func_189763_b(DataFixer p_189763_0_)
+    public static void registerFixesEnderPup(DataFixer fixer)
     {
-        EntityLiving.func_189752_a(p_189763_0_, "EnderPuppy");
+        EntityLiving.registerFixesMob(fixer, EntityEnderPuppy.class);
     }
 
     /**
-     * Checks to see if this enderman should be attacking this player
+     * Checks to see if this Entity should be attacking this player
      */
     private boolean shouldAttackPlayer(EntityPlayer player)
     {
-        ItemStack itemstack = player.inventory.armorInventory[3];
+        ItemStack itemstack = player.inventory.armorInventory.get(3);
 
-        if (itemstack != null && itemstack.getItem() == Item.getItemFromBlock(Blocks.PUMPKIN))
+        if (itemstack.getItem() == Item.getItemFromBlock(Blocks.PUMPKIN))
         {
             return false;
         }
@@ -139,11 +142,11 @@ public class EntityEnderPuppy extends EntityMob {
 
     public void onLivingUpdate()
     {
-        if (this.worldObj.isRemote)
+        if (this.world.isRemote)
         {
             for (int i = 0; i < 2; ++i)
             {
-                this.worldObj.spawnParticle(EnumParticleTypes.PORTAL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height - 0.25D, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, (this.rand.nextDouble() - 0.5D) * 2.0D, -this.rand.nextDouble(), (this.rand.nextDouble() - 0.5D) * 2.0D, new int[0]);
+                this.world.spawnParticle(EnumParticleTypes.PORTAL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height - 0.25D, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, (this.rand.nextDouble() - 0.5D) * 2.0D, -this.rand.nextDouble(), (this.rand.nextDouble() - 0.5D) * 2.0D, new int[0]);
             }
         }
 
@@ -155,14 +158,14 @@ public class EntityEnderPuppy extends EntityMob {
     {
         if (this.isWet())
         {
-            this.attackEntityFrom(DamageSource.drown, 1.0F);
+            this.attackEntityFrom(DamageSource.DROWN, 1.0F);
         }
 
-        if (this.worldObj.isDaytime() && this.ticksExisted >= this.targetChangeTime + 600)
+        if (this.world.isDaytime() && this.ticksExisted >= this.targetChangeTime + 600)
         {
-            float f = this.getBrightness(1.0F);
+            float f = this.getBrightness();
 
-            if (f > 0.5F && this.worldObj.canSeeSky(new BlockPos(this)) && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F)
+            if (f > 0.5F && this.world.canSeeSky(new BlockPos(this)) && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F)
             {
                 this.setAttackTarget((EntityLivingBase)null);
                 this.teleportRandomly();
@@ -191,9 +194,9 @@ public class EntityEnderPuppy extends EntityMob {
         Vec3d vec3d = new Vec3d(this.posX - p_70816_1_.posX, this.getEntityBoundingBox().minY + (double)(this.height / 2.0F) - p_70816_1_.posY + (double)p_70816_1_.getEyeHeight(), this.posZ - p_70816_1_.posZ);
         vec3d = vec3d.normalize();
         double d0 = 16.0D;
-        double d1 = this.posX + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.xCoord * 16.0D;
-        double d2 = this.posY + (double)(this.rand.nextInt(16) - 8) - vec3d.yCoord * 16.0D;
-        double d3 = this.posZ + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.zCoord * 16.0D;
+        double d1 = this.posX + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.x * 16.0D;
+        double d2 = this.posY + (double)(this.rand.nextInt(16) - 8) - vec3d.y * 16.0D;
+        double d3 = this.posZ + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.z * 16.0D;
         return this.teleportTo(d1, d2, d3);
     }
 
@@ -208,7 +211,7 @@ public class EntityEnderPuppy extends EntityMob {
 
         if (flag)
         {
-            this.worldObj.playSound((EntityPlayer)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.ENTITY_ENDERMEN_TELEPORT, this.getSoundCategory(), 1.0F, 1.0F);
+            this.world.playSound((EntityPlayer)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.ENTITY_ENDERMEN_TELEPORT, this.getSoundCategory(), 1.0F, 1.0F);
             this.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 1.0F, 1.0F);
         }
 
@@ -223,7 +226,7 @@ public class EntityEnderPuppy extends EntityMob {
     /**
      * Returns the sound this mob makes when it is hurt.
      */
-    protected SoundEvent getHurtSound()
+    protected SoundEvent getHurtSound(DamageSource p_184601_1_)
     {
 
         return SoundEvents.ENTITY_WOLF_HURT;
@@ -240,6 +243,114 @@ public class EntityEnderPuppy extends EntityMob {
     protected void dropFewItems(boolean par1, int par2) {
         if (this.rand.nextInt(8) == 0) {
             this.dropItem(CPMItems.endercore, 1);
+        }
+    }
+    static class AIFindPlayer extends EntityAINearestAttackableTarget<EntityPlayer>
+    {
+        private final EntityEnderPuppy enderpup;
+        /** The player */
+        private EntityPlayer player;
+        private int aggroTime;
+        private int teleportTime;
+
+        public AIFindPlayer(EntityEnderPuppy entityEnderPuppy)
+        {
+            super(entityEnderPuppy, EntityPlayer.class, false);
+            this.enderpup = entityEnderPuppy;
+        }
+
+        /**
+         * Returns whether the EntityAIBase should begin execution.
+         */
+        public boolean shouldExecute()
+        {
+            double d0 = this.getTargetDistance();
+            this.player = this.enderpup.world.getNearestAttackablePlayer(this.enderpup.posX, this.enderpup.posY, this.enderpup.posZ, d0, d0, (Function)null, new Predicate<EntityPlayer>()
+            {
+                public boolean apply(@Nullable EntityPlayer p_apply_1_)
+                {
+                    return p_apply_1_ != null && EntityEnderPuppy.AIFindPlayer.this.enderpup.shouldAttackPlayer(p_apply_1_);
+                }
+            });
+            return this.player != null;
+        }
+
+        /**
+         * Execute a one shot task or start executing a continuous task
+         */
+        public void startExecuting()
+        {
+            this.aggroTime = 5;
+            this.teleportTime = 0;
+        }
+
+        /**
+         * Reset the task's internal state. Called when this task is interrupted by another one
+         */
+        public void resetTask()
+        {
+            this.player = null;
+            super.resetTask();
+        }
+
+        /**
+         * Returns whether an in-progress EntityAIBase should continue executing
+         */
+        public boolean shouldContinueExecuting()
+        {
+            if (this.player != null)
+            {
+                if (!this.enderpup.shouldAttackPlayer(this.player))
+                {
+                    return false;
+                }
+                else
+                {
+                    this.enderpup.faceEntity(this.player, 10.0F, 10.0F);
+                    return true;
+                }
+            }
+            else
+            {
+                return this.targetEntity != null && ((EntityPlayer)this.targetEntity).isEntityAlive() ? true : super.shouldContinueExecuting();
+            }
+        }
+
+        /**
+         * Keep ticking a continuous task that has already been started
+         */
+        public void updateTask()
+        {
+            if (this.player != null)
+            {
+                if (--this.aggroTime <= 0)
+                {
+                    this.targetEntity = this.player;
+                    this.player = null;
+                    super.startExecuting();
+                }
+            }
+            else
+            {
+                if (this.targetEntity != null)
+                {
+                    if (this.enderpup.shouldAttackPlayer((EntityPlayer)this.targetEntity))
+                    {
+                        if (((EntityPlayer)this.targetEntity).getDistanceSq(this.enderpup) < 16.0D)
+                        {
+                            this.enderpup.teleportRandomly();
+                        }
+
+                        this.teleportTime = 0;
+                    }
+                    else if (((EntityPlayer)this.targetEntity).getDistanceSq(this.enderpup) > 256.0D && this.teleportTime++ >= 30 && this.enderpup.teleportToEntity(this.targetEntity))
+                    {
+                        this.teleportTime = 0;
+                    }
+                }
+
+                super.updateTask();
+            }
         }
     }
 }

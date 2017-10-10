@@ -1,5 +1,6 @@
 package manmaed.cutepuppymod.client.render.model;
 
+import manmaed.cutepuppymod.CutePuppyMod;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -19,6 +20,23 @@ public class ModelRedPuppy extends ModelBase
     ModelRenderer EarR;
     ModelRenderer EarL;
     ModelRenderer ThePinkThing;
+
+  //Hat
+  ModelRenderer Hatp1;
+  ModelRenderer Hatp2;
+  ModelRenderer Hatp3;
+  ModelRenderer HatBottem;
+  ModelRenderer Hatp4;
+  ModelRenderer Hatp5;
+  ModelRenderer ballball;
+
+  //Mask
+  ModelRenderer Face;
+  ModelRenderer Band1;
+  ModelRenderer Band2;
+
+  //Cake
+  ModelRenderer Cake;
   
   public ModelRedPuppy()
   {
@@ -86,25 +104,107 @@ public class ModelRedPuppy extends ModelBase
       EarL.setTextureSize(64, 32);
       EarL.mirror = true;
       setRotation(EarL, 0F, 0F, 0.1745329F);
-      /*ThePinkThing = new ModelRenderer(this, 16, 10);
-      ThePinkThing.addBox(-1F, -0.5F, -2F, 2, 1, 2);
-     ThePinkThing.setRotationPoint(0F, -1.5F, -1.5F);
-      ThePinkThing.setTextureSize(64, 32);
-      ThePinkThing.mirror = true;
-      */
       ThePinkThing = new ModelRenderer(this, 16, 10);
       ThePinkThing.addBox(-0.5F, -3.3F, -1.5F, 1, 1, 2);
-      //ThePinkThing.setRotationPoint(0.5F, 19F, -4F);
       ThePinkThing.setRotationPoint(0F, -0.0F, 0F);
       ThePinkThing.setTextureSize(64, 32);
       ThePinkThing.mirror = true;
-      //setRotation(ThePinkThing, 0.2617994F, 0F, 0F);
       setRotation(ThePinkThing, 1.155001F, 0F, 0F);
+
+    //xmas hat
+    HatBottem = new ModelRenderer(this, 26, 25);
+    HatBottem.addBox(-3F, -7F, -3.5F, 6, 1, 6);
+    HatBottem.setRotationPoint(0F, 1F, 0F);
+    HatBottem.setTextureSize(64, 32);
+    HatBottem.mirror = true;
+    setRotation(HatBottem, 0F, 0F, 0F);
+    Hatp1 = new ModelRenderer(this, 26, 26);
+    Hatp1.addBox(-2.5F, -7F, -3F, 5, 1, 5);
+    Hatp1.setRotationPoint(0F, 0F, 0F);
+    Hatp1.setTextureSize(64, 32);
+    Hatp1.mirror = true;
+    setRotation(Hatp1, 0F, 0F, 0F);
+    Hatp2 = new ModelRenderer(this, 26, 27);
+    Hatp2.addBox(-2F, -7F, -2.5F, 4, 1, 4);
+    Hatp2.setRotationPoint(0F, -1F, 0F);
+    Hatp2.setTextureSize(64, 32);
+    Hatp2.mirror = true;
+    setRotation(Hatp2, 0F, 0F, 0F);
+    Hatp3 = new ModelRenderer(this, 26, 28);
+    Hatp3.addBox(-1.5F, -7F, -2F, 3, 1, 3);
+    Hatp3.setRotationPoint(0F, -2F, 0F);
+    Hatp3.setTextureSize(64, 32);
+    Hatp3.mirror = true;
+    setRotation(Hatp3, 0F, 0F, 0F);
+    Hatp4 = new ModelRenderer(this, 26, 29);
+    Hatp4.addBox(-1F, -7F, -1.5F, 2, 1, 2);
+    Hatp4.setRotationPoint(0F, -3F, 0F);
+    Hatp4.setTextureSize(64, 32);
+    Hatp4.mirror = true;
+    setRotation(Hatp4, 0F, 0F, 0F);
+    Hatp5 = new ModelRenderer(this, 26, 29);
+    Hatp5.addBox(-1F, -3F,5.5F, 2, 2, 1);
+    Hatp5.setRotationPoint(0F, -3.5F, 0F);
+    Hatp5.setTextureSize(64, 32);
+    Hatp5.mirror = true;
+    setRotation(Hatp5, 1.169371F, 0F, 0F);
+    ballball = new ModelRenderer(this, 26, 20);
+    ballball.addBox(-1F, -3F, 5F, 2, 2, 2);
+    ballball.setRotationPoint(0F, -2.5F, 1.8F);
+    ballball.setTextureSize(64, 32);
+    ballball.mirror = true;
+    setRotation(ballball, 1.169371F, 0F, 0F);
+
+    //Mask
+    Face = new ModelRenderer(this, 25, 12);
+    Face.addBox(-3.5F, -22F, 3.5F, 6, 6, 1);
+    Face.setRotationPoint(0.5F, 16.5F, -7.5F);
+    Face.setTextureSize(64, 32);
+    Face.mirror = true;
+    setRotation(Face, 0, 0F, 0F);
+    Band1 = new ModelRenderer(this, 26, 7);
+    Band1.addBox(-0.5F, -19.5F, 4.2F, 0, 1, 3);
+    Band1.setRotationPoint(3.5F, 16F, -7.7F);
+    Band1.setTextureSize(64, 32);
+    Band1.mirror = true;
+    setRotation(Band1, 0, 0F, 0F);
+    Band2 = new ModelRenderer(this, 26, 7);
+    Band2.addBox(-0.5F, -19.5F, 4.2F, 0, 1, 3);
+    Band2.setRotationPoint(-2.5F, 16F, -7.7F);
+    Band2.setTextureSize(64, 32);
+    Band2.mirror = true;
+    setRotation(Band2, 0, 0F, 0F);
+
+    //Cake
+    Cake = new ModelRenderer(this, 40, 12);
+    Cake.addBox(-3F, -21, 1.7F, 5, 2, 5);
+    Cake.setRotationPoint(0.5F, 14F, -4.8F);
+    Cake.setTextureSize(64, 32);
+    Cake.mirror = true;
+    setRotation(Cake, 0, 0F, 0F);
+
       //tings
       head.addChild(EarL);
       head.addChild(EarR);
       head.addChild(Nose);
       head.addChild(ThePinkThing);
+    if(CutePuppyMod.christmas) {
+      head.addChild(HatBottem);
+      head.addChild(Hatp1);
+      head.addChild(Hatp2);
+      head.addChild(Hatp3);
+      head.addChild(Hatp4);
+      head.addChild(Hatp5);
+      head.addChild(ballball);
+    }
+    if(CutePuppyMod.halloween) {
+      head.addChild(Face);
+      head.addChild(Band1);
+      head.addChild(Band2);
+    }
+    if(CutePuppyMod.manmaedbday){
+      head.addChild(Cake);
+    }
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -118,10 +218,6 @@ public class ModelRedPuppy extends ModelBase
     LegBL.render(f5);
     LegBR.render(f5);
     Tail.render(f5);
-/*        EarR.render(f5);
-    EarL.render(f5);
-    ThePinkThing.render(f5);
-    Nose.render(f5);*/
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)

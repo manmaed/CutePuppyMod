@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "cutepuppymod:banhammer"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.killedbosspuppy.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.killedbosspuppy.description"
+    }
+  },
+  "parent": "cutepuppymod:cutepuppymod/killpuppy",
+  "criteria": {
+    "killed_sixpuppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:sixpuppy"
+        }
+      }
+    }
+  }
+}

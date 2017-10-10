@@ -35,23 +35,28 @@ item.BanHammer.name=SixKillers Ban Hammer
 
 # Entitys
 ## Colord Puppys
-entity.cutepuppymod.RedPuppy.name=Red Hound
-entity.cutepuppymod.GreenPuppy.name=Green Hound
-entity.cutepuppymod.YellowPuppy.name=Yellow Hound
-entity.cutepuppymod.BluePuppy.name=Blue Hound
-entity.cutepuppymod.PurplePuppy.name=Purple Hound
+entity.RedPuppy.name=Red Hound
+entity.GreenPuppy.name=Green Hound
+entity.YellowPuppy.name=Yellow Hound
+entity.BluePuppy.name=Blue Hound
+entity.PurplePuppy.name=Purple Hound
 ## Custom Puppys
-entity.cutepuppymod.SixPuppy.name=Sixkillers Hound
-entity.cutepuppymod.StevePuppy.name=Steves Hound
-entity.cutepuppymod.HerobrinePuppy.name=Herobrines Hound
-entity.cutepuppymod.HazardPuppy.name=Mr_Hazaeds Hound
+entity.SixPuppy.name=Sixkillers Hound
+entity.StevePuppy.name=Steves Hound
+entity.HerobrinePuppy.name=Herobrines Hound
+entity.HazardPuppy.name=Mr_Hazaeds Hound
 
 # CreativeTabs
 creativeTab.name=Hound's Tab
 
-# Other Things
-achievement.puppyachievements.name = Hound Achievements
-achievement.puppykiller=A Hound Killer
-achievement.puppykiller.desc=Kill a Hound
-achievement.killedbosspuppy=I Killed an Op!
-achievement.killedbosspuppy.desc=Murder th' cap'n Hound
+# Advancements
+advancements.cutepuppymod.root.title=CutePuppyMod
+advancements.cutepuppymod.root.description=Go Find CutePuppys
+advancements.cutepuppymod.killpuppy.title=How could ye?
+advancements.cutepuppymod.killpuppy.description=Murder a Hound
+advancements.cutepuppymod.killedbosspuppy.title=I Murdered th' cap'n Hound!
+advancements.cutepuppymod.killedbosspuppy.description=Murder th' cap'n Hound
+advancements.cutepuppymod.enderpuppy.title=Ender Hound
+advancements.cutepuppymod.enderpuppy.description=Murder th' cap'n Hound
+advancements.cutepuppymod.herobrine.title=Herobrine Removed
+advancements.cutepuppymod.herobrine.description=Herobrine Removed

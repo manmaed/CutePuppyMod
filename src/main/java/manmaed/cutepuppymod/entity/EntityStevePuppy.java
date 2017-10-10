@@ -48,7 +48,7 @@ public class EntityStevePuppy extends EntityAnimal
     
     public EntityStevePuppy spawnBabyAnimal(EntityAgeable par1EntityAgeable)
     {
-        return new EntityStevePuppy(this.worldObj);
+        return new EntityStevePuppy(this.world);
     }
 
     protected SoundEvent getAmbientSound()
@@ -80,12 +80,12 @@ public class EntityStevePuppy extends EntityAnimal
 
     public void onStruckByLightning(EntityLightningBolt p_70077_1_)
     {
-        if (!this.worldObj.isRemote)
+        if (!this.world.isRemote)
         {
-            EntityHerobrinePuppy entityherobrinepuppy = new EntityHerobrinePuppy(this.worldObj);
+            EntityHerobrinePuppy entityherobrinepuppy = new EntityHerobrinePuppy(this.world);
             /*entityherobrinepuppy. setCurrentItemOrArmor(0, new ItemStack(CPMItems.banhammer));*/
             entityherobrinepuppy.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-            this.worldObj.spawnEntityInWorld(entityherobrinepuppy);
+            this.world.spawnEntity(entityherobrinepuppy);
             this.setDead();
         }
     }

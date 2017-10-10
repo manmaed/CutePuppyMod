@@ -6,7 +6,7 @@ public class CPMBlocks {
 	public static Block blockHamsterWheel;*/
 	
 	
-	public static void load() {
+	public static void RegisterBlocks() {
 		//Init'ing
 		/*blockGearbox = new BlockGearBox();*/
 		

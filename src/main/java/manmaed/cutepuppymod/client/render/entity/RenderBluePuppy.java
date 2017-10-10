@@ -1,5 +1,6 @@
 package manmaed.cutepuppymod.client.render.entity;
 
+import manmaed.cutepuppymod.CutePuppyMod;
 import manmaed.cutepuppymod.client.render.model.ModelRedPuppy;
 import manmaed.cutepuppymod.entity.EntityBluePuppy;
 import manmaed.cutepuppymod.libs.Textures;
@@ -13,7 +14,6 @@ import javax.annotation.Nonnull;
 
 public class RenderBluePuppy extends RenderLiving<EntityBluePuppy>
 {
-	private ResourceLocation mobTexture = Textures.MODEL_BLUE_PUPPY;
 	public static final Factory FACTORY = new Factory();
 
 	public RenderBluePuppy(RenderManager rendermanagerIn)
@@ -23,7 +23,17 @@ public class RenderBluePuppy extends RenderLiving<EntityBluePuppy>
 	@Override
 	@Nonnull
 	protected ResourceLocation getEntityTexture(@Nonnull EntityBluePuppy entity) {
-		return mobTexture;
+		if (CutePuppyMod.manmaedbday) {
+			return Textures.MODEL_BLUE_PUPPY_BDAY;
+		}
+		if (CutePuppyMod.halloween) {
+			return Textures.MODEL_BLUE_PUPPY_HALLOWEEN;
+		}
+		if (CutePuppyMod.christmas) {
+			return Textures.MODEL_BLUE_PUPPY_XMAS;
+		} else {
+			return Textures.MODEL_BLUE_PUPPY;
+		}
 	}
 
 	public static class Factory implements IRenderFactory<EntityBluePuppy> {
