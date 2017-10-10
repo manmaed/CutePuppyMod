@@ -25,7 +25,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, certificateFingerprint = "@FINGERPRINT@")
 
 public class CutePuppyMod {
 
@@ -36,6 +36,7 @@ public class CutePuppyMod {
     public static boolean christmas;
     public static boolean halloween;
     public static boolean manmaedbday;
+    private static final String FINGERPRINT = "@FINGERPRINT@";
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
 	public static CommonProxy proxy;
@@ -59,11 +60,11 @@ public class CutePuppyMod {
         }
         if(month == 10){
             halloween = true;
-            LogHelper.info("Its Halloween!:" + " " + halloween);
+            /*LogHelper.info("Its Halloween!:" + " " + halloween);*/
         }
         if(month == 12){
             christmas = true;
-            LogHelper.info("Its Christmas!:" + " " + christmas);
+            /*LogHelper.info("Its Christmas!:" + " " + christmas);*/
         }
 
 
@@ -105,8 +106,8 @@ public class CutePuppyMod {
         if (invalsign) {
             LogHelper.warn(Reference.INVALID_FINGERPRINT_MESSAGE);
         }
-        if (christmas) {
-            LogHelper.warn("Christmas Hats are On!");
+        if (manmaedbday) {
+            LogHelper.fatal("Please inform manmaed of this error: Happy Birthday!");
         }
     }
 }

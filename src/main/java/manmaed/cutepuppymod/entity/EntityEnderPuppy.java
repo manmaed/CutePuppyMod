@@ -336,14 +336,14 @@ public class EntityEnderPuppy extends EntityMob {
                 {
                     if (this.enderpup.shouldAttackPlayer((EntityPlayer)this.targetEntity))
                     {
-                        if (((EntityPlayer)this.targetEntity).getDistanceSqToEntity(this.enderpup) < 16.0D)
+                        if (((EntityPlayer)this.targetEntity).getDistanceSq(this.enderpup) < 16.0D)
                         {
                             this.enderpup.teleportRandomly();
                         }
 
                         this.teleportTime = 0;
                     }
-                    else if (((EntityPlayer)this.targetEntity).getDistanceSqToEntity(this.enderpup) > 256.0D && this.teleportTime++ >= 30 && this.enderpup.teleportToEntity(this.targetEntity))
+                    else if (((EntityPlayer)this.targetEntity).getDistanceSq(this.enderpup) > 256.0D && this.teleportTime++ >= 30 && this.enderpup.teleportToEntity(this.targetEntity))
                     {
                         this.teleportTime = 0;
                     }
