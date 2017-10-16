@@ -36,6 +36,8 @@ public class CutePuppyMod {
     public static boolean christmas;
     public static boolean halloween;
     public static boolean manmaedbday;
+    public static boolean bday;
+    public static boolean direbday;
     private static final String FINGERPRINT = "@FINGERPRINT@";
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
@@ -54,9 +56,22 @@ public class CutePuppyMod {
         int month = localDate.getMonthValue();
         int day = localDate.getDayOfMonth();
 
-        if(month == 06 && day == 30) {
+        if(month == 6 && day == 30) {
             manmaedbday = true;
+            bday = true;
             LogHelper.info("Happy Birthday manmaed!");
+        }
+        if(month == 4 && day == 27) {
+            bday = true;
+            LogHelper.info("Happy Birthday JoeNoice!");
+        }
+        if(month == 6 && day == 8 ) {
+            bday = true;
+            LogHelper.info("Happy Birthday UnRealDinnerbone!");
+        }
+        if(month == 3 && day == 20 ) {
+            direbday = true;
+            LogHelper.info("Happy Birthday Direwolf20!");
         }
         if(month == 10){
             halloween = true;

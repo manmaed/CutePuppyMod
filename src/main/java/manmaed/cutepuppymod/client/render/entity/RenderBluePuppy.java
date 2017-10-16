@@ -23,7 +23,7 @@ public class RenderBluePuppy extends RenderLiving<EntityBluePuppy>
 	@Override
 	@Nonnull
 	protected ResourceLocation getEntityTexture(@Nonnull EntityBluePuppy entity) {
-		if (CutePuppyMod.manmaedbday) {
+		if (CutePuppyMod.bday) {
 			return Textures.MODEL_BLUE_PUPPY_BDAY;
 		}
 		if (CutePuppyMod.halloween) {
