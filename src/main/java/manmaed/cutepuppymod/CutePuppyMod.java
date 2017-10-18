@@ -68,6 +68,7 @@ public class CutePuppyMod {
         if(month == 6 && day == 8 ) {
             bday = true;
             LogHelper.info("Happy Birthday UnRealDinnerbone!");
+            LogHelper.info("Happy Birthday Dinnerbeef!");
         }
         if(month == 3 && day == 20 ) {
             direbday = true;
