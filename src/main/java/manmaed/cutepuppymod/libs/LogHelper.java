@@ -1,7 +1,7 @@
 package manmaed.cutepuppymod.libs;
 
-import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Created by manmaed on 27/09/2016.
@@ -10,7 +10,7 @@ public class LogHelper {
 
     private static void log(Level logLevel, Object object)
     {
-        FMLLog.log(Reference.MOD_ID, logLevel, "["+ Reference.MOD_ID + "]:[" + logLevel + "]:" + String.valueOf(object));
+        LogManager.getLogger(Reference.MOD_ID).log(logLevel, "["+ Reference.MOD_ID + "]:[" + logLevel + "]:" + String.valueOf(object));
     }
 
     public static void all(Object object)
