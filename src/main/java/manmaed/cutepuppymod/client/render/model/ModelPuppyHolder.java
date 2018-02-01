@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 public class ModelPuppyHolder extends ModelBase
 {
 
-    public static ModelPuppyHolder instance = new ModelPuppyHolder();
     //fields
     public ModelRenderer head;
     public ModelRenderer Nose;
@@ -61,14 +60,12 @@ public class ModelPuppyHolder extends ModelBase
         LegFR.setTextureSize(128, 32);
         LegFR.mirror = true;
         setRotation(LegFR, 0F, 0F, 0F);
-        LegBL.mirror = true;
         LegBL = new ModelRenderer(this, 18, 20);
         LegBL.addBox(-1F, 0F, -1F, 2, 4, 2);
         LegBL.setRotationPoint(-0.8F, 3F, 8.1F);
         LegBL.setTextureSize(128, 32);
-        LegBL.mirror = true;
-        setRotation(LegBL, 0F, 0F, 0F);
         LegBL.mirror = false;
+        setRotation(LegBL, 0F, 0F, 0F);
         LegBR = new ModelRenderer(this, 18, 20);
         LegBR.addBox(-1F, 0F, -1F, 2, 4, 2);
         LegBR.setRotationPoint(1.8F, 3F, 8.1F);

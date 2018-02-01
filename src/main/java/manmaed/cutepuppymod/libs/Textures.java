@@ -28,6 +28,10 @@ public class Textures {
 
    //evemt textures
 
+    //
+    public static final ResourceLocation MODEL_PUPPY_HOLDER = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION  + "PuppyHolder.png");
+    public static final ResourceLocation MODEL_BANHAMMER = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION  + "SixPuppy.png");
+
     //christmas
     public static final ResourceLocation MODEL_GREEN_PUPPY_XMAS = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + XMAS  + "GreenPuppy.png");
     public static final ResourceLocation MODEL_RED_PUPPY_XMAS = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + XMAS  + "RedPuppy.png");

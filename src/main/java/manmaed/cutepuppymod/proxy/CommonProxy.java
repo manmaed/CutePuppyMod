@@ -6,4 +6,8 @@ public class CommonProxy {
     public void renderInformation(){
 		
 	}
+
+	public void renderlayers() {
+
+    }
 }

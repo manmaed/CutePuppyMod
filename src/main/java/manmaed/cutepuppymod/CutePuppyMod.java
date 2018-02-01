@@ -125,6 +125,14 @@ public class CutePuppyMod {
         if (manmaedbday) {
             LogHelper.fatal("Please inform manmaed of this error: Happy Birthday!");
         }
+        proxy.renderlayers();
+        /*if(event.getSide() == Side.CLIENT)
+        {
+            RenderDemLayers dimlayer = new RenderDemLayers(new ModelPuppyHolder());
+            for (RenderPlayer playerRender : Minecraft.getMinecraft().getRenderManager().getSkinMap().values()) {
+                playerRender.addLayer(dimlayer);
+            }
+        }*/
     }
 }
 
