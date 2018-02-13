@@ -31,6 +31,4 @@ public class BanHammer extends ItemSword {
     {
         return false;
     }
-
-
 }

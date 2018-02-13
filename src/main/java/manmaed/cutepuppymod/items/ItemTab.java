@@ -1,9 +1,12 @@
 package manmaed.cutepuppymod.items;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemTab extends Item {
@@ -16,7 +19,8 @@ public class ItemTab extends Item {
         super();
         setUnlocalizedName(name);
     }
-    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List result, boolean expanded) {
-        result.add("Nothing To See here");
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        tooltip.add("Nothing To See here");
     }
 }

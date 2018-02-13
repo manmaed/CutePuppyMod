@@ -27,3 +27,4 @@ public class CPMCreativeTab extends CreativeTabs {
 		return I18n.translateToLocal("creativePuppyTab.name");
 	}
 }
+/**/
