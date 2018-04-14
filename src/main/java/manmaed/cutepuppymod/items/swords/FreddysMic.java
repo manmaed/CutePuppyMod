@@ -1,11 +1,14 @@
 package manmaed.cutepuppymod.items.swords;
 
 import manmaed.cutepuppymod.CutePuppyMod;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -22,7 +25,8 @@ public class FreddysMic extends ItemSword {
         setUnlocalizedName(name);
         setCreativeTab(CutePuppyMod.tabsCMP);
     }
-    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List result, boolean expanded) {
-        result.add("How Did that Get there?");
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        tooltip.add("Nothing To See here");
     }
 }
