@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "cutepuppymod:thecoreblock"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.thebosspuppy.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.thebosspuppy.description"
+    },
+    "frame": "goal"
+  },
+  "parent": "cutepuppymod:cutepuppymod/thecoreofcores",
+  "criteria": {
+    "summoned_thebosspuppy": {
+      "trigger": "minecraft:summoned_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:thebosspuppy"
+        }
+      }
+    }
+  }
+}

@@ -23,11 +23,13 @@ public class ClientProxy extends CommonProxy {
     	RenderingRegistry.registerEntityRenderingHandler(EntityPurplePuppy.class,  RenderPurplePuppy.FACTORY);
 
         RenderingRegistry.registerEntityRenderingHandler(EntityEnderPuppy.class,  RenderEnderPuppy.FACTORY);
+		RenderingRegistry.registerEntityRenderingHandler(EntityEnderBossPuppy.class,  RenderEnderBossPuppy.FACTORY);
 
 		//Custom Pups
 		RenderingRegistry.registerEntityRenderingHandler(EntitySixPuppy.class,  RenderSixPuppy.FACTORY);
     	RenderingRegistry.registerEntityRenderingHandler(EntityStevePuppy.class,  RenderStevePuppy.FACTORY);
     	RenderingRegistry.registerEntityRenderingHandler(EntityHerobrinePuppy.class,  RenderHerobrinePuppy.FACTORY);
+		RenderingRegistry.registerEntityRenderingHandler(EntityTheBossPuppy.class, RenderTheBossPuppy.FACTORY);
 
 
 /*      RenderingRegistry.registerEntityRenderingHandler(EntityWaterHamster.class,  RenderWaterHamster( ModelHamster(0), 0.5f));

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "cutepuppymod:thecoreblock"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.thecoreofcors.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.thecoreofcors.description"
+    }
+  },
+  "parent": "cutepuppymod:cutepuppymod/killpuppy",
+  "criteria": {
+    "thecoreofcores": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+        {
+          "item": "cutepuppymod:thecoreblock"
+        }
+          ]
+      }
+    }
+  }
+}

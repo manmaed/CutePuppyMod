@@ -24,6 +24,7 @@ public class Textures {
    public static final ResourceLocation MODEL_HEROBRINE_PUPPY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "HerobrinePuppy.png");
    public static final ResourceLocation MODEL_YELLOW_PUPPY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "YellowPuppy.png");
    public static final ResourceLocation MODEL_ENDER_PUPPY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "EnderPuppy.png");
+   public static final ResourceLocation MODEL_BOSS_PUPPY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION + "BossPuppy.png");
 
 
    //evemt textures

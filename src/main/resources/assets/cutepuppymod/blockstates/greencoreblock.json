@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "normal": { "model": "cutepuppymod:GreenCoreBlock" },
+    "inventory": { "model": "cutepuppymod:GreenCoreBlock" }
+  }
+}

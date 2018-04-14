@@ -1,5 +1,6 @@
 package manmaed.cutepuppymod.entity;
 
+import manmaed.cutepuppymod.items.CPMItems;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
@@ -90,13 +91,13 @@ public class EntityStevePuppy extends EntityAnimal
         }
     }
 
-    
-/*    protected void dropFewItems(boolean par1, int par2)
+
+    protected void dropFewItems(boolean par1, int par2)
     {
-		if(this.rand.nextInt(4) == 0)
-				{
-			this.dropItem(Items.diamond, 2);
-				}
-    }*/
+        if(this.rand.nextInt(8) == 0)
+        {
+            this.dropItem(CPMItems.stevecore, 1);
+        }
+    }
     
 }

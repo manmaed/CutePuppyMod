@@ -33,6 +33,9 @@ public class CPMEntitys
 		EntityHelper.registerEntity(ResourceLocationHelper.getResourceLocation("stevepuppy"), EntityStevePuppy.class, "StevePuppy", id++, 0x004192, 0x220092);
 		EntityHelper.registerEntity(ResourceLocationHelper.getResourceLocation("herobrinepuppy"), EntityHerobrinePuppy.class, "HerobrinePuppy", id++, 0xFFFFFF, 0xd4d4d4);
         EntityHelper.registerEntity(ResourceLocationHelper.getResourceLocation("enderpuppy"), EntityEnderPuppy.class, "EnderPuppy", id++, 0x151515, 0x000000);
+		EntityHelper.registerEntity(ResourceLocationHelper.getResourceLocation("enderbosspuppy"), EntityEnderBossPuppy.class, "EnderBossPuppy", id++, 0x151515, 0x000000);
+		EntityHelper.registerEntity(ResourceLocationHelper.getResourceLocation("thebosspuppy"), EntityTheBossPuppy.class, "TheBossPuppy", id++, 0x151515, 0x000000);
+
 
 		/**
 		 * Add a spawn entry for the supplied entity in the supplied {@link Biomes} list

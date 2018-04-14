@@ -10,12 +10,14 @@ public class CPMItems {
 
 
     //PuppyDrops
-    public static Item redcore;
-    public static Item bluecore;
-    public static Item greencore;
-    public static Item purplecore;
-    public static Item yellowcore;
-    public static Item endercore;
+    public static ItemCoreBase redcore;
+    public static ItemCoreBase bluecore;
+    public static ItemCoreBase greencore;
+    public static ItemCoreBase purplecore;
+    public static ItemCoreBase yellowcore;
+    public static ItemCoreBase endercore;
+    public static ItemCoreBase stevecore;
+    public static ItemCoreBase herobrinecore;
 
     //Swords
     public static Item bluesword;
@@ -24,9 +26,10 @@ public class CPMItems {
     public static Item yellowsword;
     public static Item greensword;
     public static Item banhammer;
-    public static Item spawnenderpuppy;
 
     //Random
+    public static ItemCoreBase emptysyringe;
+    public static ItemCoreBase fullsyringe;
     public static Item iconfortab;
     public static Item mic;
     static Item.ToolMaterial banhammermeterial = EnumHelper.addToolMaterial("banhammermeterial", 3, 3000, 0.0F, 20.0F, 0);
@@ -43,6 +46,8 @@ public class CPMItems {
 		yellowcore = new YellowPuppyCore();
 		greencore = new GreenPuppyCore();
         endercore = new EnderCore();
+        stevecore = new StevePuppyCore();
+        herobrinecore = new HerobrinePuppyCore();
 
 
         //Swords
@@ -56,6 +61,8 @@ public class CPMItems {
 		//Other Things
 		iconfortab = new ItemTab();
         mic = new FreddysMic(Item.ToolMaterial.WOOD);
+        emptysyringe = new EmptySyringe();
+        fullsyringe = new FullSyringe();
 
 
 
@@ -67,6 +74,8 @@ public class CPMItems {
         CutePuppyMod.getRegistryHelper().registerItem(redcore);
         CutePuppyMod.getRegistryHelper().registerItem(yellowcore);
         CutePuppyMod.getRegistryHelper().registerItem(endercore);
+        CutePuppyMod.getRegistryHelper().registerItem(stevecore);
+        CutePuppyMod.getRegistryHelper().registerItem(herobrinecore);
 
 
         //Others
@@ -81,6 +90,9 @@ public class CPMItems {
         CutePuppyMod.getRegistryHelper().registerItem(redsword);
         CutePuppyMod.getRegistryHelper().registerItem(yellowsword);
         CutePuppyMod.getRegistryHelper().registerItem(banhammer);
+
+        CutePuppyMod.getRegistryHelper().registerItem(fullsyringe);
+        CutePuppyMod.getRegistryHelper().registerItem(emptysyringe);
         /*RegistryHelper.RegisterItem(bluesword, BluePuppySword.getName());
         RegistryHelper.RegisterItem(greensword, GreenPuppySword.getName());
         RegistryHelper.RegisterItem(purplesword, PurplePuppySword.getName());
@@ -89,12 +101,6 @@ public class CPMItems {
         RegistryHelper.RegisterItem(banhammer, BanHammer.getName());*/
 
         //Cores
-        bluecore.setRegistryName(BluePuppyCore.getName());
-        greencore.setRegistryName(GreenPuppyCore.getName());
-        purplecore.setRegistryName(PurplePuppyCore.getName());
-        redcore.setRegistryName(RedPuppyCore.getName());
-        yellowcore.setRegistryName(YellowPuppyCore.getName());
-        endercore.setRegistryName(EnderCore.getName());
 
         //Others
         iconfortab.setRegistryName(ItemTab.getName());
@@ -106,6 +112,5 @@ public class CPMItems {
         purplesword.setRegistryName(PurplePuppySword.getName());
         redsword.setRegistryName(RedPuppySword.getName());
         yellowsword.setRegistryName(YellowPuppySword.getName());
-        banhammer.setRegistryName(BanHammer.getName());
     }
 }

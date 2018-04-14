@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ccc",
+    "ccc",
+    "ccc"
+  ],
+  "key": {
+    "c": { "item": "cutepuppymod:redpuppycore" }
+  },
+  "result": {
+    "item": "cutepuppymod:redcoreblock"
+  }
+}

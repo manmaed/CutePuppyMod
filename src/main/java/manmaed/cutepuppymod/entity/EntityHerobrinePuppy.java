@@ -1,5 +1,6 @@
 package manmaed.cutepuppymod.entity;
 
+import manmaed.cutepuppymod.items.CPMItems;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
@@ -63,13 +64,13 @@ public class EntityHerobrinePuppy extends EntityMob implements IMob
         return SoundEvents.ENTITY_WOLF_DEATH;
     }
 
-    
-/*    protected void dropFewItems(boolean par1, int par2)
+
+    protected void dropFewItems(boolean par1, int par2)
     {
-		if(this.rand.nextInt(4) == 0)
-				{
-			this.dropItem(Items.diamond, 2);
-				}
-    }*/
+        if(this.rand.nextInt(8) == 0)
+        {
+            this.dropItem(CPMItems.herobrinecore, 1);
+        }
+    }
     
 }

@@ -10,16 +10,11 @@ import net.minecraft.item.ItemSword;
 public class BanHammer extends ItemSword {
 
     private static String name = "BanHammer";
-    public static String getName()
-    {
-
-        return name;
-    }
-
     public BanHammer(ToolMaterial material) {
         super(material);
         setUnlocalizedName(name);
         setCreativeTab(CutePuppyMod.tabsCMP);
+        setRegistryName(name);
     }
 
     @Override

@@ -25,7 +25,7 @@ public class RenderDemLayers implements LayerRenderer<EntityPlayer> {
     public void doRenderLayer(EntityPlayer entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         playerUUID = entitylivingbaseIn.getUniqueID().toString().replace("-","");
         /*LogHelper.fatal(entitylivingbaseIn.getUniqueID().toString().replace("-", ""));*/
-        if (playerUUID.equalsIgnoreCase("2eebcb1af63e4a80b380801a10f88d4e") && !entitylivingbaseIn.inventory.armorInventory.get(2).getItem().equals(Items.ELYTRA) ) {
+        if (playerUUID.equalsIgnoreCase("2eebcb1af63e4a80b380801a10f88d4e") && !entitylivingbaseIn.inventory.armorInventory.get(2).getItem().equals(Items.ELYTRA) && !entitylivingbaseIn.isInvisible() ) {
             GlStateManager.pushMatrix();
             bindTexture(Textures.MODEL_PUPPY_HOLDER);
             GlStateManager.translate(0F, 0.4375, -0.375);
