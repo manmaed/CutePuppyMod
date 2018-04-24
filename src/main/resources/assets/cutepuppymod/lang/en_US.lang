@@ -48,6 +48,10 @@ item.YellowPuppySword.name=Yellow Puppy Sword
 item.PurplePuppySword.name=Purple Puppy Sword
 item.BanHammer.name=SixKillers Ban Hammer
 
+##Other Items
+item.EmptySyringe.name=Empty Syringe
+item.FullSyringe.name=Full Syringe
+
 # Entitys
 ## Colord Puppys
 entity.RedPuppy.name=Red Puppy
@@ -61,6 +65,8 @@ entity.StevePuppy.name=Steves Puppy
 entity.HerobrinePuppy.name=Herobrines Puppy
 entity.HazardPuppy.name=Mr_Hazaeds Puppy
 entity.EnderPuppy.name=Ender Puppy
+entity.EnderBossPuppy.name=Ender Boss Puppy
+entity.TheBossPuppy.name=The Boss Puppy
 
 # CreativeTabs
 creativePuppyTab.name=Puppy's Tab

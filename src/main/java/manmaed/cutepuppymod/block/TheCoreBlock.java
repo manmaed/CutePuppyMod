@@ -2,10 +2,12 @@ package manmaed.cutepuppymod.block;
 
 import manmaed.cutepuppymod.entity.EntityTheBossPuppy;
 import manmaed.cutepuppymod.items.CPMItems;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -31,10 +33,14 @@ public class TheCoreBlock extends BaseCoreBlock {
             if(itemStack.getItem() == CPMItems.fullsyringe) {
                 itemStack.shrink(1);
                 worldIn.setBlockToAir(pos);
-                EntityTheBossPuppy BossPuppy = new EntityTheBossPuppy(worldIn);
-                BossPuppy.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 10, 10);
+                EntityTheBossPuppy bossPuppy = new EntityTheBossPuppy(worldIn);
+                bossPuppy.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 10, 10);
                 worldIn.spawnEntity(new EntityLightningBolt(worldIn, pos.getX(), pos.getY(), pos.getZ(), false));
-                worldIn.spawnEntity(BossPuppy);
+                worldIn.spawnEntity(bossPuppy);
+                for (EntityPlayerMP entityplayermp : worldIn.getEntitiesWithinAABB(EntityPlayerMP.class, bossPuppy.getEntityBoundingBox().grow(50.0D)))
+                {
+                    CriteriaTriggers.SUMMONED_ENTITY.trigger(entityplayermp, bossPuppy);
+                }
                 return true;
             }
         }

@@ -128,6 +128,6 @@ public class EntityEnderBossPuppy extends EntityMob implements IMob
 
     protected void dropFewItems(boolean par1, int par2)
     {
-        this.dropItem(Items.ENDER_PEARL, 64);
+        this.dropItem(Items.ENDER_PEARL, 10);
     }
 }

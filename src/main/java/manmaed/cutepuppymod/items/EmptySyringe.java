@@ -19,6 +19,7 @@ public class EmptySyringe extends ItemCoreBase {
         super();
         setUnlocalizedName(name);
         setRegistryName(name);
+        setMaxStackSize(1);
     }
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {

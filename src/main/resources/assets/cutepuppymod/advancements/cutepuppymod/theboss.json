@@ -14,7 +14,7 @@
   "parent": "cutepuppymod:cutepuppymod/thecoreofcores",
   "criteria": {
     "summoned_thebosspuppy": {
-      "trigger": "minecraft:summoned_entity",
+      "trigger": "summoned_entity",
       "conditions": {
         "entity": {
           "type": "cutepuppymod:thebosspuppy"

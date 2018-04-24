@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iw ",
+    "wgw",
+    " ww"
+  ],
+  "key": {
+    "i": { "item": "minecraft:iron_ingot" },
+    "w": { "item": "minecraft:wool", "data": 15},
+    "g": { "item": "minecraft:glass"}
+  },
+  "result": {
+    "item": "cutepuppymod:emptysyringe"
+  }
+}

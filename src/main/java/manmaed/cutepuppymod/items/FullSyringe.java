@@ -12,5 +12,6 @@ public class FullSyringe extends ItemCoreBase {
         super();
         setUnlocalizedName(name);
         setRegistryName(name);
+        setMaxStackSize(1);
     }
 }

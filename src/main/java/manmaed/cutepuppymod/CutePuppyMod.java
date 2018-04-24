@@ -11,6 +11,8 @@ import manmaed.cutepuppymod.libs.iChun;
 import manmaed.cutepuppymod.libs.util.RegistryHelper;
 import manmaed.cutepuppymod.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -18,6 +20,7 @@ import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -47,6 +50,7 @@ public class CutePuppyMod {
     public static RegistryHelper getRegistryHelper() {
         return registryHelper;
     }
+
 
 
 	@Mod.EventHandler
@@ -97,6 +101,7 @@ public class CutePuppyMod {
 	@Mod.EventHandler
 	public void load(FMLInitializationEvent event)
 	{
+        GameRegistry.addSmelting(new ItemStack(CPMBlocks.endercoreblock), new ItemStack(Items.ENDER_PEARL, 2), 5.0F);
 	    //Stuff
 	}
     private static boolean devenvsign = false;
