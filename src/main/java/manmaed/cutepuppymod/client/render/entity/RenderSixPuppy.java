@@ -1,9 +1,7 @@
 package manmaed.cutepuppymod.client.render.entity;
 
-import manmaed.cutepuppymod.CutePuppyMod;
 import manmaed.cutepuppymod.client.render.model.ModelSixPuppy;
 import manmaed.cutepuppymod.entity.EntitySixPuppy;
-import manmaed.cutepuppymod.libs.Textures;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -22,7 +20,7 @@ public class RenderSixPuppy extends RenderLiving<EntitySixPuppy>
 	@Override
 	@Nonnull
 	protected ResourceLocation getEntityTexture(@Nonnull EntitySixPuppy entity) {
-		return CutePuppyMod.christmas ? Textures.MODEL_SIX_PUPPY_XMAS : (Textures.MODEL_SIX_PUPPY);
+		return RenderPuppyTextures.SixPuppy();
 	}
 
 	public static class Factory implements IRenderFactory<EntitySixPuppy> {

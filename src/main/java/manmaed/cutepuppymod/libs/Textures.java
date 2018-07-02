@@ -48,7 +48,7 @@ public class Textures {
     public static final ResourceLocation MODEL_GREEN_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "GreenPuppy.png");
     public static final ResourceLocation MODEL_RED_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "RedPuppy.png");
     public static final ResourceLocation MODEL_BLUE_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "BluePuppy.png");
-    public static final ResourceLocation MODEL_SIX_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "SixPuppy.png");
+    //public static final ResourceLocation MODEL_SIX_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "SixPuppy.png");
     public static final ResourceLocation MODEL_STEVE_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "StevePuppy.png");
     public static final ResourceLocation MODEL_PURPLE_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "PurplePuppy.png");
     public static final ResourceLocation MODEL_HEROBRINE_PUPPY_HALLOWEEN = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + HALLOWEEN  + "HerobrinePuppy.png");
@@ -59,7 +59,7 @@ public class Textures {
     public static final ResourceLocation MODEL_GREEN_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "GreenPuppy.png");
     public static final ResourceLocation MODEL_RED_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "RedPuppy.png");
     public static final ResourceLocation MODEL_BLUE_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "BluePuppy.png");
-    public static final ResourceLocation MODEL_SIX_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "SixPuppy.png");
+    //public static final ResourceLocation MODEL_SIX_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "SixPuppy.png");
     public static final ResourceLocation MODEL_STEVE_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "StevePuppy.png");
     public static final ResourceLocation MODEL_PURPLE_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "PurplePuppy.png");
     public static final ResourceLocation MODEL_HEROBRINE_PUPPY_BDAY = ResourceLocationHelper.getResourceLocation(MODEL_SHEET_LOCATION_EVENT + BDAY  + "HerobrinePuppy.png");

@@ -1,10 +1,8 @@
 package manmaed.cutepuppymod.client.render.entity;
 
 
-import manmaed.cutepuppymod.CutePuppyMod;
 import manmaed.cutepuppymod.client.render.model.ModelRedPuppyBig;
 import manmaed.cutepuppymod.entity.EntityEnderBossPuppy;
-import manmaed.cutepuppymod.libs.Textures;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -25,17 +23,7 @@ public class RenderEnderBossPuppy extends RenderLiving<EntityEnderBossPuppy>
 	@Nullable
 	@Override
 	protected ResourceLocation getEntityTexture(EntityEnderBossPuppy entity) {
-		if (CutePuppyMod.bday) {
-			return Textures.MODEL_ENDER_PUPPY_BDAY;
-		}
-		if (CutePuppyMod.halloween) {
-			return Textures.MODEL_ENDER_PUPPY_HALLOWEEN;
-		}
-		if (CutePuppyMod.christmas) {
-			return Textures.MODEL_ENDER_PUPPY_XMAS;
-		} else {
-			return Textures.MODEL_ENDER_PUPPY;
-		}
+		return RenderPuppyTextures.EnderBossPuppy();
 	}
 	public static class Factory implements IRenderFactory<EntityEnderBossPuppy> {
 

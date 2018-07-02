@@ -1,6 +1,7 @@
 package manmaed.cutepuppymod;
 
 import manmaed.cutepuppymod.block.CPMBlocks;
+import manmaed.cutepuppymod.client.render.entity.RenderPuppyTextures;
 import manmaed.cutepuppymod.config.ConfigManager;
 import manmaed.cutepuppymod.creativetab.CPMCreativeTab;
 import manmaed.cutepuppymod.entity.CPMEntitys;
@@ -40,7 +41,6 @@ public class CutePuppyMod {
     public static boolean halloween;
     public static boolean manmaedbday;
     public static boolean bday;
-    public static boolean direbday;
     private static final String FINGERPRINT = "@FINGERPRINT@";
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.PROXY_COMMON)
@@ -54,38 +54,59 @@ public class CutePuppyMod {
 
 
 	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
+	public void preInit(FMLPreInitializationEvent event) throws NoSuchFieldException, IllegalAccessException {
         Date date = new Date();
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         int month = localDate.getMonthValue();
         int day = localDate.getDayOfMonth();
+        RenderPuppyTextures hat = new RenderPuppyTextures();
 
         if(month == 6 && day == 30) {
-            manmaedbday = true;
             bday = true;
+            manmaedbday = true;
+            hat.sethat("manmaed");
             LogHelper.info("Happy Birthday manmaed!");
         }
         if(month == 4 && day == 27) {
-            bday = true;
+            /*bday = true;
+            hat.sethat("joe");*/
             LogHelper.info("Happy Birthday JoeNoice!");
         }
         if(month == 6 && day == 8 ) {
-            bday = true;
+            /*bday = true;
+            hat.sethat("beefs");*/
             LogHelper.info("Happy Birthday UnRealDinnerbone!");
             LogHelper.info("Happy Birthday Dinnerbeef!");
         }
         if(month == 3 && day == 20 ) {
-            direbday = true;
+            bday = true;
+            hat.sethat("dire");
             LogHelper.info("Happy Birthday Direwolf20!");
         }
         if(month == 10){
             halloween = true;
+            hat.sethat("halloween");
             /*LogHelper.info("Its Halloween!:" + " " + halloween);*/
         }
         if(month == 12){
             christmas = true;
+            hat.sethat("christmas");
             /*LogHelper.info("Its Christmas!:" + " " + christmas);*/
         }
+        /*if(textevent){
+            *//*Testing Events Enable Depending on event*//*
+            //halloween = true;
+            //christmas = true;
+            //bday = true;
+
+            *//*Turn Hats On*//*
+            //hat.sethat("manmaed");
+            //hat.sethat("joe");
+            //hat.sethat("beefs");
+            //hat.sethat("dire");
+            //hat.sethat("halloween");
+            //hat.sethat("christmas");
+        }*/
 
 
         ConfigManager.loadConfig(new Configuration(event.getSuggestedConfigurationFile()));

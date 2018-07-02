@@ -202,7 +202,7 @@ public class ModelRedPuppy extends ModelBase
       head.addChild(Band1);
       head.addChild(Band2);
     }
-    if(CutePuppyMod.manmaedbday){
+    if(CutePuppyMod.bday){
       head.addChild(Cake);
     }
   }

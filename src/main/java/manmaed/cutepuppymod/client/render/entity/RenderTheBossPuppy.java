@@ -3,7 +3,6 @@ package manmaed.cutepuppymod.client.render.entity;
 
 import manmaed.cutepuppymod.client.render.model.ModelTheBossPuppy;
 import manmaed.cutepuppymod.entity.EntityTheBossPuppy;
-import manmaed.cutepuppymod.libs.Textures;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -24,7 +23,7 @@ public class RenderTheBossPuppy extends RenderLiving<EntityTheBossPuppy>
 	@Nullable
 	@Override
 	protected ResourceLocation getEntityTexture(EntityTheBossPuppy entity) {
-		return Textures.MODEL_BOSS_PUPPY;
+		return RenderPuppyTextures.TheBossPuppy();
 		}
 	public static class Factory implements IRenderFactory<EntityTheBossPuppy> {
 
