@@ -30,9 +30,9 @@ public class RenderPuppyTextures {
         if (manmaed) {
             return Textures.MODEL_BLUE_PUPPY_BDAY;
         }
-        /*if () {
+        if (beefs) {
             return Textures.MODEL_BLUE_PUPPY_BDAY;
-        }*/
+        }
         if (halloween) {
             return Textures.MODEL_BLUE_PUPPY_HALLOWEEN;
         }
@@ -149,9 +149,9 @@ public class RenderPuppyTextures {
         if (manmaed) {
             return Textures.MODEL_ENDER_PUPPY_BDAY;
         }
-        /*if () {
+        if (beefs) {
             return Textures.MODEL_ENDER_PUPPY_BDAY;
-        }*/
+        }
         if (halloween) {
             return Textures.MODEL_ENDER_PUPPY_HALLOWEEN;
         }

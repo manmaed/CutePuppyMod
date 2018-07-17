@@ -73,8 +73,8 @@ public class CutePuppyMod {
             LogHelper.info("Happy Birthday JoeNoice!");
         }
         if(month == 6 && day == 8 ) {
-            /*bday = true;
-            hat.sethat("beefs");*/
+            bday = true;
+            hat.sethat("beefs");
             LogHelper.info("Happy Birthday UnRealDinnerbone!");
             LogHelper.info("Happy Birthday Dinnerbeef!");
         }
