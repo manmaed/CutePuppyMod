@@ -6,10 +6,10 @@
     " s "
   ],
   "key": {
-    "c": { "item": "cutepuppymod:redpuppycore" },
+    "c": { "item": "cutepuppymod:redcore" },
     "s": { "item": "minecraft:stick" }
   },
   "result": {
-    "item": "cutepuppymod:redpuppysword"
+    "item": "cutepuppymod:redsword"
   }
 }

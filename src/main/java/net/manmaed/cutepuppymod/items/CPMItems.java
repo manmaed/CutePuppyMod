@@ -2,6 +2,7 @@ package net.manmaed.cutepuppymod.items;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
 import net.manmaed.cutepuppymod.items.puppydrops.CPMPuppyDrops;
+import net.manmaed.cutepuppymod.items.swords.BanHammer;
 import net.manmaed.cutepuppymod.items.swords.CPMSwords;
 import net.manmaed.cutepuppymod.libs.Reference;
 import net.minecraft.item.Item;
@@ -33,6 +34,5 @@ public class CPMItems {
 
         CPMSwords.load();
         CPMPuppyDrops.load();
-
     }
 }

@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "cutepuppymod:greencoreblock"
+      "item": "cutepuppymod:redcoreblock"
     }
   },
   "result": {
-    "item": "cutepuppymod:greenpuppycore",
+    "item": "cutepuppymod:redcore",
     "count": 9
   }
 }

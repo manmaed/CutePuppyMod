@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "cutepuppymod:items/BanHammer"
+    "layer0": "cutepuppymod:items/banhammer"
   }
 }
