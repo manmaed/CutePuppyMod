@@ -1,9 +1,13 @@
 package net.manmaed.cutepuppymod;
 
 import net.manmaed.cutepuppymod.blocks.CPMBlocks;
+import net.manmaed.cutepuppymod.entitys.CPMEntitys;
+import net.manmaed.cutepuppymod.entitys.EntityRedPup;
 import net.manmaed.cutepuppymod.items.CPMItems;
 import net.manmaed.cutepuppymod.libs.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -38,7 +42,6 @@ public class CutePuppyMod {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         registeryHandler = new RegisteryHandler();
         MinecraftForge.EVENT_BUS.addListener(this::serverLoad);
-        /*MinecraftForge.EVENT_BUS.addListener(this);*/
     }
 
     public static RegisteryHandler getRegisteryHandler() {
@@ -81,10 +84,10 @@ public class CutePuppyMod {
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
-       /* @SubscribeEvent
+        @SubscribeEvent
         public static void onEntityRegistry(final RegistryEvent.Register<EntityType<?>> event) {
-            event.getRegistry().register(EntityType.Builder.create(EntityPetRock:: new, EntityClassification.MISC).size(0.5f, 0.5f).build("petrock").setRegistryName("petrock"));
-        }*/
+            event.getRegistry().register(EntityType.Builder.create(EntityRedPup::new, EntityClassification.AMBIENT).size(0.5F, 0.5F).build("red_puppy").setRegistryName("red_puppy"));
+        }
 
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
@@ -98,7 +101,6 @@ public class CutePuppyMod {
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             CPMItems.load();
             for (Block block : CutePuppyMod.getRegisteryHandler().getRegisteredBlocks()) {
-                /*event.getRegistry().register(new BlockItem(new Block.Properties.from(block).setRegistryName(block.getRegistryName())));*/
                 event.getRegistry().register(new BlockItem(block, new Item.Properties().group(CutePuppyMod.itemGroup)).setRegistryName(block.getRegistryName()));
             }
             for (Item item : CutePuppyMod.getRegisteryHandler().getRegisteredItems()) {
