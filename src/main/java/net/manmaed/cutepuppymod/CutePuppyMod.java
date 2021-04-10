@@ -1,111 +1,77 @@
 package net.manmaed.cutepuppymod;
 
-import net.manmaed.cutepuppymod.blocks.CPMBlocks;
-import net.manmaed.cutepuppymod.entitys.CPMEntitys;
-import net.manmaed.cutepuppymod.entitys.EntityRedPup;
-import net.manmaed.cutepuppymod.items.CPMItems;
-import net.manmaed.cutepuppymod.libs.Reference;
-import net.minecraft.block.Block;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+
+import net.manmaed.cutepuppymod.entitys.CPEntity;
+import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
+import net.manmaed.cutepuppymod.items.CPItems;
+import net.manmaed.cutepuppymod.libs.Refs;
+import net.manmaed.cutepuppymod.libs.RegisterHandler;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.fml.DeferredWorkQueue;
+import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import java.util.ArrayList;
-
 /**
- * Created by manmaed on 05/01/2020.
+ * Created by manmaed on 09/04/2021.
  */
-@Mod(Reference.id)
+
+@Mod(Refs.id)
 public class CutePuppyMod {
 
-    private static RegisteryHandler registeryHandler;
-    public static final ItemGroup itemGroup = new ItemGroup(Reference.id) {
+    /*
+    *
+    * TODO List
+    * TODO: Blocks
+    *  * EnderCore Block (Needs Entitys)
+    *  * TheCoreBlock (Needs Entitys)
+    * ---
+    *
+    *
+    */
+
+    private static RegisterHandler registeryHandler;
+    public static final ItemGroup itemGroup = new ItemGroup(Refs.id) {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(CPMItems.itemfortab);
+            return new ItemStack(CPItems.tabicon);
         }
     };
 
     public CutePuppyMod() {
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::init);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-        registeryHandler = new RegisteryHandler();
-        MinecraftForge.EVENT_BUS.addListener(this::serverLoad);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(CutePuppyModClient::doClientStuff);
+        registeryHandler = new RegisterHandler();
+        CPEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        /*
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PRConfig.COMMON_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, PRConfig.CLIENT_CONFIG);
+        MinecraftForge.EVENT_BUS.addListener(this::serverLoad);*/
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
-    public static RegisteryHandler getRegisteryHandler() {
+    public static RegisterHandler getRegisteryHandler() {
         return registeryHandler;
     }
 
     private void init(final FMLCommonSetupEvent event) {
-        //Do things
+        // some preinit code;
+        DeferredWorkQueue.runLater(CPEntity::load);
+        //World Gen
+        /*event.enqueueWork(WorldGenHandler::registerConfiguredFeatures);*/
     }
 
-    private void doClientStuff(FMLClientSetupEvent event) {
-        //Do Client Stuff
-    }
-
-    private void serverLoad(FMLServerStartingEvent event) {
-        //Stuff for servers
-    }
-
-    public static class RegisteryHandler {
-        private final ArrayList<Block> blocks = new ArrayList<>();
-        private final ArrayList<Item> items = new ArrayList<>();
-        public ArrayList<Block> getRegisteredBlocks()
-
-        {
-            return blocks;
-        }
-        public void registerBlock(Block block)
-        {
-            blocks.add(block);
-        }
-        public ArrayList<Item> getRegisteredItems()
-        {
-            return items;
-        }
-        public void registerItem(Item item)
-        {
-            this.items.add(item);
-        }
-    }
-
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents {
-        @SubscribeEvent
-        public static void onEntityRegistry(final RegistryEvent.Register<EntityType<?>> event) {
-            event.getRegistry().register(EntityType.Builder.create(EntityRedPup::new, EntityClassification.AMBIENT).size(0.5F, 0.5F).build("red_puppy").setRegistryName("red_puppy"));
-        }
-
-        @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-            CPMBlocks.load();
-            for (Block block : CutePuppyMod.getRegisteryHandler().getRegisteredBlocks()) {
-                event.getRegistry().registerAll(block);
-            }
-        }
-
-        @SubscribeEvent
-        public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            CPMItems.load();
-            for (Block block : CutePuppyMod.getRegisteryHandler().getRegisteredBlocks()) {
-                event.getRegistry().register(new BlockItem(block, new Item.Properties().group(CutePuppyMod.itemGroup)).setRegistryName(block.getRegistryName()));
-            }
-            for (Item item : CutePuppyMod.getRegisteryHandler().getRegisteredItems()) {
-                event.getRegistry().register(item);
-            }
-        }
-    }
+    //Commands
+    /*private void serverLoad(FMLServerStartingEvent event) {
+        PRCommands.register(event.getServer().getCommandManager().getDispatcher());
+    }*/
 }

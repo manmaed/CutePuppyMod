@@ -12,7 +12,7 @@ public class LogHelper {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private static void log(Level loglvl, Object object) {
-        LOGGER.log(loglvl, "[" + loglvl + "]:" + "-" + Reference.LOG + " " + String.valueOf(object));
+        LOGGER.log(loglvl, "[" + loglvl + "]:" + "-" + Refs.LOG + " " + String.valueOf(object));
     }
 
     public static void info(Object object) {
@@ -24,5 +24,7 @@ public class LogHelper {
     public static void fatal(Object object) {
         log(Level.FATAL, object);
     }
-
+    public static void debug(Object object) {
+        log(Level.FATAL,object);
+    }
 }

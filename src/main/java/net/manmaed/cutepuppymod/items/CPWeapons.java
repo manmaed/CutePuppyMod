@@ -1,16 +1,17 @@
-package net.manmaed.cutepuppymod.items.swords;
+package net.manmaed.cutepuppymod.items;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
-import net.manmaed.cutepuppymod.libs.Reference;
+import net.manmaed.cutepuppymod.items.weapon.BanHammer;
+import net.manmaed.cutepuppymod.libs.Refs;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 
 /**
  * Created by manmaed on 05/01/2020.
  */
-public class CPMSwords {
+public class CPWeapons {
 
-    @ObjectHolder(Reference.Register + "banhammer")
+    @ObjectHolder(Refs.Register + "banhammer")
     public static Item banhammer;
 
     public static void load() {

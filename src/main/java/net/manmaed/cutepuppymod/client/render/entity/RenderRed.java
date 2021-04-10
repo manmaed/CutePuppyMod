@@ -1,0 +1,23 @@
+package net.manmaed.cutepuppymod.client.render.entity;
+
+import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
+import net.manmaed.cutepuppymod.entitys.EntityRed;
+import net.manmaed.cutepuppymod.libs.Refs;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.util.ResourceLocation;
+
+import javax.annotation.Nullable;
+
+public class RenderRed extends MobRenderer<EntityRed, ModelPuppy<EntityRed>> {
+    private static final ResourceLocation skin = new ResourceLocation(Refs.id, "textures/entity/red.png");
+
+    public RenderRed(EntityRendererManager manager) {
+        super(manager, new ModelPuppy(), 0.25F);
+    }
+
+    @Override
+    public ResourceLocation getEntityTexture(EntityRed entity) {
+        return skin;
+    }
+}

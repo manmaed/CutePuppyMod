@@ -1,45 +1,45 @@
 package net.manmaed.cutepuppymod.blocks;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
-import net.manmaed.cutepuppymod.libs.Reference;
+import net.manmaed.cutepuppymod.libs.Refs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.registries.ObjectHolder;
 
 /**
- * Created by manmaed on 05/01/2020.
+ * Created by manmaed on 09/04/2021.
  */
-public class CPMBlocks {
+public class CPBlocks {
 
     private static float hard = 3.0F;
     private static float ress = 5.0F;
 
-    @ObjectHolder(Reference.Register + "redcoreblock")
+    @ObjectHolder(Refs.Register + "redcoreblock")
     public static Block redcoreblock;
 
-    @ObjectHolder(Reference.Register + "greencoreblock")
+    @ObjectHolder(Refs.Register + "greencoreblock")
     public static Block greencoreblock;
 
-    @ObjectHolder(Reference.Register + "bluecoreblock")
+    @ObjectHolder(Refs.Register + "bluecoreblock")
     public static Block bluecoreblock;
 
-    @ObjectHolder(Reference.Register + "yellowcoreblock")
+    @ObjectHolder(Refs.Register + "yellowcoreblock")
     public static Block yellowcoreblock;
 
-    @ObjectHolder(Reference.Register + "purplecoreblock")
+    @ObjectHolder(Refs.Register + "purplecoreblock")
     public static Block purplecoreblock;
 
-    @ObjectHolder(Reference.Register + "stevecoreblock")
+    @ObjectHolder(Refs.Register + "stevecoreblock")
     public static Block stevecoreblock;
 
-    @ObjectHolder(Reference.Register + "herobrinecoreblock")
+    @ObjectHolder(Refs.Register + "herobrinecoreblock")
     public static Block herobrinecoreblock;
 
-    @ObjectHolder(Reference.Register + "endercoreblock")
+    @ObjectHolder(Refs.Register + "endercoreblock")
     public static Block endercoreblock;
 
-    @ObjectHolder(Reference.Register + "thecoreblock")
+    @ObjectHolder(Refs.Register + "thecoreblock")
     public static Block thecoreblock;
 
     public static void load() {
@@ -65,6 +65,5 @@ public class CPMBlocks {
         CutePuppyMod.getRegisteryHandler().registerBlock(herobrinecoreblock);
         CutePuppyMod.getRegisteryHandler().registerBlock(endercoreblock);
         CutePuppyMod.getRegisteryHandler().registerBlock(thecoreblock);
-
     }
 }

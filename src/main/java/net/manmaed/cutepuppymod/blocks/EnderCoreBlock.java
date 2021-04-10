@@ -11,6 +11,7 @@ public class EnderCoreBlock extends Block {
         super(properties);
     }
 
+    //TODO
     /*@Override
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if(!worldIn.isRemote) {

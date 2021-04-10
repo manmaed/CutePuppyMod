@@ -1,37 +1,37 @@
-package net.manmaed.cutepuppymod.items.puppydrops;
+package net.manmaed.cutepuppymod.items;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
-import net.manmaed.cutepuppymod.libs.Reference;
+import net.manmaed.cutepuppymod.libs.Refs;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 
 /**
  * Created by manmaed on 05/01/2020.
  */
-public class CPMPuppyDrops {
+public class CPPuppyDrops {
 
-    @ObjectHolder(Reference.Register + "redcore")
+    @ObjectHolder(Refs.Register + "redcore")
     public static Item redcore;
 
-    @ObjectHolder(Reference.Register + "bluecore")
+    @ObjectHolder(Refs.Register + "bluecore")
     public static Item bluecore;
 
-    @ObjectHolder(Reference.Register + "greencore")
+    @ObjectHolder(Refs.Register + "greencore")
     public static Item greencore;
 
-    @ObjectHolder(Reference.Register + "purplecore")
+    @ObjectHolder(Refs.Register + "purplecore")
     public static Item purplecore;
 
-    @ObjectHolder(Reference.Register + "yellowcore")
+    @ObjectHolder(Refs.Register + "yellowcore")
     public static Item yellowcore;
 
-    @ObjectHolder(Reference.Register + "endercore")
+    @ObjectHolder(Refs.Register + "endercore")
     public static Item endercore;
 
-    @ObjectHolder(Reference.Register + "stevecore")
+    @ObjectHolder(Refs.Register + "stevecore")
     public static Item stevecore;
 
-    @ObjectHolder(Reference.Register + "herobrinecore")
+    @ObjectHolder(Refs.Register + "herobrinecore")
     public static Item herobrinecore;
 
     public static void load() {
