@@ -1,15 +1,11 @@
 package net.manmaed.cutepuppymod.entitys;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
 import net.manmaed.cutepuppymod.libs.Refs;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.Supplier;
 
 public class CPEntityTypes {
 
@@ -69,6 +65,18 @@ public class CPEntityTypes {
             () -> EntityType.Builder.create(EntityHerobrine:: new, EntityClassification.AMBIENT)
                     .size(0.5f, 0.5f)
                     .build(getName("herobrine"))
+    );
+
+    public static final RegistryObject<EntityType<EntityEnder>> ENDER = ENTITY_TYPES.register(getName("ender"),
+            () -> EntityType.Builder.create(EntityEnder:: new, EntityClassification.MONSTER)
+                    .size(0.5f, 0.5f)
+                    .build(getName("ender"))
+    );
+
+    public static final RegistryObject<EntityType<EntityBoss>> BOSS = ENTITY_TYPES.register(getName("boss"),
+            () -> EntityType.Builder.create(EntityBoss:: new, EntityClassification.MONSTER)
+                    .size(0.5f, 0.5f)
+                    .build(getName("boss"))
     );
 
     /*

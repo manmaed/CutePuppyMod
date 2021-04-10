@@ -32,6 +32,12 @@ public class CPSpawnEggs {
     @ObjectHolder(Refs.Register + "herobrine_spawn_egg")
     public static Item herobrine_spawn_egg;
 
+    @ObjectHolder(Refs.Register + "ender_spawn_egg")
+    public static Item ender_spawn_egg;
+
+    @ObjectHolder(Refs.Register + "boss_spawn_egg")
+    public static Item boss_spawn_egg;
+
     public static void load() {
         //TODO eggs
         red_spawn_egg = new RedEgg("red_spawn_egg");
@@ -41,6 +47,8 @@ public class CPSpawnEggs {
         purple_spawn_egg = new PurpleEgg("purple_spawn_egg");
         steve_spawn_egg = new SteveEgg("steve_spawn_egg");
         herobrine_spawn_egg = new HerobrineEgg("herobrine_spawn_egg");
+        ender_spawn_egg = new EnderEgg("ender_spawn_egg");
+        boss_spawn_egg = new BossEgg("boss_spawn_egg");
 
         CutePuppyMod.getRegisteryHandler().registerItem(red_spawn_egg);
         CutePuppyMod.getRegisteryHandler().registerItem(blue_spawn_egg);
@@ -49,5 +57,7 @@ public class CPSpawnEggs {
         CutePuppyMod.getRegisteryHandler().registerItem(purple_spawn_egg);
         CutePuppyMod.getRegisteryHandler().registerItem(steve_spawn_egg);
         CutePuppyMod.getRegisteryHandler().registerItem(herobrine_spawn_egg);
+        CutePuppyMod.getRegisteryHandler().registerItem(ender_spawn_egg);
+        CutePuppyMod.getRegisteryHandler().registerItem(boss_spawn_egg);
     }
 }

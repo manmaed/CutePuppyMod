@@ -57,7 +57,7 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
         //Goal Selectors
         this.goalSelector.addGoal(1, new SwimGoal(this));
         this.goalSelector.addGoal(2, new SitGoal(this));
-        this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
+        this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.2F));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.goalSelector.addGoal(6, new BreedGoal(this, 1.0D));
@@ -209,6 +209,9 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
                 return !herobrine.isTamed() || herobrine.getOwner() != owner;
             } else if (target instanceof PlayerEntity && owner instanceof PlayerEntity && !((PlayerEntity)owner).canAttackPlayer((PlayerEntity)target)) {
                 return false;
+            } else if (target instanceof EntitySteve) {
+                EntitySteve steve = (EntitySteve)target;
+                return !steve.isTamed() || steve.getOwner() != owner;
             } else if (target instanceof AbstractHorseEntity && ((AbstractHorseEntity)target).isTame()) {
                 return false;
             } else {

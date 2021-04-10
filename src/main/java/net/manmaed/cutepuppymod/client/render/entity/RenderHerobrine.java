@@ -19,7 +19,7 @@ public class RenderHerobrine extends MobRenderer<EntityHerobrine, ModelPuppy<Ent
 
     @Override
     public ResourceLocation getEntityTexture(EntityHerobrine entity) {
-        if (entity.getAngerTime() != 0) {
+        if (entity.getAngerTime() != 0 || entity.isAggressive()) {
             return mad;
         } else {
             return normal;
