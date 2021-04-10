@@ -2,16 +2,20 @@ package net.manmaed.cutepuppymod.entitys;
 
 import net.manmaed.cutepuppymod.items.CPItems;
 import net.manmaed.cutepuppymod.items.CPPuppyDrops;
+import net.manmaed.cutepuppymod.items.spawn_eggs.HerobrineEgg;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.AbstractSkeletonEntity;
+import net.minecraft.entity.monster.CreeperEntity;
+import net.minecraft.entity.monster.GhastEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.passive.WolfEntity;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -74,7 +78,7 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
         return MobEntity.func_233666_p_()
                 .createMutableAttribute(Attributes.MAX_HEALTH, 2.5D)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F)
-                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 2.0D);
+                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0D);
     }
 
     protected void registerData() {
@@ -97,7 +101,13 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return this.rand.nextInt(2) == 0 ? SoundEvents.ENTITY_WOLF_AMBIENT: null;
+        if (this.func_233678_J__()) {
+            return SoundEvents.ENTITY_WOLF_GROWL;
+        } else if (this.rand.nextInt(3) == 0) {
+            return this.isTamed() && this.getHealth() < (float) 5.0D ? SoundEvents.ENTITY_WOLF_WHINE : SoundEvents.ENTITY_WOLF_PANT;
+        } else {
+            return SoundEvents.ENTITY_WOLF_AMBIENT;
+        }
     }
 
 
@@ -144,7 +154,7 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(2.5D);
         }
 
-        this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+        this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(5.0D);
     }
 
     @Override
@@ -152,7 +162,7 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
         ItemStack itemStack = playerEntity.getHeldItem(hand);
         Item item = itemStack.getItem();
         if (this.world.isRemote) {
-            boolean flag = this.isOwner(playerEntity) || this.isTamed() || item == CPPuppyDrops.stevecore && !this.isTamed();
+            boolean flag = this.isOwner(playerEntity) || this.isTamed() || item == CPPuppyDrops.stevecore && !this.isTamed() && this.func_233678_J__();
             return flag ? ActionResultType.CONSUME : ActionResultType.PASS;
         } else {
             if (this.isTamed()) {
@@ -174,7 +184,7 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
 
                     return actionresulttype;
                 }
-            } else if (item == Items.BONE) {
+            } else if (item == CPPuppyDrops.stevecore && !this.func_233678_J__()) {
                 if (!playerEntity.abilities.isCreativeMode) {
                     itemStack.shrink(1);
                 }
@@ -190,6 +200,27 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
             }
             return super.func_230254_b_(playerEntity, hand);
         }
+    }
+
+    public boolean shouldAttackEntity(LivingEntity target, LivingEntity owner) {
+        if (!(target instanceof CreeperEntity) && !(target instanceof GhastEntity)) {
+            if (target instanceof EntityHerobrine) {
+                EntityHerobrine herobrine = (EntityHerobrine)target;
+                return !herobrine.isTamed() || herobrine.getOwner() != owner;
+            } else if (target instanceof PlayerEntity && owner instanceof PlayerEntity && !((PlayerEntity)owner).canAttackPlayer((PlayerEntity)target)) {
+                return false;
+            } else if (target instanceof AbstractHorseEntity && ((AbstractHorseEntity)target).isTame()) {
+                return false;
+            } else {
+                return !(target instanceof TameableEntity) || !((TameableEntity)target).isTamed();
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public boolean canBeLeashedTo(PlayerEntity player) {
+        return !this.func_233678_J__() && super.canBeLeashedTo(player);
     }
 
     @Nullable

@@ -66,7 +66,11 @@ public class EntityYellow extends TameableEntity {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return this.rand.nextInt(2) == 0 ? SoundEvents.ENTITY_WOLF_AMBIENT: null;
+        if (this.rand.nextInt(3) == 0) {
+            return this.isTamed() && this.getHealth() < (float) 5.0D ? SoundEvents.ENTITY_WOLF_WHINE : SoundEvents.ENTITY_WOLF_PANT;
+        } else {
+            return SoundEvents.ENTITY_WOLF_AMBIENT;
+        }
     }
 
 
