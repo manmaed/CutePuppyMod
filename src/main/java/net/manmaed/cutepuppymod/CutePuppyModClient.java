@@ -1,8 +1,7 @@
 package net.manmaed.cutepuppymod;
 
-import net.manmaed.cutepuppymod.client.render.entity.RenderRed;
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
+
+import net.manmaed.cutepuppymod.entitys.CPEntity;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 /**
@@ -11,6 +10,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class CutePuppyModClient {
 
     public static void doClientStuff(final FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.RED.get(), RenderRed::new);
+        CPEntity.clientload();
     }
 }

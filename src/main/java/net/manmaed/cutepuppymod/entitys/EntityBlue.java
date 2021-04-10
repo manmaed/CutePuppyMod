@@ -24,9 +24,9 @@ import java.util.UUID;
 /**
  * Created by manmaed on 10/04/2021.
  */
-public class EntityRed extends TameableEntity {
+public class EntityBlue extends TameableEntity {
 
-    protected EntityRed(EntityType<? extends TameableEntity> type, World worldIn) {
+    protected EntityBlue(EntityType<? extends TameableEntity> type, World worldIn) {
         super(type, worldIn);
         this.setTamed(false);
     }
@@ -136,7 +136,7 @@ public class EntityRed extends TameableEntity {
     @Nullable
     @Override
     public AgeableEntity func_241840_a(ServerWorld world, AgeableEntity entity) {
-        EntityRed red = new EntityRed(CPEntityTypes.RED.get(), world);
+        EntityBlue red = new EntityBlue(CPEntityTypes.BLUE.get(), world);
         UUID uuid = this.getOwnerId();
         if (uuid != null) {
             red.setOwnerId(uuid);

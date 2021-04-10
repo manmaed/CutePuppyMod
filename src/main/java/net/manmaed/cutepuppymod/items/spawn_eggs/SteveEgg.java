@@ -23,10 +23,10 @@ import java.util.Objects;
 /**
  * Created by manmaed on 10/04/2021.
  */
-public class BlueEgg extends Item {
+public class SteveEgg extends Item {
 
 
-    public BlueEgg(String name) {
+    public SteveEgg(String name) {
         super(new Properties().group(CutePuppyMod.itemGroup));
         setRegistryName(name);
     }
@@ -48,7 +48,7 @@ public class BlueEgg extends Item {
                 TileEntity tileentity = world.getTileEntity(blockpos);
                 if (tileentity instanceof MobSpawnerTileEntity) {
                     AbstractSpawner abstractspawner = ((MobSpawnerTileEntity) tileentity).getSpawnerBaseLogic();
-                    abstractspawner.setEntityType(CPEntityTypes.BLUE.get());
+                    abstractspawner.setEntityType(CPEntityTypes.STEVE.get());
                     tileentity.markDirty();
                     world.notifyBlockUpdate(blockpos, blockstate, blockstate, 3);
                     itemstack.shrink(1);
@@ -63,7 +63,7 @@ public class BlueEgg extends Item {
                 blockpos1 = blockpos.offset(direction);
             }
 
-            if (CPEntityTypes.BLUE.get().spawn((ServerWorld) world, itemstack, context.getPlayer(), blockpos1, SpawnReason.SPAWN_EGG, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP) != null) {
+            if (CPEntityTypes.STEVE.get().spawn((ServerWorld) world, itemstack, context.getPlayer(), blockpos1, SpawnReason.SPAWN_EGG, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP) != null) {
                 itemstack.shrink(1);
             }
 

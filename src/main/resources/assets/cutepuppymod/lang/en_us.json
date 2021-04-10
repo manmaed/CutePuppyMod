@@ -15,9 +15,9 @@
 
   "cutepuppymod.comment.3": "Items",
   "cutepuppymod.comment.4": "# Colored Puppys",
-  "item.cutepuppymod.spawnRedPuppy": "Spawn A Red Puppy",
-  "item.cutepuppymod.spawnGreenPuppy": "Spawn A Green Puppy",
-  "item.cutepuppymod.spawnBluePuppy": "Spawn A Blue Puppy",
+  "item.cutepuppymod.red_spawn_egg": "Spawn A Red Puppy",
+  "item.cutepuppymod.blue_spawn_egg": "Spawn A Blue Puppy",
+  "item.cutepuppymod.green_spwan_egg": "Spawn A Green Puppy",
   "item.cutepuppymod.spawnPurplePuppy": "Spawn A Purple Puppy",
   "item.cutepuppymod.spawnYellowPuppy": "Spawn A Yellow Puppy",
   "cutepuppymod.comment.5": "# Custom Puppys",

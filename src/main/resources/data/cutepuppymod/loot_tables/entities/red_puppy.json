@@ -9,7 +9,11 @@
           "functions": [
             {
               "function": "minecraft:set_count",
-              "count": 1
+              "count": {
+                "min": 1.0,
+                "max": 4.0,
+                "type": "minecraft:uniform"
+              }
             }
           ],
           "name": "cutepuppymod:redcore"
