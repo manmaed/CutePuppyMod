@@ -1,6 +1,7 @@
-package net.manmaed.cutepuppymod.items;
+package net.manmaed.cutepuppymod.items.tbf;
 
 import net.manmaed.cutepuppymod.damage.CustomDamageSource;
+import net.manmaed.cutepuppymod.items.CPItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

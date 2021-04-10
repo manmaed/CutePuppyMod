@@ -1,7 +1,6 @@
 package net.manmaed.cutepuppymod.entitys;
 
 import net.manmaed.cutepuppymod.items.CPItems;
-import net.manmaed.cutepuppymod.libs.LogHelper;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;

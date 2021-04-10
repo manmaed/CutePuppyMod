@@ -7,8 +7,6 @@ import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
 
-import javax.annotation.Nullable;
-
 public class RenderRed extends MobRenderer<EntityRed, ModelPuppy<EntityRed>> {
     private static final ResourceLocation skin = new ResourceLocation(Refs.id, "textures/entity/red.png");
 
