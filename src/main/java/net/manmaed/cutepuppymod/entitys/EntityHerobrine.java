@@ -2,9 +2,7 @@ package net.manmaed.cutepuppymod.entitys;
 
 import net.manmaed.cutepuppymod.items.CPItems;
 import net.manmaed.cutepuppymod.items.CPPuppyDrops;
-import net.manmaed.cutepuppymod.items.spawn_eggs.HerobrineEgg;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
@@ -13,16 +11,12 @@ import net.minecraft.entity.monster.CreeperEntity;
 import net.minecraft.entity.monster.GhastEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.entity.passive.TurtleEntity;
-import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
-import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.DyeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -76,7 +70,7 @@ public class EntityHerobrine extends TameableEntity implements IAngerable {
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
         return MobEntity.func_233666_p_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 2.5D)
+                .createMutableAttribute(Attributes.MAX_HEALTH, 150D)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F)
                 .createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0D);
     }

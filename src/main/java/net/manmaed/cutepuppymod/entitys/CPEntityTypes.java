@@ -86,6 +86,12 @@ public class CPEntityTypes {
                     .size(width, height)
                     .build(getName("six"))
     );
+
+    public static final RegistryObject<EntityType<EntityBossEnder>> BOSS_ENDER = ENTITY_TYPES.register(getName("boss_ender"),
+            () -> EntityType.Builder.create(EntityBossEnder:: new, EntityClassification.MONSTER)
+                    .size(1.7F, 1.7F)
+                    .build(getName("boss_ender"))
+    );
     /*
     public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Refs.id);
 

@@ -3,7 +3,6 @@ package net.manmaed.cutepuppymod.client.render.entity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.manmaed.cutepuppymod.client.render.layers.BanHammerFeatureRenderer;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
-import net.manmaed.cutepuppymod.entitys.EntityBlue;
 import net.manmaed.cutepuppymod.entitys.EntitySix;
 import net.manmaed.cutepuppymod.libs.Refs;
 import net.minecraft.client.renderer.entity.EntityRendererManager;

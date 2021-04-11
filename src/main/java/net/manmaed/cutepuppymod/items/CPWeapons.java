@@ -16,7 +16,7 @@ public class CPWeapons {
 
     public static void load() {
 
-        banhammer = new BanHammer(new Item.Properties().group(CutePuppyMod.itemGroup).maxStackSize(1), "banhammer");
+        banhammer = new BanHammer(new Item.Properties().group(CutePuppyMod.itemGroup), "banhammer");
 
         CutePuppyMod.getRegisteryHandler().registerItem(banhammer);
     }

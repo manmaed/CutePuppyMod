@@ -2,8 +2,6 @@ package net.manmaed.cutepuppymod.client.render.entity;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
-import net.manmaed.cutepuppymod.entitys.EntityGreen;
-import net.manmaed.cutepuppymod.entitys.EntityPurple;
 import net.manmaed.cutepuppymod.entitys.EntitySteve;
 import net.manmaed.cutepuppymod.libs.Refs;
 import net.minecraft.client.renderer.entity.EntityRendererManager;

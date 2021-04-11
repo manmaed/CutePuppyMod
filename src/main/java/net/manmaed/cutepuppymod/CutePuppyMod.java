@@ -20,15 +20,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Refs.id)
 public class CutePuppyMod {
-
     /*
-    *
-    * TODO List
-    * TODO: Blocks
-    *  * EnderCore Block (Needs Entitys)
-    *  * TheCoreBlock (Needs Entitys)
-    * ---
-    *
     *
     */
 

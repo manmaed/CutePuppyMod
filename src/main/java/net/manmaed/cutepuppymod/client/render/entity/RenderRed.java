@@ -1,19 +1,12 @@
 package net.manmaed.cutepuppymod.client.render.entity;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
 import net.manmaed.cutepuppymod.entitys.EntityRed;
 import net.manmaed.cutepuppymod.libs.Refs;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.entity.monster.CreeperEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.Quaternion;
 
 public class RenderRed extends MobRenderer<EntityRed, ModelPuppy<EntityRed>> {
     private static final ResourceLocation skin = new ResourceLocation(Refs.id, "textures/entity/red.png");

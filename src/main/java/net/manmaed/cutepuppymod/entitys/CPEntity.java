@@ -20,6 +20,7 @@ public class CPEntity {
         GlobalEntityTypeAttributes.put(CPEntityTypes.ENDER.get(), EntityEnder.setCustomAttributes().create());
         GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS.get(), EntityBoss.setCustomAttributes().create());
         GlobalEntityTypeAttributes.put(CPEntityTypes.SIX.get(), EntitySix.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS_ENDER.get(), EntityBossEnder.setCustomAttributes().create());
 
 
     }
@@ -35,8 +36,6 @@ public class CPEntity {
         RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.ENDER.get(), RenderEnder::new);
         RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.BOSS.get(), RenderBoss::new);
         RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.SIX.get(), RenderSix::new);
-
-
-
+        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.BOSS_ENDER.get(), RenderBossEnder::new);
     }
 }

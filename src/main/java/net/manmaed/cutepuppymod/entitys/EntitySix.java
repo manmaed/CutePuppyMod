@@ -95,6 +95,6 @@ public class EntitySix extends MonsterEntity {
 
     @Override
     public boolean isNonBoss() {
-        return false;
+        return true;
     }
 }

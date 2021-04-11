@@ -34,9 +34,6 @@ public class TheCoreBlock extends Block {
         super(properties);
     }
 
-    //TODO
-
-
     @Override
     public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
         if(!world.isRemote) {
