@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "cutepuppymod:items/wip"
+    "layer0": "cutepuppymod:items/ender_spawn_egg"
   }
 }
