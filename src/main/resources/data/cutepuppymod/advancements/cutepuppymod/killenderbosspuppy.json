@@ -12,11 +12,11 @@
   },
   "parent": "cutepuppymod:cutepuppymod/killenderpuppy",
   "criteria": {
-    "enderbosspuppy": {
+    "boss_ender_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:enderbosspuppy"
+          "type": "cutepuppymod:boss_ender_puppy"
         }
       }
     }

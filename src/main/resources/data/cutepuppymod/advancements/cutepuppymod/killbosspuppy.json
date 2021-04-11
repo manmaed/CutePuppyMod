@@ -1,22 +1,22 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:ender_pearl"
+      "item": "cutepuppymod:banhammer"
     },
     "title": {
-      "translate": "advancements.cutepuppymod.enderpuppy.title"
+      "translate": "advancements.cutepuppymod.killedbosspuppy.title"
     },
     "description": {
-      "translate": "advancements.cutepuppymod.enderpuppy.description"
+      "translate": "advancements.cutepuppymod.killedbosspuppy.description"
     }
   },
   "parent": "cutepuppymod:cutepuppymod/killpuppy",
   "criteria": {
-    "enderpuppy": {
+    "killed_six_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:enderpuppy"
+          "type": "cutepuppymod:six_puppy"
         }
       }
     }

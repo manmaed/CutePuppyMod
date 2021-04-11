@@ -12,11 +12,11 @@
   },
   "parent": "cutepuppymod:cutepuppymod/killpuppy",
   "criteria": {
-    "killed_herobrineuppy": {
+    "killed_herobrine_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:herobrinepuppy"
+          "type": "cutepuppymod:herobrine_puppy"
         }
       }
     }

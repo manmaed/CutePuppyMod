@@ -12,54 +12,54 @@
   },
   "parent": "cutepuppymod:cutepuppymod/root",
   "criteria": {
-    "bluepuppy": {
+    "blue_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:bluepuppy"
+          "type": "cutepuppymod:blue_puppy"
         }
       }
     },
-    "redpuppy": {
+    "red_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:redpuppy"
+          "type": "cutepuppymod:red_puppy"
         }
       }
     },
-    "greenpuppy": {
+    "green_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:greenpuppy"
+          "type": "cutepuppymod:green_puppy"
         }
       }
     },
-    "purplepuppy": {
+    "purple_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:purplepuppy"
+          "type": "cutepuppymod:purple_puppy"
         }
       }
     },
-    "yellowpuppy": {
+    "yellow_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:yellowpuppy"
+          "type": "cutepuppymod:yellow_puppy"
         }
       }
     }
   },
   "requirements": [
     [
-      "bluepuppy",
-      "redpuppy",
-      "greenpuppy",
-      "purplepuppy",
-      "yellowpuppy"
+      "blue_puppy",
+      "red_puppy",
+      "green_puppy",
+      "purple_puppy",
+      "yellow_puppy"
     ]
   ]
 }

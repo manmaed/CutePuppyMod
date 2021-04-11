@@ -13,11 +13,11 @@
   },
   "parent": "cutepuppymod:cutepuppymod/theboss",
   "criteria": {
-    "killed_bosspuppy": {
+    "killed_boss_puppy": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:thebosspuppy"
+          "type": "cutepuppymod:boss_puppy"
         }
       }
     }

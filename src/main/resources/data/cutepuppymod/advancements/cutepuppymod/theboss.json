@@ -13,11 +13,11 @@
   },
   "parent": "cutepuppymod:cutepuppymod/thecoreofcores",
   "criteria": {
-    "summoned_thebosspuppy": {
+    "summoned_boss_puppy": {
       "trigger": "summoned_entity",
       "conditions": {
         "entity": {
-          "type": "cutepuppymod:thebosspuppy"
+          "type": "cutepuppymod:boss_puppy"
         }
       }
     }
