@@ -33,6 +33,8 @@ public class CPEntity {
         RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.HEROBRINE.get(), RenderHerobrine::new);
         RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.ENDER.get(), RenderEnder::new);
         RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.BOSS.get(), RenderBoss::new);
+        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.SIX.get(), RenderSix::new);
+
 
 
     }
