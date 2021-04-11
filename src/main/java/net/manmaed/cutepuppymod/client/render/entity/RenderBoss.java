@@ -11,13 +11,15 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBoss extends MobRenderer<EntityBoss, ModelPuppy<EntityBoss>> {
     private static final ResourceLocation skin = new ResourceLocation(Refs.id, "textures/entity/boss.png");
+    private static float size = 10F;
 
     public RenderBoss(EntityRendererManager manager) {
-        super(manager, new ModelPuppy(), 0.25F);
+        super(manager, new ModelPuppy(), 2.25F);
     }
 
     @Override
     protected void preRenderCallback(EntityBoss entitylivingbaseIn, MatrixStack matrixStackIn, float partialTickTime) {
+        matrixStackIn.scale(size, size, size);
         matrixStackIn.translate(-0.05, 0 ,0.2);
     }
 

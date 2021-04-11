@@ -11,14 +11,15 @@ public class CPEntity {
 
     public static void load() {
         GlobalEntityTypeAttributes.put(CPEntityTypes.RED.get(), EntityRed.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.BLUE.get(), EntityRed.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.GREEN.get(), EntityRed.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.YELLOW.get(), EntityRed.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.PURPLE.get(), EntityRed.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.BLUE.get(), EntityBlue.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.GREEN.get(), EntityGreen.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.YELLOW.get(), EntityYellow.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.PURPLE.get(), EntityPurple.setCustomAttributes().create());
         GlobalEntityTypeAttributes.put(CPEntityTypes.STEVE.get(), EntitySteve.setCustomAttributes().create());
         GlobalEntityTypeAttributes.put(CPEntityTypes.HEROBRINE.get(), EntityHerobrine.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.ENDER.get(), EntityHerobrine.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS.get(), EntityHerobrine.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.ENDER.get(), EntityEnder.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS.get(), EntityBoss.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(CPEntityTypes.SIX.get(), EntitySix.setCustomAttributes().create());
 
 
     }
