@@ -1,16 +1,21 @@
 package net.manmaed.cutepuppymod.items.weapon;
 
+import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 
 /**
  * Created by manmaed on 05/01/2020.
  */
-public class BanHammer extends Item {
-    public BanHammer(Properties properties, String name) {
+public class BanHammer extends SwordItem {
+    public BanHammer(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties properties) {
+        super(tier, attackDamageIn, attackSpeedIn, properties);
+    }
+    /*public BanHammer(Properties properties, String name) {
         super(properties);
         setRegistryName(name);
-    }
+    }*/
     /*public BanHammer(Properties properties, String name) {
         super(properties);
         setRegistryName(name);
