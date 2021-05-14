@@ -2,7 +2,6 @@ package net.manmaed.cutepuppymod.world;
 
 import net.manmaed.cutepuppymod.config.CPConfig;
 import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.manmaed.cutepuppymod.libs.LogHelper;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.MobSpawnInfo;

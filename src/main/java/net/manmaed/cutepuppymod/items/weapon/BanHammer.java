@@ -1,7 +1,6 @@
 package net.manmaed.cutepuppymod.items.weapon;
 
 import net.minecraft.item.IItemTier;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 
