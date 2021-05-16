@@ -1,4 +1,4 @@
-package net.manmaed.cutepuppymod.items.tbf;
+package net.manmaed.cutepuppymod.items.tools;
 
 import net.minecraft.item.Item;
 

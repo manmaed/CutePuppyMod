@@ -1,4 +1,4 @@
-package net.manmaed.cutepuppymod.items.tbf;
+package net.manmaed.cutepuppymod.items.tools;
 
 import net.manmaed.cutepuppymod.damage.CustomDamageSource;
 import net.manmaed.cutepuppymod.items.CPItems;

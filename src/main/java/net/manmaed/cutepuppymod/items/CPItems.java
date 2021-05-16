@@ -1,8 +1,8 @@
 package net.manmaed.cutepuppymod.items;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
-import net.manmaed.cutepuppymod.items.tbf.EmptySyringe;
-import net.manmaed.cutepuppymod.items.tbf.FullSyringe;
+import net.manmaed.cutepuppymod.items.tools.EmptySyringe;
+import net.manmaed.cutepuppymod.items.tools.FullSyringe;
 import net.manmaed.cutepuppymod.libs.Refs;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
