@@ -15,8 +15,8 @@ import net.minecraftforge.registries.ObjectHolder;
 public class CPWeapons {
 
 
-    /*@ObjectHolder(Refs.Register + "banhammer")
-    public static Item banhammer;*/
+    @ObjectHolder(Refs.Register + "ban_hammer")
+    public static Item ban_hammer;
 
     //Core Swords
     @ObjectHolder(Refs.Register + "red_sword")
@@ -37,7 +37,7 @@ public class CPWeapons {
 
     public static void load() {
 
-        /*banhammer = new BanHammer(ToolMaterials.BAN, 20, 2f, new Item.Properties().group(CutePuppyMod.itemGroup));*/
+        ban_hammer = new Item(new Item.Properties().group(CutePuppyMod.itemGroup).maxStackSize(1)).setRegistryName("ban_hammer");
         red_sword = new SwordItem(ToolMaterials.RED_CORE,3, -2.4F, (new Item.Properties().group(CutePuppyMod.itemGroup))).setRegistryName("red_sword");
         blue_sword = new SwordItem(ToolMaterials.BLUE_CORE,3, -2.4F, (new Item.Properties().group(CutePuppyMod.itemGroup))).setRegistryName("blue_sword");
         yellow_sword = new SwordItem(ToolMaterials.YELLOW_CORE,3, -2.4F, (new Item.Properties().group(CutePuppyMod.itemGroup))).setRegistryName("yellow_sword");
@@ -46,7 +46,8 @@ public class CPWeapons {
 
 
 
-        /*CutePuppyMod.getRegisteryHandler().registerItem(banhammer);*/
+
+        CutePuppyMod.getRegisteryHandler().registerItem(ban_hammer);
         CutePuppyMod.getRegisteryHandler().registerItem(red_sword);
         CutePuppyMod.getRegisteryHandler().registerItem(blue_sword);
         CutePuppyMod.getRegisteryHandler().registerItem(yellow_sword);

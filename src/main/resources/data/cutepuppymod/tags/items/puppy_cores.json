@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+	"cutepuppymod:redcore",
+    "cutepuppymod:bluecore",
+	"cutepuppymod:greencore",
+	"cutepuppymod:purplecore",
+	"cutepuppymod:yellowcore",
+	"cutepuppymod:endercore",
+	"cutepuppymod:stevecore",
+	"cutepuppymod:herobrinecore"
+]
+}
