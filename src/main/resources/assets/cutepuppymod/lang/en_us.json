@@ -39,11 +39,11 @@
   "item.cutepuppymod.herobrinecore": "Herobrine Puppy Core",
 
   "cutepuppymod.comment.7": "Swords",
-  "item.cutepuppymod.BluePuppySword": "Blue Puppy Sword",
-  "item.cutepuppymod.RedPuppySword": "Red Puppy Sword",
-  "item.cutepuppymod.GreenPuppySword": "Green Puppy Sword",
-  "item.cutepuppymod.YellowPuppySword": "Yellow Puppy Sword",
-  "item.cutepuppymod.PurplePuppySword": "Purple Puppy Sword",
+  "item.cutepuppymod.blue_sword": "Blue Puppy Sword",
+  "item.cutepuppymod.red_sword": "Red Puppy Sword",
+  "item.cutepuppymod.green_sword": "Green Puppy Sword",
+  "item.cutepuppymod.yellow_sword": "Yellow Puppy Sword",
+  "item.cutepuppymod.purple_sword": "Purple Puppy Sword",
   "item.cutepuppymod.banhammer": "SixKillers Ban Hammer",
 
   "cutepuppymod.comment.8": "#Other Items",

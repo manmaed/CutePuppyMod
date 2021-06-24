@@ -1,5 +1,6 @@
 package net.manmaed.cutepuppymod.materials;
 
+import net.manmaed.cutepuppymod.items.CPPuppyDrops;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
@@ -11,7 +12,25 @@ import java.util.function.Supplier;
  * Complete copy paste from {@link net.minecraft.item.ItemTier}
  */
 public enum ToolMaterials implements IItemTier {
-    BAN(3, 3000, 2.0F, 20F, 0, () -> Ingredient.fromItems(Items.AIR));
+
+    BAN(3, 3000, 2.0F, 20F, 0, () -> {
+        return Ingredient.fromItems(Items.AIR);
+    }),
+    RED_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+        return Ingredient.fromItems(CPPuppyDrops.redcore);
+    }),
+    BLUE_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+        return Ingredient.fromItems(CPPuppyDrops.bluecore);
+    }),
+    YELLOW_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+        return Ingredient.fromItems(CPPuppyDrops.yellowcore);
+    }),
+    PURPLE_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+        return Ingredient.fromItems(CPPuppyDrops.purplecore);
+    }),
+    GREEN_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+        return Ingredient.fromItems(CPPuppyDrops.greencore);
+    });
     private final int harvestLevel;
     private final int maxUses;
     private final float efficiency;

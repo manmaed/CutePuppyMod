@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "cutepuppymod:items/FreddysMic"
+    "layer0": "cutepuppymod:items/blue_sword"
   }
 }
