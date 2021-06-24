@@ -80,7 +80,7 @@ public class CPConfig {
         PURPLE_CHANCE = COMMON_BUILDER.comment("weight of purple puppy spawning (higher is more offen)[DEFAULT: 10?]").defineInRange("purple_puppy_spawn_weight", 10, 0, 50);
         STEVE_CHANCE = COMMON_BUILDER.comment("weight of steve puppy spawning (higher is more offen)[DEFAULT: 10]").defineInRange("steve__puppy_spawn_weight", 10, 0, 50);
         HEROBRINE_CHANCE = COMMON_BUILDER.comment("weight of Herobrine puppy spawning (higher is more offen)[DEFAULT: 3]").defineInRange("herobrine_puppy_spawn_weight", 3, 0, 50);
-        SIX_CHANCE = COMMON_BUILDER.comment("weight of Six puppy spawning (higher is more offen)[DEFAULT: 3]").defineInRange("six_puppy_spawn_weight", 3, 0, 50);
+        SIX_CHANCE = COMMON_BUILDER.comment("weight of Six puppy spawning (higher is more offen)[DEFAULT: 1]").defineInRange("six_puppy_spawn_weight", 1, 0, 50);
         ENDER_CHANCE = COMMON_BUILDER.comment("weight of Ender puppy spawning (higher is more offen)[DEFAULT: 10] (Note: Nether is - 5 and End is + 5 of this value").defineInRange("ender_puppy_spawn_weight", 10, 0, 50);
         CLAY_CHANCE = COMMON_BUILDER.comment("weight of Clay puppy spawning (higher is more offen)[DEFAULT: 10]").defineInRange("clay_puppy_spawn_weight", 10, 0, 50);
     }

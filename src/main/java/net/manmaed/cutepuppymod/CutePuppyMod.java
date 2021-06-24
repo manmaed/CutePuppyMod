@@ -12,6 +12,8 @@ import net.manmaed.cutepuppymod.world.WorldGenMobs;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -45,8 +47,8 @@ public class CutePuppyMod {
         CPEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CPConfig.COMMON_CONFIG);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.CLIENT_CONFIG);
-        MinecraftForge.EVENT_BUS.register(WorldGenMobs.class);
         //MinecraftForge.EVENT_BUS.addListener(this::serverLoad);
+        MinecraftForge.EVENT_BUS.addListener(this::onBiomeLoad);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -60,10 +62,14 @@ public class CutePuppyMod {
             LogHelper.info("Minecraft Changelog: - Herobrine Removed!");
         }
         DeferredWorkQueue.runLater(CPEntity::load);
+
         //World Gen
         /*event.enqueueWork(WorldGenHandler::registerConfiguredFeatures);*/
     }
-
+    @SubscribeEvent
+    public void onBiomeLoad(BiomeLoadingEvent event) {
+        WorldGenMobs.onBiomeLoadingEvent(event);
+    }
     //Commands
     /*private void serverLoad(FMLServerStartingEvent event) {
         PRCommands.register(event.getServer().getCommandManager().getDispatcher());

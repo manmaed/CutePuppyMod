@@ -1,13 +1,23 @@
 package net.manmaed.cutepuppymod.entitys;
 
 import net.manmaed.cutepuppymod.client.render.entity.*;
+import net.manmaed.cutepuppymod.config.CPConfig;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by manmaed on 10/04/2021.
  */
 public class CPEntity {
+
 
     public static void load() {
         GlobalEntityTypeAttributes.put(CPEntityTypes.RED.get(), EntityRed.setCustomAttributes().create());
@@ -21,8 +31,6 @@ public class CPEntity {
         GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS.get(), EntityBoss.setCustomAttributes().create());
         GlobalEntityTypeAttributes.put(CPEntityTypes.SIX.get(), EntitySix.setCustomAttributes().create());
         GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS_ENDER.get(), EntityBossEnder.setCustomAttributes().create());
-
-
     }
 
     public static void clientload() {

@@ -17,7 +17,7 @@ public class CPEntityTypes {
 
     /*private RegistryObject<EntityType<Entity>> dolazy(String name, Entity entity ) {
         return ENTITY_TYPES.register(getName(name),
-                () -> EntityType.Builder.create(entity:: new, EntityClassification.AMBIENT)
+                () -> EntityType.Builder.create(entity:: new, EntityClassification.CREATURE)
                         .size(width, height)
                         .build(getName(name))
         );
@@ -28,43 +28,43 @@ public class CPEntityTypes {
     /*public static final RegistryObject<EntityType<EntityRed>> PINK = dolazy("red", EntityRed.class);*/
 
     public static final RegistryObject<EntityType<EntityRed>> RED = ENTITY_TYPES.register(getName("red"),
-            () -> EntityType.Builder.create(EntityRed:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntityRed:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("red"))
     );
 
     public static final RegistryObject<EntityType<EntityBlue>> BLUE = ENTITY_TYPES.register(getName("blue"),
-            () -> EntityType.Builder.create(EntityBlue:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntityBlue:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("blue"))
     );
 
     public static final RegistryObject<EntityType<EntityGreen>> GREEN = ENTITY_TYPES.register(getName("green"),
-            () -> EntityType.Builder.create(EntityGreen:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntityGreen:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("green"))
     );
 
     public static final RegistryObject<EntityType<EntityYellow>> YELLOW = ENTITY_TYPES.register(getName("yellow"),
-            () -> EntityType.Builder.create(EntityYellow:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntityYellow:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("yellow"))
     );
 
     public static final RegistryObject<EntityType<EntityPurple>> PURPLE = ENTITY_TYPES.register(getName("purple"),
-            () -> EntityType.Builder.create(EntityPurple:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntityPurple:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("purple"))
     );
 
     public static final RegistryObject<EntityType<EntitySteve>> STEVE = ENTITY_TYPES.register(getName("steve"),
-            () -> EntityType.Builder.create(EntitySteve:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntitySteve:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("steve"))
     );
 
     public static final RegistryObject<EntityType<EntityHerobrine>> HEROBRINE = ENTITY_TYPES.register(getName("herobrine"),
-            () -> EntityType.Builder.create(EntityHerobrine:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntityHerobrine:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("herobrine"))
     );
@@ -82,7 +82,7 @@ public class CPEntityTypes {
     );
 
     public static final RegistryObject<EntityType<EntitySix>> SIX = ENTITY_TYPES.register(getName("six"),
-            () -> EntityType.Builder.create(EntitySix:: new, EntityClassification.AMBIENT)
+            () -> EntityType.Builder.create(EntitySix:: new, EntityClassification.CREATURE)
                     .size(width, height)
                     .build(getName("six"))
     );
