@@ -24,7 +24,7 @@ public class WorldGenMobs {
                     event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), (CPConfig.ENDER_CHANCE.get() + 5), 5, 10));
                 }
             }
-            if (event.getCategory() == Biome.Category.NETHER) {
+            else if (event.getCategory() == Biome.Category.NETHER) {
                 //Must be The Nether
                 if (!CPConfig.DISABLE_ENDER_SPAWN.get()) {
                     event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), (CPConfig.ENDER_CHANCE.get() - 5), 1, 1));
@@ -33,7 +33,7 @@ public class WorldGenMobs {
                     event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.HEROBRINE.get(), CPConfig.HEROBRINE_CHANCE.get(), 0, 1));
                 }
             }
-            if (event.getCategory() != Biome.Category.THEEND || event.getCategory() != Biome.Category.NETHER ) {
+            else /*(event.getCategory() != Biome.Category.THEEND || event.getCategory() != Biome.Category.NETHER )*/ {
                 //If Not the End or Nether (So Overworld Right?)
                 if (event.getCategory() != Biome.Category.OCEAN || event.getCategory() != Biome.Category.RIVER || event.getCategory() !=  Biome.Category.MUSHROOM ) {
                     //If Not An Ocean, River or A mushroom Biome
