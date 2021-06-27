@@ -1,6 +1,7 @@
 package net.manmaed.cutepuppymod.items;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
+import net.manmaed.cutepuppymod.items.weapon.BanHammer;
 import net.manmaed.cutepuppymod.libs.Refs;
 import net.manmaed.cutepuppymod.materials.ToolMaterials;
 import net.minecraft.item.Item;
@@ -37,7 +38,7 @@ public class CPWeapons {
 
     public static void load() {
 
-        ban_hammer = new Item(new Item.Properties().group(CutePuppyMod.itemGroup).maxStackSize(1)).setRegistryName("ban_hammer");
+        ban_hammer = new BanHammer(new Item.Properties().group(CutePuppyMod.itemGroup).maxStackSize(1)).setRegistryName("ban_hammer");
         red_sword = new SwordItem(ToolMaterials.RED_CORE,3, -2.4F, (new Item.Properties().group(CutePuppyMod.itemGroup))).setRegistryName("red_sword");
         blue_sword = new SwordItem(ToolMaterials.BLUE_CORE,3, -2.4F, (new Item.Properties().group(CutePuppyMod.itemGroup))).setRegistryName("blue_sword");
         yellow_sword = new SwordItem(ToolMaterials.YELLOW_CORE,3, -2.4F, (new Item.Properties().group(CutePuppyMod.itemGroup))).setRegistryName("yellow_sword");
