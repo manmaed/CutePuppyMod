@@ -11,9 +11,11 @@ import net.minecraftforge.fml.common.Mod;
 public class CPConfig {
     private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
     private static final ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
+    private static final ForgeConfigSpec.Builder SERVER_BUILDER = new ForgeConfigSpec.Builder();
 
     public static ForgeConfigSpec COMMON_CONFIG;
     public static ForgeConfigSpec CLIENT_CONFIG;
+    public static ForgeConfigSpec SERVER_CONFIG;
 
     public static final String CAT_ENITYSPWNING = "entity_spawning";
     public static ForgeConfigSpec.BooleanValue DISABLE_NATUARL_SPAWNS;
@@ -40,6 +42,9 @@ public class CPConfig {
     public static ForgeConfigSpec.IntValue ENDER_CHANCE;
     public static ForgeConfigSpec.IntValue CLAY_CHANCE;
 
+    public static final String CAT_RSS = "Random Server Stuff";
+    public static ForgeConfigSpec.BooleanValue RANDOM_SERVER_BOL;
+
 
     //Other Shit Here
 
@@ -52,7 +57,14 @@ public class CPConfig {
         COMMON_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
-        CLIENT_CONFIG = CLIENT_BUILDER.build();
+
+        /*SERVER_BUILDER.comment("").push(CAT_RSS);
+        justaddedtomakesunerage();
+        SERVER_BUILDER.pop();
+
+        SERVER_CONFIG = SERVER_BUILDER.build();
+
+        CLIENT_CONFIG = CLIENT_BUILDER.build();*/
     }
 
     //Make Configs
@@ -83,5 +95,9 @@ public class CPConfig {
         SIX_CHANCE = COMMON_BUILDER.comment("weight of Six puppy spawning (higher is more offen)[DEFAULT: 1]").defineInRange("six_puppy_spawn_weight", 1, 0, 50);
         ENDER_CHANCE = COMMON_BUILDER.comment("weight of Ender puppy spawning (higher is more offen)[DEFAULT: 10] (Note: Nether is - 5 and End is + 5 of this value").defineInRange("ender_puppy_spawn_weight", 10, 0, 50);
         CLAY_CHANCE = COMMON_BUILDER.comment("weight of Clay puppy spawning (higher is more offen)[DEFAULT: 10]").defineInRange("clay_puppy_spawn_weight", 10, 0, 50);
+    }
+
+    private static void justAddedTomakesunerage() {
+        RANDOM_SERVER_BOL = SERVER_BUILDER.comment("Is this a Server Config? [DEFAULT: TRUE]").define("is_server_config", true);
     }
 }

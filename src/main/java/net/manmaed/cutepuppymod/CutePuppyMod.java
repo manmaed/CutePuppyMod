@@ -19,6 +19,7 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 /**
@@ -46,8 +47,9 @@ public class CutePuppyMod {
         registeryHandler = new RegisterHandler();
         CPEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CPConfig.COMMON_CONFIG);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.CLIENT_CONFIG);
-        //MinecraftForge.EVENT_BUS.addListener(this::serverLoad);
+        /*ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.CLIENT_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, CPConfig.SERVER_CONFIG);*/
+        /*MinecraftForge.EVENT_BUS.addListener(this::serverLoad);*/
         MinecraftForge.EVENT_BUS.addListener(this::onBiomeLoad);
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -72,6 +74,10 @@ public class CutePuppyMod {
     }
     //Commands
     /*private void serverLoad(FMLServerStartingEvent event) {
-        PRCommands.register(event.getServer().getCommandManager().getDispatcher());
+        if (!CPConfig.RANDOM_SERVER_BOL.get()) {
+        LogHelper.warn("So according to the server config, this isn't a server!?");
+        } else {
+            LogHelper.info("So according to the server config, this is a server! Wooo");
+        }
     }*/
 }
