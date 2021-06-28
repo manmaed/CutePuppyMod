@@ -1,0 +1,16 @@
+{
+    "name": "Ender Puppy",
+    "icon": "cutepuppymod:ender_spawn_egg",
+    "category": "cutepuppymod:puppys_category",
+    "pages": [
+        {
+            "type": "entity",
+            "entity": "cutepuppymod:ender_puppy",
+            "title": "A Ender Puppy"
+        },
+        {
+            "type": "text",
+            "text": "This Puppy is like an enderman. Can be found in all the places enderman can"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Herobrine Cores",
+    "icon": "cutepuppymod:herobrinecore",
+    "category": "cutepuppymod:cores_category",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "cutepuppymod:herobrinecore",
+            "text": "Drops Form Herobrine Puppys"
+        },
+        {
+            "type": "crafting",
+            "recipe": "cutepuppymod:herobrinecoreblock",
+            "recipe2": "cutepuppymod:herobrinecore"
+        }
+    ]
+}

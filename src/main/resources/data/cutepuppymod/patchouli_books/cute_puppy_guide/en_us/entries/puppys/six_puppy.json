@@ -1,0 +1,21 @@
+{
+    "name": "SixKillers Puppy",
+    "icon": "cutepuppymod:six_spawn_egg",
+    "category": "cutepuppymod:puppys_category",
+    "pages": [
+        {
+            "type": "entity",
+            "entity": "cutepuppymod:six_puppy",
+            "title": "SixKillers Puppy"
+        },
+        {
+            "type": "text",
+            "text": "This Puppy is like a boss puppy and drops its hammer"
+        },
+        {
+            "type": "spotlight",
+            "item": "cutepuppymod:ban_hammer",
+            "text": "This Ban Hammer dose 20.5 hearts of Damage to an entity $(c)(Please Note: It dose $(bold)not$(clear)$(c) ban players)"
+        }
+    ]
+}

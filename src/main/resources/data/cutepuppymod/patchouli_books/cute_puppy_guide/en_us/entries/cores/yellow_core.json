@@ -1,0 +1,17 @@
+{
+    "name": "Yellow Cores",
+    "icon": "cutepuppymod:yellowcore",
+    "category": "cutepuppymod:cores_category",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "cutepuppymod:yellowcore",
+            "text": "Drops Form Yellow Puppys"
+        },
+        {
+            "type": "crafting",
+            "recipe": "cutepuppymod:yellowcoreblock",
+            "recipe2": "cutepuppymod:yellowcore"
+        }
+    ]
+}

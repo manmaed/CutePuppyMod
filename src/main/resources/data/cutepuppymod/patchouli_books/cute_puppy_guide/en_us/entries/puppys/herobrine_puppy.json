@@ -1,0 +1,27 @@
+{
+    "name": "Herobrine Puppy",
+    "icon": "cutepuppymod:herobrine_spawn_egg",
+    "category": "cutepuppymod:puppys_category",
+    "pages": [
+        {
+            "type": "entity",
+            "entity": "cutepuppymod:herobrine_puppy",
+            "title": "A Herobrine Puppy"
+        },
+        {
+            "type": "spotlight",
+            "item": "minecraft:bone",
+            "text": "$(obf)To tame this puppy use a few bones"
+        },
+        {
+            "type": "spotlight",
+            "item": "cutepuppymod:doggokibble",
+            "text": "$(obf)Use Doggo Kibble to heal your puppy if it gets hurt"
+        },
+        {
+            "type": "crafting",
+            "title": "Crafting Doggo Kibble",
+            "recipe": "cutepuppymod:doggo_kibble"
+        }
+    ]
+}

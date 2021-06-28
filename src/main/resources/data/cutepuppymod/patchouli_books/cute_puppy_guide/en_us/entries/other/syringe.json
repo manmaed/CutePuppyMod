@@ -1,0 +1,15 @@
+{
+    "name": "Syringe",
+    "icon": "cutepuppymod:fullsyringe",
+    "category": "cutepuppymod:other_things_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "How to Craft and use the syringe.$(br)To get a full Syringe right click the empty syringe in the air (this will damage the player)"
+        },
+        {
+            "type": "crafting",
+            "recipe": "cutepuppymod:syringe"
+        }
+    ]
+}

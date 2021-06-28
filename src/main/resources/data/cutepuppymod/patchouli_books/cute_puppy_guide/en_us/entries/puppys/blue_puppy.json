@@ -1,0 +1,27 @@
+{
+    "name": "Blue Puppy",
+    "icon": "cutepuppymod:blue_spawn_egg",
+    "category": "cutepuppymod:puppys_category",
+    "pages": [
+        {
+            "type": "entity",
+            "entity": "cutepuppymod:blue_puppy",
+            "title": "A Blue Puppy"
+        },
+        {
+            "type": "spotlight",
+            "item": "minecraft:bone",
+            "text": "To tame this puppy use a few bones"
+        },
+        {
+            "type": "spotlight",
+            "item": "cutepuppymod:doggokibble",
+            "text": "Use Doggo Kibble to heal your puppy if it gets hurt"
+        },
+        {
+            "type": "crafting",
+            "title": "Crafting Doggo Kibble",
+            "recipe": "cutepuppymod:doggo_kibble"
+        }
+    ]
+}
