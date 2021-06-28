@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ObjectHolder;
  */
 public class CPItems {
 
-    @ObjectHolder(Refs.Register + "tabicon")
+    @ObjectHolder(Refs.Register + "tab_icon")
     public static Item tabicon;
 
     @ObjectHolder(Refs.Register + "emptysyringe")
@@ -27,7 +27,7 @@ public class CPItems {
 
     public static void load() {
 
-        tabicon = new Item(new Item.Properties()).setRegistryName("itemfortab");
+        tabicon = new Item(new Item.Properties()).setRegistryName("tab_icon");
         emptysyringe = new EmptySyringe(new Item.Properties().group(CutePuppyMod.itemGroup).maxStackSize(1), "emptysyringe");
         fullsyringe = new FullSyringe(new Item.Properties().group(CutePuppyMod.itemGroup).maxStackSize(1), "fullsyringe");
         doggokibble = new Item(new Item.Properties().group(CutePuppyMod.itemGroup)).setRegistryName("doggokibble");
