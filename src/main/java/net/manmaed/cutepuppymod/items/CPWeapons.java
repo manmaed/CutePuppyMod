@@ -5,9 +5,7 @@ import net.manmaed.cutepuppymod.items.weapon.BanHammer;
 import net.manmaed.cutepuppymod.libs.Refs;
 import net.manmaed.cutepuppymod.materials.ToolMaterials;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemTier;
 import net.minecraft.item.SwordItem;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.registries.ObjectHolder;
 
 /**
