@@ -11,15 +11,14 @@ import net.manmaed.cutepuppymod.libs.RegisterHandler;
 import net.manmaed.cutepuppymod.world.WorldGenMobs;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 /**
@@ -68,9 +67,21 @@ public class CutePuppyMod {
         //World Gen
         /*event.enqueueWork(WorldGenHandler::registerConfiguredFeatures);*/
     }
-    @SubscribeEvent
+
+    /*@SubscribeEvent(priority = EventPriority.HIGHEST)*/
     public void onBiomeLoad(BiomeLoadingEvent event) {
-        WorldGenMobs.onBiomeLoadingEvent(event);
+        if (!CPConfig.DISABLE_NATUARL_SPAWNS.get()) {
+            if (event.getCategory() == Biome.Category.THEEND) {
+                WorldGenMobs.withEndMobs(event);
+            } else if (event.getCategory() == Biome.Category.NETHER) {
+                WorldGenMobs.withNetherMobs(event);
+            } else {
+                if (event.getCategory() != Biome.Category.OCEAN || event.getCategory() != Biome.Category.RIVER || event.getCategory() != Biome.Category.MUSHROOM) {
+                    WorldGenMobs.withPassiveMobs(event);
+                    WorldGenMobs.withHostileMobs(event);
+                }
+            }
+        }
     }
     //Commands
     /*private void serverLoad(FMLServerStartingEvent event) {
