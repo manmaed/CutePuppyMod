@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
  */
 public class EntityBoss extends MonsterEntity implements IMob {
 
-    private final ServerBossInfo bossInfo = (ServerBossInfo)(new ServerBossInfo(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
+    private final ServerBossInfo bossInfo = (ServerBossInfo)(new ServerBossInfo(this.getDisplayName(), BossInfo.Color.RED, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
     public EntityBoss(EntityType<? extends MonsterEntity> type, World worldIn) {
         super(type, worldIn);
         this.setHealth(this.getMaxHealth());
