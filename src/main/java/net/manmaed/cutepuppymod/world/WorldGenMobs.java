@@ -17,55 +17,63 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Refs.id, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class WorldGenMobs {
     public static void onBiomeLoadingEvent(BiomeLoadingEvent event) {
+        MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
         if (!CPConfig.DISABLE_NATUARL_SPAWNS.get()) {
             if (event.getCategory() == Biome.Category.THEEND) {
-                //Must be the End?
-                if (!CPConfig.DISABLE_ENDER_SPAWN.get()) {
-                    event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), (CPConfig.ENDER_CHANCE.get() + 5), 5, 10));
+                withEndMobs(mobspawninfo$builder);
+            } else if (event.getCategory() == Biome.Category.NETHER) {
+                withNetherMobs(mobspawninfo$builder);
+            } else {
+                if (event.getCategory() != Biome.Category.OCEAN || event.getCategory() != Biome.Category.RIVER || event.getCategory() != Biome.Category.MUSHROOM) {
+                    withPassiveMobs(mobspawninfo$builder);
+                    withHostileMobs(mobspawninfo$builder);
                 }
             }
-            else if (event.getCategory() == Biome.Category.NETHER) {
-                //Must be The Nether
-                if (!CPConfig.DISABLE_ENDER_SPAWN.get()) {
-                    event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), (CPConfig.ENDER_CHANCE.get() - 5), 1, 1));
-                }
-                if (!CPConfig.DISABLE_HEROBRINE_SPAWN.get()) {
-                    event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.HEROBRINE.get(), CPConfig.HEROBRINE_CHANCE.get(), 0, 1));
-                }
-            }
-            else /*(event.getCategory() != Biome.Category.THEEND || event.getCategory() != Biome.Category.NETHER )*/ {
-                //If Not the End or Nether (So Overworld Right?)
-                if (event.getCategory() != Biome.Category.OCEAN || event.getCategory() != Biome.Category.RIVER || event.getCategory() !=  Biome.Category.MUSHROOM ) {
-                    //If Not An Ocean, River or A mushroom Biome
-                    if (!CPConfig.DISABLE_ENDER_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), CPConfig.ENDER_CHANCE.get(), 2, 3));
-                    }
-                    if (!CPConfig.DISABLE_RED_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.RED.get(), CPConfig.RED_CHANCE.get(), 2, 4));
-                    }
-                    if (!CPConfig.DISABLE_BLUE_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.BLUE.get(), CPConfig.BLUE_CHANCE.get(), 2, 4));
-                    }
-                    if (!CPConfig.DISABLE_GREEN_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.GREEN.get(), CPConfig.GREEN_CHANCE.get(), 2, 4));
-                    }
-                    if (!CPConfig.DISABLE_YELLOW_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.YELLOW.get(), CPConfig.YELLOW_CHANCE.get(), 2, 4));
-                    }
-                    if (!CPConfig.DISABLE_PURPLE_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.PURPLE.get(), CPConfig.PURPLE_CHANCE.get(), 2, 4));
-                    }
-                    if (!CPConfig.DISABLE_STEVE_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.STEVE.get(), CPConfig.STEVE_CHANCE.get(), 2, 4));
-                    }
-                    if (!CPConfig.DISABLE_HEROBRINE_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.HEROBRINE.get(), CPConfig.HEROBRINE_CHANCE.get(), 0, 1));
-                    }
-                    if (!CPConfig.DISABLE_SIX_SPAWN.get()) {
-                        event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(CPEntityTypes.SIX.get(), CPConfig.SIX_CHANCE.get(), 0, 1));
-                    }
-                }
-            }
+        }
+    }
+
+    public static void withPassiveMobs(MobSpawnInfo.Builder builder) {
+        if (!CPConfig.DISABLE_RED_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(CPEntityTypes.RED.get(), CPConfig.RED_CHANCE.get(), 2, 4));
+        }
+        if (!CPConfig.DISABLE_BLUE_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(CPEntityTypes.BLUE.get(), CPConfig.BLUE_CHANCE.get(), 2, 4));
+        }
+        if (!CPConfig.DISABLE_GREEN_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(CPEntityTypes.GREEN.get(), CPConfig.GREEN_CHANCE.get(), 2, 4));
+        }
+        if (!CPConfig.DISABLE_YELLOW_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(CPEntityTypes.YELLOW.get(), CPConfig.YELLOW_CHANCE.get(), 2, 4));
+        }
+        if (!CPConfig.DISABLE_PURPLE_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(CPEntityTypes.PURPLE.get(), CPConfig.PURPLE_CHANCE.get(), 2, 4));
+        }
+        if (!CPConfig.DISABLE_STEVE_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(CPEntityTypes.STEVE.get(), CPConfig.STEVE_CHANCE.get(), 2, 4));
+        }
+        if (!CPConfig.DISABLE_HEROBRINE_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(CPEntityTypes.HEROBRINE.get(), CPConfig.HEROBRINE_CHANCE.get(), 0, 1));
+        }
+    }
+
+    public static void withHostileMobs(MobSpawnInfo.Builder builder) {
+        if (!CPConfig.DISABLE_ENDER_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), CPConfig.ENDER_CHANCE.get(), 2, 3));
+        }
+    }
+
+    public static void withEndMobs(MobSpawnInfo.Builder builder) {
+        if (!CPConfig.DISABLE_ENDER_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), (CPConfig.ENDER_CHANCE.get() + 5), 5, 10));
+        }
+    }
+
+    public static void withNetherMobs(MobSpawnInfo.Builder builder) {
+        if (!CPConfig.DISABLE_ENDER_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(CPEntityTypes.ENDER.get(), (CPConfig.ENDER_CHANCE.get() - 5), 1, 1));
+        }
+        if (!CPConfig.DISABLE_HEROBRINE_SPAWN.get()) {
+            builder.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(CPEntityTypes.HEROBRINE.get(), CPConfig.HEROBRINE_CHANCE.get(), 0, 1));
         }
     }
 }
