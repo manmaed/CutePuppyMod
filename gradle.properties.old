@@ -2,3 +2,8 @@
 # This is required to provide enough memory for the Minecraft decompilation process.
 org.gradle.jvmargs=-Xmx3G
 org.gradle.daemon=false
+
+
+jei_file=3066492
+# Jenksins Version Number eg 0.x.1 etc
+mod_version=0.7
