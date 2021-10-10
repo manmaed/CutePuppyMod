@@ -1,7 +1,5 @@
 package net.manmaed.cutepuppymod;
 
-
-import net.manmaed.cutepuppymod.entitys.CPEntity;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 /**
@@ -10,6 +8,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class CutePuppyModClient {
 
     public static void doClientStuff(final FMLClientSetupEvent event) {
-        CPEntity.clientload();
+        /*CPEntity.clientload();*/
     }
 }
