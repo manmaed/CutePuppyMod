@@ -1,30 +1,16 @@
 package net.manmaed.cutepuppymod.blocks;
 
 
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.manmaed.cutepuppymod.entitys.EntityBoss;
 import net.manmaed.cutepuppymod.items.CPItems;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.effect.LightningBoltEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
-import java.util.List;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 /**
  * Created by manmaed on 05/01/2020.
@@ -35,12 +21,12 @@ public class TheCoreBlock extends Block {
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
-        if(!world.isRemote) {
-            ItemStack itemStack = player.getHeldItem(hand);
-            if(itemStack.getItem() == CPItems.fullsyringe) {
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (!world.isClientSide) {
+            ItemStack itemStack = player.getItemInHand(hand);
+            if (itemStack.getItem() == CPItems.FULL_SYRINGE.get()) {
                 itemStack.shrink(1);
-                world.setBlockState(pos, Blocks.AIR.getDefaultState());
+                /*world.setBlock(pos, Blocks.AIR.defaultBlockState());
                 EntityBoss bossPuppy = new EntityBoss(CPEntityTypes.BOSS.get() ,world);
                 bossPuppy.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 10, 10);
                 LightningBoltEntity boltEntity = new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world);
@@ -48,40 +34,20 @@ public class TheCoreBlock extends Block {
                 boltEntity.setEffectOnly(true);
                 world.addEntity(boltEntity);
                 bossPuppy.setAttackTarget(player);
-/*                world.addEntity(new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world));*/
+                //world.addEntity(new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world));
                 world.addEntity(bossPuppy);
-                for (ServerPlayerEntity serverPlayer : world.getEntitiesWithinAABB(ServerPlayerEntity.class, bossPuppy.getBoundingBox())) {
+                for (Entity serverPlayer : world.getEntities(ServerPlayer.class, bossPuppy.getBoundingBox())) {
                     CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, bossPuppy);
-                }
-                return ActionResultType.SUCCESS;
+                }*/
+                return InteractionResult.SUCCESS;
             }
         }
-        return ActionResultType.FAIL;
+        return InteractionResult.FAIL;
     }
 
     /*@Override
-    public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-        if(!worldIn.isRemote) {
-            ItemStack itemStack = playerIn.getHeldItem(hand);
-            if(itemStack.getItem() == CPMItems.fullsyringe) {
-                itemStack.shrink(1);
-                worldIn.setBlockToAir(pos);
-                EntityTheBossPuppy bossPuppy = new EntityTheBossPuppy(worldIn);
-                bossPuppy.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 10, 10);
-                worldIn.spawnEntity(new EntityLightningBolt(worldIn, pos.getX(), pos.getY(), pos.getZ(), false));
-                worldIn.spawnEntity(bossPuppy);
-                for (EntityPlayerMP entityplayermp : worldIn.getEntitiesWithinAABB(EntityPlayerMP.class, bossPuppy.getEntityBoundingBox().grow(50.0D)))
-                {
-                    CriteriaTriggers.SUMMONED_ENTITY.trigger(entityplayermp, bossPuppy);
-                }
-                return true;
-            }
-        }
-        return false;
+    public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flagIn) {
+        tooltip.add(new Tras("block.cutepuppymod.coreblock.tooltip"));
     }*/
 
-    @Override
-    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-         tooltip.add(new TranslationTextComponent("block.cutepuppymod.coreblock.tooltip"));
-    }
 }
