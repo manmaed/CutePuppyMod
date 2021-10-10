@@ -2,7 +2,8 @@ modLoader="javafml" #mandatory
 loaderVersion="[37,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 license="All rights reserved"
 [[mods]] #mandatory
-version="${version}" #mandatory
+version="0.8.0" #mandatory
+#version="${version}" #mandatory
 authors="manmaed" #optional
 #Change Below Here
 modId="cutepuppymod" #mandatory

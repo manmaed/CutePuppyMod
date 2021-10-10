@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "cutepuppymod:red_core_block",
+    "cutepuppymod:green_core_block",
+    "cutepuppymod:blue_core_block",
+    "cutepuppymod:yellow_core_block",
+    "cutepuppymod:purple_core_block",
+    "cutepuppymod:steve_core_block",
+    "cutepuppymod:herobrine_core_block",
+    "cutepuppymod:ender_core_block",
+    "cutepuppymod:the_core_block"
+  ]
+}
