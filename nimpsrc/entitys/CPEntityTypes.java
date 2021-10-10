@@ -1,0 +1,109 @@
+package net.manmaed.cutepuppymod.entitys;
+
+import net.manmaed.cutepuppymod.libs.Reference;
+import net.minecraft.world.entity.EntityType;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+
+public class CPEntityTypes {
+
+    //TODO: Entity Work
+
+    private static final float width = 0.7f;
+    private static final float height = 0.7f;
+
+    private static String getName(String name) {
+        return name + "_puppy";
+    }
+
+    /*private RegistryObject<EntityType<Entity>> dolazy(String name, Entity entity ) {
+        return ENTITY_TYPES.register(getName(name),
+                () -> EntityType.Builder.create(entity:: new, EntityClassification.CREATURE)
+                        .size(width, height)
+                        .build(getName(name))
+        );
+    }*/
+
+    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Reference.MOD_ID);
+
+    /*public static final RegistryObject<EntityType<EntityRed>> PINK = dolazy("red", EntityRed.class);*/
+
+   /* public static final RegistryObject<EntityType<EntityRed>> RED = ENTITY_TYPES.register(getName("red"),
+            () -> EntityType.Builder.of(EntityRed:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("red"))
+    );
+
+    public static final RegistryObject<EntityType<EntityBlue>> BLUE = ENTITY_TYPES.register(getName("blue"),
+            () -> EntityType.Builder.of(EntityBlue:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("blue"))
+    );
+
+    public static final RegistryObject<EntityType<EntityGreen>> GREEN = ENTITY_TYPES.register(getName("green"),
+            () -> EntityType.Builder.of(EntityGreen:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("green"))
+    );
+
+    public static final RegistryObject<EntityType<EntityYellow>> YELLOW = ENTITY_TYPES.register(getName("yellow"),
+            () -> EntityType.Builder.of(EntityYellow:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("yellow"))
+    );
+
+    public static final RegistryObject<EntityType<EntityPurple>> PURPLE = ENTITY_TYPES.register(getName("purple"),
+            () -> EntityType.Builder.of(EntityPurple:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("purple"))
+    );
+
+    public static final RegistryObject<EntityType<EntitySteve>> STEVE = ENTITY_TYPES.register(getName("steve"),
+            () -> EntityType.Builder.of(EntitySteve:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("steve"))
+    );
+
+    public static final RegistryObject<EntityType<EntityHerobrine>> HEROBRINE = ENTITY_TYPES.register(getName("herobrine"),
+            () -> EntityType.Builder.of(EntityHerobrine:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("herobrine"))
+    );
+
+    public static final RegistryObject<EntityType<EntityEnder>> ENDER = ENTITY_TYPES.register(getName("ender"),
+            () -> EntityType.Builder.of(EntityEnder:: new, MobCategory.MONSTER)
+                    .size(width, height)
+                    .build(getName("ender"))
+    );
+
+    public static final RegistryObject<EntityType<EntityBoss>> BOSS = ENTITY_TYPES.register(getName("boss"),
+            () -> EntityType.Builder.of(EntityBoss:: new, MobCategory.MONSTER)
+                    .size(6.7F, 6.7F)
+                    .build(getName("boss"))
+    );
+
+    public static final RegistryObject<EntityType<EntitySix>> SIX = ENTITY_TYPES.register(getName("six"),
+            () -> EntityType.Builder.of(EntitySix:: new, MobCategory.CREATURE)
+                    .size(width, height)
+                    .build(getName("six"))
+    );
+
+    public static final RegistryObject<EntityType<EntityBossEnder>> BOSS_ENDER = ENTITY_TYPES.register(getName("boss_ender"),
+            () -> EntityType.Builder.of(EntityBossEnder:: new, MobCategory.MONSTER)
+                    .size(1.7F, 1.7F)
+                    .build(getName("boss_ender"))
+    );*/
+    /*
+    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Refs.id);
+
+    //Entity Types
+    @ObjectHolder(Refs.Register + "petrock")
+    public static EntityType<EntityPetRock> PETROCK;
+
+    public static final RegistryObject<EntityType<EntityPetRock>> PETROCK = ENTITY_TYPES.register("petrock",
+            () -> EntityType.Builder.create(EntityPetRock:: new, EntityClassification.MISC)
+                    .size(width, height)
+                    .build("petrock")
+    );
+     */
+}
