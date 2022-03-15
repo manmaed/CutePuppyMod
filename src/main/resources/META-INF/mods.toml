@@ -1,12 +1,12 @@
 modLoader="javafml" #mandatory
 loaderVersion="[39,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 license="All rights reserved"
-issueTrackerURL = "https://github.com/manmaed/cutepuppymod/issues"
+issueTrackerURL = "https://github.com/manmaed/CutePuppyMod/issues"
 [[mods]] #mandatory
 modId="cutepuppymod" #mandatory
-version="${version}" #mandatory
+version="${file.jarVersion}" #mandatory
 displayName="CutePuppyMod" #mandatory
-updateJSONURL = "https://raw.githubusercontent.com/manmaed/petrock/main/update.json"
+updateJSONURL = "https://raw.githubusercontent.com/manmaed/CutePuppyMod/main/update.json"
 authors="manmaed" #optional
 description='''
 Puppys!'''

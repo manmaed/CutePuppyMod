@@ -1,9 +1,8 @@
 package net.manmaed.cutepuppymod.entitys;
 
-import net.manmaed.cutepuppymod.libs.Refs;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.EntityType;
-import net.minecraftforge.fml.RegistryObject;
+import net.manmaed.cutepuppymod.CutePuppyMod;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -23,73 +22,73 @@ public class CPEntityTypes {
         );
     }*/
 
-    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Refs.id);
+    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, CutePuppyMod.MOD_ID);
 
     /*public static final RegistryObject<EntityType<EntityRed>> PINK = dolazy("red", EntityRed.class);*/
 
     public static final RegistryObject<EntityType<EntityRed>> RED = ENTITY_TYPES.register(getName("red"),
-            () -> EntityType.Builder.create(EntityRed:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntityRed:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("red"))
     );
 
     public static final RegistryObject<EntityType<EntityBlue>> BLUE = ENTITY_TYPES.register(getName("blue"),
-            () -> EntityType.Builder.create(EntityBlue:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntityBlue:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("blue"))
     );
 
     public static final RegistryObject<EntityType<EntityGreen>> GREEN = ENTITY_TYPES.register(getName("green"),
-            () -> EntityType.Builder.create(EntityGreen:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntityGreen:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("green"))
     );
 
     public static final RegistryObject<EntityType<EntityYellow>> YELLOW = ENTITY_TYPES.register(getName("yellow"),
-            () -> EntityType.Builder.create(EntityYellow:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntityYellow:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("yellow"))
     );
 
     public static final RegistryObject<EntityType<EntityPurple>> PURPLE = ENTITY_TYPES.register(getName("purple"),
-            () -> EntityType.Builder.create(EntityPurple:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntityPurple:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("purple"))
     );
 
     public static final RegistryObject<EntityType<EntitySteve>> STEVE = ENTITY_TYPES.register(getName("steve"),
-            () -> EntityType.Builder.create(EntitySteve:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntitySteve:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("steve"))
     );
 
     public static final RegistryObject<EntityType<EntityHerobrine>> HEROBRINE = ENTITY_TYPES.register(getName("herobrine"),
-            () -> EntityType.Builder.create(EntityHerobrine:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntityHerobrine:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("herobrine"))
     );
 
     public static final RegistryObject<EntityType<EntityEnder>> ENDER = ENTITY_TYPES.register(getName("ender"),
-            () -> EntityType.Builder.create(EntityEnder:: new, EntityClassification.MONSTER)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntityEnder:: new, MobCategory.MONSTER)
+                    .sized(width, height)
                     .build(getName("ender"))
     );
 
     public static final RegistryObject<EntityType<EntityBoss>> BOSS = ENTITY_TYPES.register(getName("boss"),
-            () -> EntityType.Builder.create(EntityBoss:: new, EntityClassification.MONSTER)
-                    .size(6.7F, 6.7F)
+            () -> EntityType.Builder.of(EntityBoss:: new, MobCategory.MONSTER)
+                    .sized(6.7F, 6.7F)
                     .build(getName("boss"))
     );
 
     public static final RegistryObject<EntityType<EntitySix>> SIX = ENTITY_TYPES.register(getName("six"),
-            () -> EntityType.Builder.create(EntitySix:: new, EntityClassification.CREATURE)
-                    .size(width, height)
+            () -> EntityType.Builder.of(EntitySix:: new, MobCategory.CREATURE)
+                    .sized(width, height)
                     .build(getName("six"))
     );
 
     public static final RegistryObject<EntityType<EntityBossEnder>> BOSS_ENDER = ENTITY_TYPES.register(getName("boss_ender"),
-            () -> EntityType.Builder.create(EntityBossEnder:: new, EntityClassification.MONSTER)
-                    .size(1.7F, 1.7F)
+            () -> EntityType.Builder.of(EntityBossEnder:: new, MobCategory.MONSTER)
+                    .sized(1.7F, 1.7F)
                     .build(getName("boss_ender"))
     );
     /*

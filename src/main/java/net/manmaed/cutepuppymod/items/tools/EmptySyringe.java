@@ -1,26 +1,16 @@
 package net.manmaed.cutepuppymod.items.tools;
 
-import net.manmaed.cutepuppymod.damage.CustomDamageSource;
-import net.manmaed.cutepuppymod.items.CPItems;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.stats.Stats;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.item.Item;
 
 /**
  * Created by manmaed on 05/01/2020.
  */
 public class EmptySyringe extends Item {
-    public EmptySyringe(Properties properties, String name) {
+    public EmptySyringe(Properties properties) {
         super(properties);
-        setRegistryName(name);
     }
 
-    @Override
+   /* @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack itemStack = playerIn.getHeldItem(handIn);
         if(!worldIn.isRemote) {
@@ -41,5 +31,5 @@ public class EmptySyringe extends Item {
             }
             return iteminhand;
         }
-    }
+    }*/
 }

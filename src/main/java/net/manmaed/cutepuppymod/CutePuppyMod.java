@@ -1,9 +1,9 @@
 package net.manmaed.cutepuppymod;
 
 
+import net.manmaed.cutepuppymod.blocks.CPBlocks;
 import net.manmaed.cutepuppymod.config.CPConfig;
-import net.manmaed.cutepuppymod.entitys.CPEntity;
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
+import net.manmaed.cutepuppymod.entitys.*;
 import net.manmaed.cutepuppymod.items.CPItems;
 import net.manmaed.cutepuppymod.libs.LogHelper;
 import net.manmaed.cutepuppymod.libs.Refs;
@@ -12,8 +12,12 @@ import net.manmaed.cutepuppymod.world.WorldGenMobs;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -25,13 +29,48 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
  * Created by manmaed on 09/04/2021.
  */
 
-@Mod(Refs.id)
+@Mod(CutePuppyMod.MOD_ID)
 public class CutePuppyMod {
     /*
-    *
+    * TODO: PORT MOD to 1.18.2
     */
+    public static final String  MOD_ID = "cutepuppymod";
+    public static final CreativeModeTab itemGroup = new CreativeModeTab(CutePuppyMod.MOD_ID) {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(CPItems.TAB_ICON.get());
+        }
+    };
 
-    private static RegisterHandler registeryHandler;
+    public CutePuppyMod() {
+        IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();
+        CPItems.ITEMS.register(event);
+        CPBlocks.BLOCKS.register(event);
+        CPEntityTypes.ENTITY_TYPES.register(event);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.COMMON_CONFIG);
+        event.addListener(this::AttributeCreation);
+        event.addListener(CutePuppyModClient::doEntityRendering);
+    }
+
+    public void init(final  FMLCommonSetupEvent event) {
+
+    }
+
+    //TODO: FIX
+    private void AttributeCreation(EntityAttributeCreationEvent event) {
+        /*event.put(CPEntityTypes.RED.get(), EntityRed.createAttributes().build());
+        event.put(CPEntityTypes.BLUE.get(), EntityBlue.createAttributes().build())
+        event.put(CPEntityTypes.GREEN.get(), EntityGreen.createAttributes().build());
+        event.put(CPEntityTypes.YELLOW.get(), EntityYellow.createAttributes().build());
+        event.put(CPEntityTypes.PURPLE.get(), EntityPurple.createAttributes().build());
+        event.put(CPEntityTypes.STEVE.get(), EntitySteve.createAttributes().build());
+        event.put(CPEntityTypes.HEROBRINE.get(), EntityHerobrine.createAttributes().build());
+        event.put(CPEntityTypes.ENDER.get(), EntityEnder.createAttributes().build());
+        event.put(CPEntityTypes.BOSS.get(), EntityBoss.createAttributes().build());
+        event.put(CPEntityTypes.SIX.get(), EntitySix.createAttributes().build());
+        event.put(CPEntityTypes.BOSS_ENDER.get(), EntityBossEnder.createAttributes().build());*/
+    }
+  /*  private static RegisterHandler registeryHandler;
     public static final ItemGroup itemGroup = new ItemGroup(Refs.id) {
         @Override
         public ItemStack createIcon() {
@@ -46,9 +85,9 @@ public class CutePuppyMod {
         registeryHandler = new RegisterHandler();
         CPEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CPConfig.COMMON_CONFIG);
-        /*ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.CLIENT_CONFIG);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, CPConfig.SERVER_CONFIG);*/
-        /*MinecraftForge.EVENT_BUS.addListener(this::serverLoad);*/
+        *//*ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.CLIENT_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, CPConfig.SERVER_CONFIG);*//*
+        *//*MinecraftForge.EVENT_BUS.addListener(this::serverLoad);*//*
         MinecraftForge.EVENT_BUS.addListener(this::onBiomeLoad);
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -65,10 +104,10 @@ public class CutePuppyMod {
         DeferredWorkQueue.runLater(CPEntity::load);
 
         //World Gen
-        /*event.enqueueWork(WorldGenHandler::registerConfiguredFeatures);*/
+        *//*event.enqueueWork(WorldGenHandler::registerConfiguredFeatures);*//*
     }
 
-    /*@SubscribeEvent(priority = EventPriority.HIGHEST)*/
+    *//*@SubscribeEvent(priority = EventPriority.HIGHEST)*//*
     public void onBiomeLoad(BiomeLoadingEvent event) {
         if (!CPConfig.DISABLE_NATUARL_SPAWNS.get()) {
             if (event.getCategory() == Biome.Category.THEEND) {
@@ -82,7 +121,7 @@ public class CutePuppyMod {
                 }
             }
         }
-    }
+    }*/
     //Commands
     /*private void serverLoad(FMLServerStartingEvent event) {
         if (!CPConfig.RANDOM_SERVER_BOL.get()) {

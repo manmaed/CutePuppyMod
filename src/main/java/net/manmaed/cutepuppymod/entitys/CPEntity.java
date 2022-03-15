@@ -1,40 +1,38 @@
 package net.manmaed.cutepuppymod.entitys;
 
-import net.manmaed.cutepuppymod.client.render.entity.*;
-import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 /**
  * Created by manmaed on 10/04/2021.
  */
 public class CPEntity {
 
+    //TODO: Move to Client Class
 
-    public static void load() {
-        GlobalEntityTypeAttributes.put(CPEntityTypes.RED.get(), EntityRed.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.BLUE.get(), EntityBlue.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.GREEN.get(), EntityGreen.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.YELLOW.get(), EntityYellow.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.PURPLE.get(), EntityPurple.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.STEVE.get(), EntitySteve.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.HEROBRINE.get(), EntityHerobrine.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.ENDER.get(), EntityEnder.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS.get(), EntityBoss.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.SIX.get(), EntitySix.setCustomAttributes().create());
-        GlobalEntityTypeAttributes.put(CPEntityTypes.BOSS_ENDER.get(), EntityBossEnder.setCustomAttributes().create());
+    /*private void AttributeCreation(EntityAttributeCreationEvent event) {
+        event.put(CPEntityTypes.RED.get(), EntityRed.createAttributes().build());
+        event.put(CPEntityTypes.BLUE.get(), EntityBlue.createAttributes().build())
+        event.put(CPEntityTypes.GREEN.get(), EntityGreen.createAttributes().build());
+        event.put(CPEntityTypes.YELLOW.get(), EntityYellow.createAttributes().build());
+        event.put(CPEntityTypes.PURPLE.get(), EntityPurple.createAttributes().build());
+        event.put(CPEntityTypes.STEVE.get(), EntitySteve.createAttributes().build());
+        event.put(CPEntityTypes.HEROBRINE.get(), EntityHerobrine.createAttributes().build());
+        event.put(CPEntityTypes.ENDER.get(), EntityEnder.createAttributes().build());
+        event.put(CPEntityTypes.BOSS.get(), EntityBoss.createAttributes().build());
+        event.put(CPEntityTypes.SIX.get(), EntitySix.createAttributes().build());
+        event.put(CPEntityTypes.BOSS_ENDER.get(), EntityBossEnder.createAttributes().build());
     }
 
-    public static void clientload() {
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.RED.get(), RenderRed::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.BLUE.get(), RenderBlue::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.GREEN.get(), RenderGreen::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.YELLOW.get(), RenderYellow::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.PURPLE.get(), RenderPurple::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.STEVE.get(), RenderSteve::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.HEROBRINE.get(), RenderHerobrine::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.ENDER.get(), RenderEnder::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.BOSS.get(), RenderBoss::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.SIX.get(), RenderSix::new);
-        RenderingRegistry.registerEntityRenderingHandler(CPEntityTypes.BOSS_ENDER.get(), RenderBossEnder::new);
-    }
+    public static void doEntityRendering(final EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(CPEntityTypes.RED.get(), RenderRed::new);
+        event.registerEntityRenderer(CPEntityTypes.BLUE.get(), RenderBlue::new);
+        event.registerEntityRenderer(CPEntityTypes.GREEN.get(), RenderGreen::new);
+        event.registerEntityRenderer(CPEntityTypes.YELLOW.get(), RenderYellow::new);
+        event.registerEntityRenderer(CPEntityTypes.PURPLE.get(), RenderPurple::new);
+        event.registerEntityRenderer(CPEntityTypes.STEVE.get(), RenderSteve::new);
+        event.registerEntityRenderer(CPEntityTypes.HEROBRINE.get(), RenderHerobrine::new);
+        event.registerEntityRenderer(CPEntityTypes.ENDER.get(), RenderEnder::new);
+        event.registerEntityRenderer(CPEntityTypes.BOSS.get(), RenderBoss::new);
+        event.registerEntityRenderer(CPEntityTypes.SIX.get(), RenderSix::new);
+        event.registerEntityRenderer(CPEntityTypes.BOSS_ENDER.get(), RenderBossEnder::new);
+    }*/
 }

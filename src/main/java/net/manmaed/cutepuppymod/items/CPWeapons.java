@@ -13,6 +13,10 @@ import net.minecraftforge.registries.ObjectHolder;
  */
 public class CPWeapons {
 
+    /**
+     * Example Item:
+     * public static final RegistryObject<Item> EXAMPLE_ITEM = CPItems.ITEMS.register("example_item", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
+     **/
 
     @ObjectHolder(Refs.Register + "ban_hammer")
     public static Item ban_hammer;
