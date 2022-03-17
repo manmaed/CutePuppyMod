@@ -1,16 +1,7 @@
 package net.manmaed.cutepuppymod.blocks;
 
 
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.manmaed.cutepuppymod.entitys.EntityBossEnder;
-import net.manmaed.cutepuppymod.items.CPPuppyDrops;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 
 /**
  * Created by manmaed on 05/01/2020.

@@ -5,6 +5,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.registries.RegistryObject;
 
 public class CPEntityTypes {
 
@@ -91,17 +93,4 @@ public class CPEntityTypes {
                     .sized(1.7F, 1.7F)
                     .build(getName("boss_ender"))
     );
-    /*
-    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Refs.id);
-
-    //Entity Types
-    @ObjectHolder(Refs.Register + "petrock")
-    public static EntityType<EntityPetRock> PETROCK;
-
-    public static final RegistryObject<EntityType<EntityPetRock>> PETROCK = ENTITY_TYPES.register("petrock",
-            () -> EntityType.Builder.create(EntityPetRock:: new, EntityClassification.MISC)
-                    .size(width, height)
-                    .build("petrock")
-    );
-     */
 }

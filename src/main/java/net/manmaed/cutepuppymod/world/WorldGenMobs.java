@@ -1,17 +1,12 @@
 package net.manmaed.cutepuppymod.world;
 
-import net.manmaed.cutepuppymod.config.CPConfig;
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.world.biome.MobSpawnInfo;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
-
 /**
  * Created by manmaed on 28/04/2021.
  */
 public class WorldGenMobs {
 
-    public static void withPassiveMobs(BiomeLoadingEvent builder) {
+    //TODO: FIX WORLD GEN CLASS
+    /*public static void withPassiveMobs(BiomeLoadingEvent builder) {
         if (!CPConfig.DISABLE_RED_SPAWN.get()) {
             builder.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.RED.get(), CPConfig.RED_CHANCE.get(), 2, 4));
         }
@@ -54,5 +49,5 @@ public class WorldGenMobs {
         else if (!CPConfig.DISABLE_HEROBRINE_SPAWN.get()) {
             builder.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(CPEntityTypes.HEROBRINE.get(), CPConfig.HEROBRINE_CHANCE.get(), 0, 1));
         }
-    }
+    }*/
 }

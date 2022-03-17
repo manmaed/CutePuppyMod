@@ -1,11 +1,7 @@
 package net.manmaed.cutepuppymod;
 
 
-import net.manmaed.cutepuppymod.client.render.entity.*;
-import net.manmaed.cutepuppymod.entitys.CPEntity;
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 /**
  * Created by manmaed on 10/04/2021.

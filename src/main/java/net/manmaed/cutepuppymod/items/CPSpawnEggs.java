@@ -2,11 +2,9 @@ package net.manmaed.cutepuppymod.items;
 
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
-import net.manmaed.cutepuppymod.entitys.CPEntity;
 import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.manmaed.cutepuppymod.items.spawn_eggs.*;
+import net.manmaed.cutepuppymod.items.spawn_eggs.BaseEgg;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.registries.RegistryObject;
 
 /**

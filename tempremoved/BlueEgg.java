@@ -1,29 +1,9 @@
 package net.manmaed.cutepuppymod.items.spawn_eggs;
 
-import net.manmaed.cutepuppymod.CutePuppyMod;
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.tileentity.MobSpawnerTileEntity;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.spawner.AbstractSpawner;
-
-import java.util.Objects;
-
 /**
  * Created by manmaed on 10/04/2021.
  */
-public class BlueEgg extends Item {
+public class BlueEgg /*extends Item {
 
 
     public BlueEgg(String name) {
@@ -32,9 +12,9 @@ public class BlueEgg extends Item {
     }
 
 
-    /**
+    *//**
      * Called when this item is used when targetting a Block
-     */
+     *//*
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
         if (world.isRemote) {
@@ -72,3 +52,4 @@ public class BlueEgg extends Item {
         }
     }
 }
+*/{}
