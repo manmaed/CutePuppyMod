@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "cutepuppymod:items/red_spawn_egg"
+    "layer0": "cutepuppymod:item/red_spawn_egg"
   }
 }

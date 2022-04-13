@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "cutepuppymod:items/purple_sword"
+    "layer0": "cutepuppymod:item/purple_sword"
   }
 }

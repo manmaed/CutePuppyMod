@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "cutepuppymod:items/cute_puppy_guide"
+    "layer0": "cutepuppymod:item/cute_puppy_guide"
   }
 }

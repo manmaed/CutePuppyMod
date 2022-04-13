@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cutepuppymod:block/steve_core_block"
+  }
+}
