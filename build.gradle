@@ -65,6 +65,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             args '--mod', 'cutepuppymod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             mods {
                 cutepuppymod  {
@@ -84,6 +86,7 @@ dependencies {
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}")
     implementation fg.deobf("curse.maven:${tk_slug}-${tk_pid}:${tk_fid}")
+    implementation fg.deobf("curse.maven:${jei_slug}-${jei_pid}:${jei_fid}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
