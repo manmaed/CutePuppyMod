@@ -1,17 +1,17 @@
 {
     "name": "Blue Cores",
-    "icon": "cutepuppymod:bluecore",
+    "icon": "cutepuppymod:blue_core",
     "category": "cutepuppymod:cores_category",
     "pages": [
         {
             "type": "spotlight",
-            "item": "cutepuppymod:bluecore",
+            "item": "cutepuppymod:blue_core",
             "text": "Drops Form Blue Puppys"
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:bluecoreblock",
-            "recipe2": "cutepuppymod:bluecore"
+            "recipe": "cutepuppymod:blue_core_block",
+            "recipe2": "cutepuppymod:blue_core"
         }
     ]
 }

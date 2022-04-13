@@ -18,13 +18,14 @@ import net.minecraftforge.registries.RegistryObject;
 public class CPBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CutePuppyMod.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CutePuppyMod.MOD_ID);
     private static float hard = 3.0F;
     private static float ress = 5.0F;
 
     /**
      * Example Block:
      * public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-     * public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = CPItems.ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+     * public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
      **/
 
     public static final RegistryObject<Block> RED_CORE_BLOCK = BLOCKS.register("red_core_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(hard, ress).requiresCorrectToolForDrops().color(MaterialColor.COLOR_RED)));
@@ -37,15 +38,15 @@ public class CPBlocks {
     public static final RegistryObject<Block> ENDER_CORE_BLOCK = BLOCKS.register("ender_core_block", () -> new EnderCoreBlock(BlockBehaviour.Properties.of(Material.STONE).strength(hard, ress).requiresCorrectToolForDrops().color(MaterialColor.COLOR_GREEN)));
     public static final RegistryObject<Block> THE_CORE_BLOCK = BLOCKS.register("the_core_block", () -> new TheCoreBlock(BlockBehaviour.Properties.of(Material.STONE).strength(hard, ress).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Item> RED_CORE_BLOCK_ITEM = CPItems.ITEMS.register("red_core_block", () -> new BlockItem(RED_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> GREEN_CORE_BLOCK_ITEM = CPItems.ITEMS.register("green_core_block", () -> new BlockItem(GREEN_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> BLUE_CORE_BLOCK_ITEM = CPItems.ITEMS.register("blue_core_block", () -> new BlockItem(BLUE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> YELLOW_CORE_BLOCK_ITEM = CPItems.ITEMS.register("yellow_core_block", () -> new BlockItem(YELLOW_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> PURPLE_CORE_BLOCK_ITEM = CPItems.ITEMS.register("purple_core_block", () -> new BlockItem(PURPLE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> STEVE_CORE_BLOCK_ITEM = CPItems.ITEMS.register("steve_core_block", () -> new BlockItem(STEVE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> HEROBRINE_CORE_BLOCK_ITEM = CPItems.ITEMS.register("herobrine_core_block", () -> new BlockItem(HEROBRINE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> ENDER_CORE_BLOCK_ITEM = CPItems.ITEMS.register("ender_core_block", () -> new BlockItem(ENDER_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> THE_CORE_BLOCK_ITEM = CPItems.ITEMS.register("the_core_block", () -> new BlockItem(THE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> RED_CORE_BLOCK_ITEM = ITEMS.register("red_core_block", () -> new BlockItem(RED_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> GREEN_CORE_BLOCK_ITEM = ITEMS.register("green_core_block", () -> new BlockItem(GREEN_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> BLUE_CORE_BLOCK_ITEM = ITEMS.register("blue_core_block", () -> new BlockItem(BLUE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> YELLOW_CORE_BLOCK_ITEM = ITEMS.register("yellow_core_block", () -> new BlockItem(YELLOW_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> PURPLE_CORE_BLOCK_ITEM = ITEMS.register("purple_core_block", () -> new BlockItem(PURPLE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> STEVE_CORE_BLOCK_ITEM = ITEMS.register("steve_core_block", () -> new BlockItem(STEVE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> HEROBRINE_CORE_BLOCK_ITEM = ITEMS.register("herobrine_core_block", () -> new BlockItem(HEROBRINE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> ENDER_CORE_BLOCK_ITEM = ITEMS.register("ender_core_block", () -> new BlockItem(ENDER_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> THE_CORE_BLOCK_ITEM = ITEMS.register("the_core_block", () -> new BlockItem(THE_CORE_BLOCK.get(), new Item.Properties().tab(CutePuppyMod.itemGroup)));
 
 
 }

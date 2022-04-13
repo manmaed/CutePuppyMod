@@ -1,17 +1,17 @@
 {
     "name": "Ender Cores",
-    "icon": "cutepuppymod:endercore",
+    "icon": "cutepuppymod:ender_core",
     "category": "cutepuppymod:cores_category",
     "pages": [
         {
             "type": "spotlight",
-            "item": "cutepuppymod:endercore",
+            "item": "cutepuppymod:ender_core",
             "text": "Drops Form Ender Puppys"
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:endercoreblock",
-            "recipe2": "cutepuppymod:endercore"
+            "recipe": "cutepuppymod:ender_core_block",
+            "recipe2": "cutepuppymod:ender_core"
         }
     ]
 }

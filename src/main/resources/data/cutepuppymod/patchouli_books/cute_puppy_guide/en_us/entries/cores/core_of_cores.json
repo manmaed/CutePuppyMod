@@ -1,6 +1,6 @@
 {
     "name": "Core of Cores",
-    "icon": "cutepuppymod:thecoreblock",
+    "icon": "cutepuppymod:the_core_block",
     "category": "cutepuppymod:cores_category",
     "pages": [
         {
@@ -9,7 +9,7 @@
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:coreofcores"
+            "recipe": "cutepuppymod:core_of_cores"
         }
     ]
 }

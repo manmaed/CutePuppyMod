@@ -4,7 +4,11 @@ package net.manmaed.cutepuppymod;
 import net.manmaed.cutepuppymod.blocks.CPBlocks;
 import net.manmaed.cutepuppymod.config.CPConfig;
 import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
+import net.manmaed.cutepuppymod.entitys.EntityBlue;
+import net.manmaed.cutepuppymod.entitys.EntityRed;
 import net.manmaed.cutepuppymod.items.CPItems;
+import net.manmaed.cutepuppymod.items.CPPuppyDrops;
+import net.manmaed.cutepuppymod.items.CPSpawnEggs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -35,11 +39,16 @@ public class CutePuppyMod {
     public CutePuppyMod() {
         IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();
         CPItems.ITEMS.register(event);
+        CPPuppyDrops.ITEMS.register(event);
+        CPSpawnEggs.ITEMS.register(event);
         CPBlocks.BLOCKS.register(event);
+        CPBlocks.ITEMS.register(event);
         CPEntityTypes.ENTITY_TYPES.register(event);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.COMMON_CONFIG);
         event.addListener(this::AttributeCreation);
         event.addListener(CutePuppyModClient::doEntityRendering);
+        event.addListener(CutePuppyModClient::registerLayerDefinitions);
+        event.addListener(CutePuppyModClient::doClientStuff);
     }
 
     public void init(final  FMLCommonSetupEvent event) {
@@ -48,9 +57,9 @@ public class CutePuppyMod {
 
     //TODO: FIX
     private void AttributeCreation(EntityAttributeCreationEvent event) {
-        /*event.put(CPEntityTypes.RED.get(), EntityRed.createAttributes().build());
-        event.put(CPEntityTypes.BLUE.get(), EntityBlue.createAttributes().build())
-        event.put(CPEntityTypes.GREEN.get(), EntityGreen.createAttributes().build());
+        event.put(CPEntityTypes.RED.get(), EntityRed.createAttributes().build());
+        event.put(CPEntityTypes.BLUE.get(), EntityBlue.createAttributes().build());
+        /*event.put(CPEntityTypes.GREEN.get(), EntityGreen.createAttributes().build());
         event.put(CPEntityTypes.YELLOW.get(), EntityYellow.createAttributes().build());
         event.put(CPEntityTypes.PURPLE.get(), EntityPurple.createAttributes().build());
         event.put(CPEntityTypes.STEVE.get(), EntitySteve.createAttributes().build());

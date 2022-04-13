@@ -1,12 +1,6 @@
 package net.manmaed.cutepuppymod.items;
 
-import net.manmaed.cutepuppymod.CutePuppyMod;
-import net.manmaed.cutepuppymod.items.weapon.BanHammer;
-import net.manmaed.cutepuppymod.libs.Refs;
-import net.manmaed.cutepuppymod.materials.ToolMaterials;
-import net.minecraft.item.Item;
-import net.minecraft.item.SwordItem;
-import net.minecraftforge.registries.ObjectHolder;
+
 
 /**
  * Created by manmaed on 05/01/2020.
@@ -18,7 +12,7 @@ public class CPWeapons {
      * public static final RegistryObject<Item> EXAMPLE_ITEM = CPItems.ITEMS.register("example_item", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
      **/
 
-    @ObjectHolder(Refs.Register + "ban_hammer")
+   /* @ObjectHolder(Refs.Register + "ban_hammer")
     public static Item ban_hammer;
 
     //Core Swords
@@ -55,8 +49,8 @@ public class CPWeapons {
         CutePuppyMod.getRegisteryHandler().registerItem(blue_sword);
         CutePuppyMod.getRegisteryHandler().registerItem(yellow_sword);
         CutePuppyMod.getRegisteryHandler().registerItem(purple_sword);
-        CutePuppyMod.getRegisteryHandler().registerItem(green_sword);
+        CutePuppyMod.getRegisteryHandler().registerItem(green_sword);*/
 
 
-    }
+    /*}*/
 }

@@ -20,7 +20,7 @@
         {
             "type": "crafting",
             "title": "Crafting Ender Core Block",
-            "recipe": "cutepuppymod:endercoreblock"
+            "recipe": "cutepuppymod:ender_core_block"
         }
     ]
 }

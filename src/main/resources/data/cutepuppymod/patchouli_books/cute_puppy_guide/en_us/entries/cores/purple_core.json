@@ -1,17 +1,17 @@
 {
     "name": "Purple Cores",
-    "icon": "cutepuppymod:purplecore",
+    "icon": "cutepuppymod:purple_core",
     "category": "cutepuppymod:cores_category",
     "pages": [
         {
             "type": "spotlight",
-            "item": "cutepuppymod:purplecore",
+            "item": "cutepuppymod:purple_core",
             "text": "Drops Form Purple Puppys"
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:purplecoreblock",
-            "recipe2": "cutepuppymod:purplecore"
+            "recipe": "cutepuppymod:purple_core_block",
+            "recipe2": "cutepuppymod:purple_core"
         }
     ]
 }

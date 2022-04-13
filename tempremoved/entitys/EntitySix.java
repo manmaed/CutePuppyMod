@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * Created by manmaed on 10/04/2021.
  */
-public class EntitySix extends MonsterEntity {
+public class EntitySix {} /* extends MonsterEntity {
 
     private final ServerBossInfo bossInfo = (ServerBossInfo)(new ServerBossInfo(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
     protected EntitySix(EntityType<? extends MonsterEntity> type, World worldIn) {
@@ -75,19 +75,19 @@ public class EntitySix extends MonsterEntity {
         }
     }
 
-    /**
+    *//**
      * Add the given player to the list of players tracking this entity. For instance, a player may track a boss in order
      * to view its associated boss bar.
-     */
+     *//*
     public void addTrackingPlayer(ServerPlayerEntity player) {
         super.addTrackingPlayer(player);
         this.bossInfo.addPlayer(player);
     }
 
-    /**
+    *//**
      * Removes the given player from the list of players tracking this entity. See {@link Entity#addTrackingPlayer} for
      * more information on tracking.
-     */
+     *//*
     public void removeTrackingPlayer(ServerPlayerEntity player) {
         super.removeTrackingPlayer(player);
         this.bossInfo.removePlayer(player);
@@ -98,3 +98,4 @@ public class EntitySix extends MonsterEntity {
         return true;
     }
 }
+*/

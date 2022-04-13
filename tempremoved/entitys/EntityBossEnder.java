@@ -6,6 +6,7 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,10 +23,10 @@ import javax.annotation.Nullable;
 /**
  * Created by manmaed on 10/04/2021.
  */
-public class EntityBoss extends MonsterEntity implements IMob {
+public class EntityBossEnder {} /*extends MonsterEntity implements IMob {
 
-    private final ServerBossInfo bossInfo = (ServerBossInfo)(new ServerBossInfo(this.getDisplayName(), BossInfo.Color.RED, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
-    public EntityBoss(EntityType<? extends MonsterEntity> type, World worldIn) {
+    private final ServerBossInfo bossInfo = (ServerBossInfo)(new ServerBossInfo(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
+    public EntityBossEnder(EntityType<? extends MonsterEntity> type, World worldIn) {
         super(type, worldIn);
         this.setHealth(this.getMaxHealth());
         this.isImmuneToFire();
@@ -37,8 +38,9 @@ public class EntityBoss extends MonsterEntity implements IMob {
         this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.0D, false));
         this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setCallsForHelp(EntityHerobrine.class));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setCallsForHelp(EntityEnder.class));
+        this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)).setCallsForHelp(EndermanEntity.class));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
     }
 
     @Override
@@ -50,9 +52,9 @@ public class EntityBoss extends MonsterEntity implements IMob {
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
         return MobEntity.func_233666_p_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 400D)
+                .createMutableAttribute(Attributes.MAX_HEALTH, 200D)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.35D)
-                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 10.0D);
+                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 8.0D);
     }
 
     @Nullable
@@ -77,19 +79,19 @@ public class EntityBoss extends MonsterEntity implements IMob {
         }
     }
 
-    /**
+    *//**
      * Add the given player to the list of players tracking this entity. For instance, a player may track a boss in order
      * to view its associated boss bar.
-     */
+     *//*
     public void addTrackingPlayer(ServerPlayerEntity player) {
         super.addTrackingPlayer(player);
         this.bossInfo.addPlayer(player);
     }
 
-    /**
+    *//**
      * Removes the given player from the list of players tracking this entity. See {@link Entity#addTrackingPlayer} for
      * more information on tracking.
-     */
+     *//*
     public void removeTrackingPlayer(ServerPlayerEntity player) {
         super.removeTrackingPlayer(player);
         this.bossInfo.removePlayer(player);
@@ -100,3 +102,4 @@ public class EntityBoss extends MonsterEntity implements IMob {
         return false;
     }
 }
+*/

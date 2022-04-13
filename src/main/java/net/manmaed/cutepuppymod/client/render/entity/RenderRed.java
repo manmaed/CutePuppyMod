@@ -1,29 +1,30 @@
 package net.manmaed.cutepuppymod.client.render.entity;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.manmaed.cutepuppymod.CutePuppyMod;
+import net.manmaed.cutepuppymod.client.model.CPModels;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
 import net.manmaed.cutepuppymod.entitys.EntityRed;
-import net.manmaed.cutepuppymod.libs.Refs;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 
 public class RenderRed extends MobRenderer<EntityRed, ModelPuppy<EntityRed>> {
-    private static final ResourceLocation skin = new ResourceLocation(Refs.id, "textures/entity/red.png");
+    private static final ResourceLocation SKIN = new ResourceLocation(CutePuppyMod.MOD_ID, "textures/entity/red.png");
 
-    public RenderRed(EntityRendererManager manager) {
-        super(manager, new ModelPuppy(), 0.25F);
+    public RenderRed(EntityRendererProvider.Context context) {
+        super(context, new ModelPuppy(context.bakeLayer(CPModels.RED)), 0.25F);
     }
 
     @Override
-    protected void preRenderCallback(EntityRed entitylivingbaseIn, MatrixStack matrixStackIn, float partialTickTime) {
-        matrixStackIn.translate(-0.05, 0 ,0.2);
+    public void render(EntityRed entity, float flt1, float flt2, PoseStack poseStack, MultiBufferSource multiBufferSource, int int1) {
+        super.render(entity, flt1, flt2, poseStack, multiBufferSource, int1);
     }
+
 
     @Override
-    public ResourceLocation getEntityTexture(EntityRed entity) {
-        return skin;
+    public ResourceLocation getTextureLocation(EntityRed p_114482_) {
+        return SKIN;
     }
-
-
 }

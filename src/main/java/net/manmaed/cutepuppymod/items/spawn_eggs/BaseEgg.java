@@ -34,7 +34,7 @@ import java.util.Objects;
  */
 public class BaseEgg extends Item {
     private EntityType type;
-    public BaseEgg(Properties properties, EntityType entityType) {
+    public BaseEgg(EntityType entityType, Properties properties) {
         super(properties);
         this.type = entityType;
     }

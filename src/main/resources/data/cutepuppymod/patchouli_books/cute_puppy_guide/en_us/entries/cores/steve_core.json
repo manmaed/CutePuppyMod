@@ -1,17 +1,17 @@
 {
     "name": "Steve Cores",
-    "icon": "cutepuppymod:stevecore",
+    "icon": "cutepuppymod:steve_core",
     "category": "cutepuppymod:cores_category",
     "pages": [
         {
             "type": "spotlight",
-            "item": "cutepuppymod:stevecore",
+            "item": "cutepuppymod:steve_core",
             "text": "Drops Form Steve Puppys"
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:stevecoreblock",
-            "recipe2": "cutepuppymod:stevecore"
+            "recipe": "cutepuppymod:steve_core_block",
+            "recipe2": "cutepuppymod:steve_core"
         }
     ]
 }

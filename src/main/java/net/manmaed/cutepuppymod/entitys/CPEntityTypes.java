@@ -26,8 +26,6 @@ public class CPEntityTypes {
 
     public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, CutePuppyMod.MOD_ID);
 
-    /*public static final RegistryObject<EntityType<EntityRed>> PINK = dolazy("red", EntityRed.class);*/
-
     public static final RegistryObject<EntityType<EntityRed>> RED = ENTITY_TYPES.register(getName("red"),
             () -> EntityType.Builder.of(EntityRed:: new, MobCategory.CREATURE)
                     .sized(width, height)
@@ -40,7 +38,7 @@ public class CPEntityTypes {
                     .build(getName("blue"))
     );
 
-    public static final RegistryObject<EntityType<EntityGreen>> GREEN = ENTITY_TYPES.register(getName("green"),
+    /*public static final RegistryObject<EntityType<EntityGreen>> GREEN = ENTITY_TYPES.register(getName("green"),
             () -> EntityType.Builder.of(EntityGreen:: new, MobCategory.CREATURE)
                     .sized(width, height)
                     .build(getName("green"))
@@ -74,9 +72,8 @@ public class CPEntityTypes {
             () -> EntityType.Builder.of(EntityEnder:: new, MobCategory.MONSTER)
                     .sized(width, height)
                     .build(getName("ender"))
-    );
-
-    public static final RegistryObject<EntityType<EntityBoss>> BOSS = ENTITY_TYPES.register(getName("boss"),
+    );*/
+    /*public static final RegistryObject<EntityType<EntityBoss>> BOSS = ENTITY_TYPES.register(getName("boss"),
             () -> EntityType.Builder.of(EntityBoss:: new, MobCategory.MONSTER)
                     .sized(6.7F, 6.7F)
                     .build(getName("boss"))
@@ -92,5 +89,5 @@ public class CPEntityTypes {
             () -> EntityType.Builder.of(EntityBossEnder:: new, MobCategory.MONSTER)
                     .sized(1.7F, 1.7F)
                     .build(getName("boss_ender"))
-    );
+    );*/
 }

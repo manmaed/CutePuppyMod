@@ -1,17 +1,17 @@
 {
     "name": "Green Cores",
-    "icon": "cutepuppymod:greencore",
+    "icon": "cutepuppymod:green_core",
     "category": "cutepuppymod:cores_category",
     "pages": [
         {
             "type": "spotlight",
-            "item": "cutepuppymod:greencore",
+            "item": "cutepuppymod:green_core",
             "text": "Drops Form Green Puppys"
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:greencoreblock",
-            "recipe2": "cutepuppymod:greencore"
+            "recipe": "cutepuppymod:green_core_block",
+            "recipe2": "cutepuppymod:green_core"
         }
     ]
 }

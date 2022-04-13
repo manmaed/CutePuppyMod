@@ -18,7 +18,7 @@
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:coreofcores",
+            "recipe": "cutepuppymod:core_of_cores",
             "recipe2": "cutepuppymod:syringe"
         }
     ]
