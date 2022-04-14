@@ -21,9 +21,4 @@ public class RenderBlue extends MobRenderer<EntityBlue, ModelPuppy<EntityBlue>> 
         return SKIN;
     }
 
-    /*@Override
-    protected void preRenderCallback(EntityBlue entitylivingbaseIn, MatrixStack matrixStackIn, float partialTickTime) {
-        matrixStackIn.translate(-0.05, 0 ,0.2);
-    }*/
-
 }

@@ -3,9 +3,7 @@ package net.manmaed.cutepuppymod;
 
 import net.manmaed.cutepuppymod.blocks.CPBlocks;
 import net.manmaed.cutepuppymod.config.CPConfig;
-import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
-import net.manmaed.cutepuppymod.entitys.EntityBlue;
-import net.manmaed.cutepuppymod.entitys.EntityRed;
+import net.manmaed.cutepuppymod.entitys.*;
 import net.manmaed.cutepuppymod.items.CPItems;
 import net.manmaed.cutepuppymod.items.CPPuppyDrops;
 import net.manmaed.cutepuppymod.items.CPSpawnEggs;
@@ -28,6 +26,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class CutePuppyMod {
     /*
     * TODO: PORT MOD to 1.18.2
+    *  TODO: Add Alex Puppy
     */
     public static final String  MOD_ID = "cutepuppymod";
     public static final CreativeModeTab itemGroup = new CreativeModeTab(CutePuppyMod.MOD_ID) {
@@ -61,15 +60,15 @@ public class CutePuppyMod {
     private void AttributeCreation(EntityAttributeCreationEvent event) {
         event.put(CPEntityTypes.RED.get(), EntityRed.createAttributes().build());
         event.put(CPEntityTypes.BLUE.get(), EntityBlue.createAttributes().build());
-        /*event.put(CPEntityTypes.GREEN.get(), EntityGreen.createAttributes().build());
+        event.put(CPEntityTypes.GREEN.get(), EntityGreen.createAttributes().build());
         event.put(CPEntityTypes.YELLOW.get(), EntityYellow.createAttributes().build());
         event.put(CPEntityTypes.PURPLE.get(), EntityPurple.createAttributes().build());
         event.put(CPEntityTypes.STEVE.get(), EntitySteve.createAttributes().build());
         event.put(CPEntityTypes.HEROBRINE.get(), EntityHerobrine.createAttributes().build());
         event.put(CPEntityTypes.ENDER.get(), EntityEnder.createAttributes().build());
-        event.put(CPEntityTypes.BOSS.get(), EntityBoss.createAttributes().build());
-        event.put(CPEntityTypes.SIX.get(), EntitySix.createAttributes().build());
-        event.put(CPEntityTypes.BOSS_ENDER.get(), EntityBossEnder.createAttributes().build());*/
+        /*event.put(CPEntityTypes.BOSS.get(), EntityBoss.createAttributes().build());
+        event.put(CPEntityTypes.SIX.get(), EntitySix.createAttributes().build());*/
+        event.put(CPEntityTypes.ENDER_BOSS.get(), EntityEnderBoss.createAttributes().build());
     }
   /*  private static RegisterHandler registeryHandler;
     public static final ItemGroup itemGroup = new ItemGroup(Refs.id) {

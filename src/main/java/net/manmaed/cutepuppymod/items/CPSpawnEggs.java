@@ -28,15 +28,15 @@ public class CPSpawnEggs {
 
     public static final RegistryObject<Item> RED_SPAWN_EGG = ITEMS.register("red_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.RED, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> BLUE_SPAWN_EGG = ITEMS.register("blue_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.BLUE, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> GREEN_SPAWN_EGG = ITEMS.register("green_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> YELLOW_SPAWN_EGG = ITEMS.register("yellow_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> PURPLE_SPAWN_EGG = ITEMS.register("purple_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> STEVE_SPAWN_EGG = ITEMS.register("steve_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> HEROBRINE_SPAWN_EGG = ITEMS.register("herobrine_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> ENDER_SPAWN_EGG = ITEMS.register("ender_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> GREEN_SPAWN_EGG = ITEMS.register("green_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.GREEN, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> YELLOW_SPAWN_EGG = ITEMS.register("yellow_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.YELLOW, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> PURPLE_SPAWN_EGG = ITEMS.register("purple_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.PURPLE, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> STEVE_SPAWN_EGG = ITEMS.register("steve_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.STEVE, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> HEROBRINE_SPAWN_EGG = ITEMS.register("herobrine_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.HEROBRINE, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> ENDER_SPAWN_EGG = ITEMS.register("ender_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.ENDER, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> BOSS_SPAWN_EGG = ITEMS.register("boss_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> SIX_SPAWN_EGG = ITEMS.register("six_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> ENDER_BOSS_SPAWN_EGG = ITEMS.register("ender_boss_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> ENDER_BOSS_SPAWN_EGG = ITEMS.register("ender_boss_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.ENDER_BOSS, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
 
 
 
