@@ -9,7 +9,7 @@
         },
         {
             "type": "crafting",
-            "recipe": "cutepuppymod:syringe"
+            "recipe": "cutepuppymod:syringe_empty"
         }
     ]
 }
