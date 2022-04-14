@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cutepuppymod:herobrinecoreblock"
+          "name": "cutepuppymod:herobrine_core_block"
         }
       ],
       "conditions": [

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cutepuppymod:thecoreblock"
+          "name": "cutepuppymod:ender_core_block"
         }
       ],
       "conditions": [

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cutepuppymod:bluecoreblock"
+          "name": "cutepuppymod:green_core_block"
         }
       ],
       "conditions": [
