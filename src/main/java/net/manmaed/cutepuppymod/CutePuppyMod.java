@@ -9,6 +9,7 @@ import net.manmaed.cutepuppymod.entitys.EntityRed;
 import net.manmaed.cutepuppymod.items.CPItems;
 import net.manmaed.cutepuppymod.items.CPPuppyDrops;
 import net.manmaed.cutepuppymod.items.CPSpawnEggs;
+import net.manmaed.cutepuppymod.items.CPWeapons;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -41,6 +42,7 @@ public class CutePuppyMod {
         CPItems.ITEMS.register(event);
         CPPuppyDrops.ITEMS.register(event);
         CPSpawnEggs.ITEMS.register(event);
+        CPWeapons.ITEMS.register(event);
         CPBlocks.BLOCKS.register(event);
         CPBlocks.ITEMS.register(event);
         CPEntityTypes.ENTITY_TYPES.register(event);
