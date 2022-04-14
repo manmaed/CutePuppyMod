@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "cutepuppymod:thecoreblock"
+      "item": "cutepuppymod:the_core_block"
     },
     "title": {
       "translate": "advancements.cutepuppymod.thecoreofcors.title"
@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
         {
-          "item": "cutepuppymod:thecoreblock"
+          "item": "cutepuppymod:the_core_block"
         }
           ]
       }
