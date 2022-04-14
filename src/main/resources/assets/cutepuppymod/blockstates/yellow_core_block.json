@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "cutepuppymod:block/yellow_core_block" }
+    "": {
+      "model": "cutepuppymod:block/yellow_core_block"
+    }
   }
 }

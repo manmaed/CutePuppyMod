@@ -22,11 +22,11 @@ public class CPWeapons {
      * public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
      **/
 
-    public static final RegistryObject<Item> RED_SWORD = ITEMS.register("red_sword", () -> new SwordItem(ToolMaterials.RED_CORE ,3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> GREEN_SWORD = ITEMS.register("green_sword", () -> new SwordItem(ToolMaterials.GREEN_CORE ,3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> BLUE_SWORD = ITEMS.register("blue_sword", () -> new SwordItem(ToolMaterials.BLUE_CORE ,3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> PURPLE_SWORD = ITEMS.register("purple_sword", () -> new SwordItem(ToolMaterials.PURPLE_CORE ,3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> YELLOW_SWORD = ITEMS.register("yellow_sword", () -> new SwordItem(ToolMaterials.YELLOW_CORE ,3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> RED_SWORD = ITEMS.register("red_sword", () -> new SwordItem(ToolMaterials.RED_CORE, 3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> GREEN_SWORD = ITEMS.register("green_sword", () -> new SwordItem(ToolMaterials.GREEN_CORE, 3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> BLUE_SWORD = ITEMS.register("blue_sword", () -> new SwordItem(ToolMaterials.BLUE_CORE, 3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> PURPLE_SWORD = ITEMS.register("purple_sword", () -> new SwordItem(ToolMaterials.PURPLE_CORE, 3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> YELLOW_SWORD = ITEMS.register("yellow_sword", () -> new SwordItem(ToolMaterials.YELLOW_CORE, 3, -2.4F, new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> BAN_HAMMER = ITEMS.register("ban_hammer", () -> new BanHammer(new Item.Properties().tab(CutePuppyMod.itemGroup)));
 
 }

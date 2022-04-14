@@ -3,8 +3,8 @@ package net.manmaed.cutepuppymod.client.render.entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.manmaed.cutepuppymod.CutePuppyMod;
 import net.manmaed.cutepuppymod.client.model.CPModels;
+import net.manmaed.cutepuppymod.client.render.layers.BanHammerLayer;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
-import net.manmaed.cutepuppymod.entitys.EntityGreen;
 import net.manmaed.cutepuppymod.entitys.EntitySix;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -16,6 +16,7 @@ public class RenderSix extends MobRenderer<EntitySix, ModelPuppy<EntitySix>> {
 
     public RenderSix(EntityRendererProvider.Context context) {
         super(context, new ModelPuppy(context.bakeLayer(CPModels.SIX)), 0.25F);
+        this.addLayer(new BanHammerLayer(this, context.getModelSet()));
     }
 
     @Override

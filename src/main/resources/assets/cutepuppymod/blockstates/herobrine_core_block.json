@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "cutepuppymod:block/herobrine_core_block" }
+    "": {
+      "model": "cutepuppymod:block/herobrine_core_block"
+    }
   }
 }

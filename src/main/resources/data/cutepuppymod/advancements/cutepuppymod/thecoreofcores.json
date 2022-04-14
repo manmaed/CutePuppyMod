@@ -16,10 +16,10 @@
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
-        {
-          "item": "cutepuppymod:the_core_block"
-        }
-          ]
+          {
+            "item": "cutepuppymod:the_core_block"
+          }
+        ]
       }
     }
   }

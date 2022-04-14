@@ -17,7 +17,6 @@ public class CutePuppyModClient {
 
     public static boolean iChunHatsLoaded;
 
-    // TODO: FIX
     public static void doEntityRendering(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(CPEntityTypes.RED.get(), RenderRed::new);
         event.registerEntityRenderer(CPEntityTypes.BLUE.get(), RenderBlue::new);

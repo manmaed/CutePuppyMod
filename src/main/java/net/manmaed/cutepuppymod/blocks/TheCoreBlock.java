@@ -3,9 +3,7 @@ package net.manmaed.cutepuppymod.blocks;
 
 import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
 import net.manmaed.cutepuppymod.entitys.EntityBoss;
-import net.manmaed.cutepuppymod.entitys.EntityEnderBoss;
 import net.manmaed.cutepuppymod.items.CPItems;
-import net.manmaed.cutepuppymod.items.CPPuppyDrops;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -36,9 +34,9 @@ public class TheCoreBlock extends Block {
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if(!level.isClientSide) {
+        if (!level.isClientSide) {
             ItemStack itemStack = player.getItemInHand(hand);
-            if(itemStack.is(CPItems.SYRINGE_FULL.get())) {
+            if (itemStack.is(CPItems.SYRINGE_FULL.get())) {
                 itemStack.shrink(1);
                 level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
                 EntityBoss boss = new EntityBoss(CPEntityTypes.BOSS.get(), level);

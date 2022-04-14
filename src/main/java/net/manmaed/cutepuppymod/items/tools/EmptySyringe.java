@@ -2,8 +2,6 @@ package net.manmaed.cutepuppymod.items.tools;
 
 import net.manmaed.cutepuppymod.damage.CustomDamageSource;
 import net.manmaed.cutepuppymod.items.CPItems;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -11,7 +9,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
 /**
@@ -25,7 +22,7 @@ public class EmptySyringe extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
-        if(!level.isClientSide) {
+        if (!level.isClientSide) {
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, this.fillWithBlood(itemStack, player, new ItemStack(CPItems.SYRINGE_FULL.get())));
         }
         return new InteractionResultHolder<>(InteractionResult.FAIL, itemStack);

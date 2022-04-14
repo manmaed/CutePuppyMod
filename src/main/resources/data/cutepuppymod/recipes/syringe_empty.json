@@ -6,9 +6,15 @@
     " ww"
   ],
   "key": {
-    "i": { "item": "minecraft:iron_ingot" },
-    "w": { "item": "minecraft:black_wool"},
-    "g": { "item": "minecraft:glass"}
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "w": {
+      "item": "minecraft:black_wool"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    }
   },
   "result": {
     "item": "cutepuppymod:syringe_empty"

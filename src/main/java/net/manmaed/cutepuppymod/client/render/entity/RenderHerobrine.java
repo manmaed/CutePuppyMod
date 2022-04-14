@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.manmaed.cutepuppymod.CutePuppyMod;
 import net.manmaed.cutepuppymod.client.model.CPModels;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
-import net.manmaed.cutepuppymod.entitys.EntityGreen;
 import net.manmaed.cutepuppymod.entitys.EntityHerobrine;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -13,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class RenderHerobrine extends MobRenderer<EntityHerobrine, ModelPuppy<EntityHerobrine>> {
     private static final String texloc = "textures/entity/herobrine";
-    private static final ResourceLocation NORMAL = new ResourceLocation(CutePuppyMod.MOD_ID,  texloc + "/normal.png");
+    private static final ResourceLocation NORMAL = new ResourceLocation(CutePuppyMod.MOD_ID, texloc + "/normal.png");
     private static final ResourceLocation MAD = new ResourceLocation(CutePuppyMod.MOD_ID, texloc + "/mad.png");
 
 

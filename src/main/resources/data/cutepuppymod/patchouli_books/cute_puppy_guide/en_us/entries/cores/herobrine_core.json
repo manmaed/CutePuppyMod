@@ -1,17 +1,17 @@
 {
-    "name": "Herobrine Cores",
-    "icon": "cutepuppymod:herobrine_core",
-    "category": "cutepuppymod:cores_category",
-    "pages": [
-        {
-            "type": "spotlight",
-            "item": "cutepuppymod:herobrine_core",
-            "text": "Drops Form Herobrine Puppys"
-        },
-        {
-            "type": "crafting",
-            "recipe": "cutepuppymod:herobrine_core_block",
-            "recipe2": "cutepuppymod:herobrine_core"
-        }
-    ]
+  "name": "Herobrine Cores",
+  "icon": "cutepuppymod:herobrine_core",
+  "category": "cutepuppymod:cores_category",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "cutepuppymod:herobrine_core",
+      "text": "Drops Form Herobrine Puppys"
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:herobrine_core_block",
+      "recipe2": "cutepuppymod:herobrine_core"
+    }
+  ]
 }

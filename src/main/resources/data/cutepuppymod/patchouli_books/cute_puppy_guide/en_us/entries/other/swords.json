@@ -1,25 +1,25 @@
 {
-    "name": "Swords",
-    "icon": "cutepuppymod:red_sword",
-    "category": "cutepuppymod:other_things_category",
-    "pages": [
-        {
-            "type": "text",
-            "text": "How to Craft the puppy swords"
-        },
-        {
-            "type": "crafting",
-            "recipe": "cutepuppymod:red_sword",
-            "recipe2": "cutepuppymod:green_sword"
-        },
-        {
-            "type": "crafting",
-            "recipe": "cutepuppymod:blue_sword",
-            "recipe2": "cutepuppymod:yellow_sword"
-        },
-        {
-            "type": "crafting",
-            "recipe": "cutepuppymod:purple_sword"
-        }
-    ]
+  "name": "Swords",
+  "icon": "cutepuppymod:red_sword",
+  "category": "cutepuppymod:other_things_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "How to Craft the puppy swords"
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:red_sword",
+      "recipe2": "cutepuppymod:green_sword"
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:blue_sword",
+      "recipe2": "cutepuppymod:yellow_sword"
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:purple_sword"
+    }
+  ]
 }

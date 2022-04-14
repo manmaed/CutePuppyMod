@@ -16,20 +16,15 @@ public enum ToolMaterials implements Tier {
 
     BAN(3, 3000, 2.0F, 0F, 0, () -> {
         return Ingredient.of(Items.AIR);
-    }),
-    RED_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+    }), RED_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
         return Ingredient.of(CPPuppyDrops.RED_CORE.get());
-    }),
-    BLUE_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+    }), BLUE_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
         return Ingredient.of(CPPuppyDrops.BLUE_CORE.get());
-    }),
-    YELLOW_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+    }), YELLOW_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
         return Ingredient.of(CPPuppyDrops.YELLOW_CORE.get());
-    }),
-    PURPLE_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+    }), PURPLE_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
         return Ingredient.of(CPPuppyDrops.PURPLE_CORE.get());
-    }),
-    GREEN_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
+    }), GREEN_CORE(2, 450, 8.0F, 2.0F, 18, () -> {
         return Ingredient.of(CPPuppyDrops.GREEN_CORE.get());
     });
     private final int level;

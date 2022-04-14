@@ -5,7 +5,6 @@ import net.manmaed.cutepuppymod.CutePuppyMod;
 import net.manmaed.cutepuppymod.client.model.CPModels;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
 import net.manmaed.cutepuppymod.entitys.EntityBoss;
-import net.manmaed.cutepuppymod.entitys.EntityEnderBoss;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

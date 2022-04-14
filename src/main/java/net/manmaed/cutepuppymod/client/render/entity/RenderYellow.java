@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.manmaed.cutepuppymod.CutePuppyMod;
 import net.manmaed.cutepuppymod.client.model.CPModels;
 import net.manmaed.cutepuppymod.client.render.model.ModelPuppy;
-import net.manmaed.cutepuppymod.entitys.EntityGreen;
 import net.manmaed.cutepuppymod.entitys.EntityYellow;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
