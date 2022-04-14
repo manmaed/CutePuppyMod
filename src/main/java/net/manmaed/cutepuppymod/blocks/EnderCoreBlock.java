@@ -1,7 +1,25 @@
 package net.manmaed.cutepuppymod.blocks;
 
 
+import net.manmaed.cutepuppymod.entitys.CPEntityTypes;
+import net.manmaed.cutepuppymod.entitys.EntityEnderBoss;
+import net.manmaed.cutepuppymod.items.CPItems;
+import net.manmaed.cutepuppymod.items.CPPuppyDrops;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 /**
  * Created by manmaed on 05/01/2020.
@@ -11,29 +29,23 @@ public class EnderCoreBlock extends Block {
         super(properties);
     }
 
-    //TODO: FIX
-   /* @Override
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
-        if(!world.isRemote) {
-            ItemStack itemStack = player.getHeldItem(hand);
-            if(itemStack.getItem() == CPPuppyDrops.endercore) {
+    @Override
+    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if(!level.isClientSide) {
+            ItemStack itemStack = player.getItemInHand(hand);
+            if(itemStack.is(CPPuppyDrops.ENDER_CORE.get())) {
                 itemStack.shrink(1);
-                world.setBlockState(pos, Blocks.AIR.getDefaultState());
-                EntityBossEnder bossPuppy = new EntityBossEnder(CPEntityTypes.BOSS_ENDER.get() ,world);
-                bossPuppy.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 10, 10);
-                LightningBoltEntity boltEntity = new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world);
-                boltEntity.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 10, 10);
-                boltEntity.setEffectOnly(true);
-                world.addEntity(boltEntity);
-                bossPuppy.setAttackTarget(player);
-                *//*                world.addEntity(new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world));*//*
-                world.addEntity(bossPuppy);
-                for (ServerPlayerEntity serverPlayer : world.getEntitiesWithinAABB(ServerPlayerEntity.class, bossPuppy.getBoundingBox())) {
-                    CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, bossPuppy);
-                }
-                return ActionResultType.SUCCESS;
+                level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
+                EntityEnderBoss boss = new EntityEnderBoss(CPEntityTypes.ENDER_BOSS.get(), level);
+                LightningBolt boltEntity = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+                boltEntity.setVisualOnly(true);
+                boltEntity.moveTo(blockPos, 10, 10);
+                boss.moveTo(blockPos, 10, 10);
+                level.addFreshEntity(boltEntity);
+                level.addFreshEntity(boss);
+                return InteractionResult.SUCCESS;
             }
         }
-        return ActionResultType.FAIL;
-    }*/
+        return InteractionResult.FAIL;
+    }
 }

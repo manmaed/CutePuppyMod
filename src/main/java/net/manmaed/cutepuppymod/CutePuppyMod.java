@@ -26,7 +26,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class CutePuppyMod {
     /*
     * TODO: PORT MOD to 1.18.2
-    *  TODO: Add Alex Puppy
+    */
+
+    /*
+    *  TODO: Make Alex Puppy (LP)
+    *  TODO: World Gen Puppys (MP)
+    *  TODO: Blocks That spawn mobs (MP)
     */
     public static final String  MOD_ID = "cutepuppymod";
     public static final CreativeModeTab itemGroup = new CreativeModeTab(CutePuppyMod.MOD_ID) {
@@ -66,8 +71,8 @@ public class CutePuppyMod {
         event.put(CPEntityTypes.STEVE.get(), EntitySteve.createAttributes().build());
         event.put(CPEntityTypes.HEROBRINE.get(), EntityHerobrine.createAttributes().build());
         event.put(CPEntityTypes.ENDER.get(), EntityEnder.createAttributes().build());
-        /*event.put(CPEntityTypes.BOSS.get(), EntityBoss.createAttributes().build());
-        event.put(CPEntityTypes.SIX.get(), EntitySix.createAttributes().build());*/
+        event.put(CPEntityTypes.BOSS.get(), EntityBoss.createAttributes().build());
+        event.put(CPEntityTypes.SIX.get(), EntitySix.createAttributes().build());
         event.put(CPEntityTypes.ENDER_BOSS.get(), EntityEnderBoss.createAttributes().build());
     }
   /*  private static RegisterHandler registeryHandler;

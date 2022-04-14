@@ -13,7 +13,7 @@ import net.minecraft.world.item.SwordItem;
  */
 public class BanHammer extends SwordItem {
     public BanHammer(Properties builderIn) {
-        super(ToolMaterials.BAN, 10, 0, builderIn);
+        super(ToolMaterials.BAN, 0, 2.0F, builderIn);
     }
 
 
@@ -22,7 +22,7 @@ public class BanHammer extends SwordItem {
         itemStack.hurtAndBreak(1, attacker, (entity) -> {
             entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });
-        attacker.hurt(CustomDamageSource.BANNED, 25.0F);
+        target.hurt(CustomDamageSource.BANNED, 25.0F);
         return true;
     }
 }

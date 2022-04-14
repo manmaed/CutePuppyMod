@@ -65,7 +65,7 @@ public class CPEntityTypes {
                     .sized(width, height)
                     .build(getName("ender"))
     );
-    /*public static final RegistryObject<EntityType<EntityBoss>> BOSS = ENTITY_TYPES.register(getName("boss"),
+    public static final RegistryObject<EntityType<EntityBoss>> BOSS = ENTITY_TYPES.register(getName("boss"),
             () -> EntityType.Builder.of(EntityBoss:: new, MobCategory.MONSTER)
                     .sized(6.7F, 6.7F)
                     .build(getName("boss"))
@@ -75,7 +75,7 @@ public class CPEntityTypes {
             () -> EntityType.Builder.of(EntitySix:: new, MobCategory.CREATURE)
                     .sized(width, height)
                     .build(getName("six"))
-    );*/
+    );
 
     public static final RegistryObject<EntityType<EntityEnderBoss>> ENDER_BOSS = ENTITY_TYPES.register(getName("ender_boss"),
             () -> EntityType.Builder.of(EntityEnderBoss:: new, MobCategory.MONSTER)

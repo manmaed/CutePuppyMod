@@ -1,6 +1,7 @@
 package net.manmaed.cutepuppymod.items;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
+import net.manmaed.cutepuppymod.items.tools.EmptySyringe;
 import net.manmaed.cutepuppymod.items.tools.FullSyringe;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,5 +22,5 @@ public class CPItems {
     public static final RegistryObject<Item> TAB_ICON = ITEMS.register("tab_icon", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DOGGO_KIBBLE = ITEMS.register("doggo_kibble", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> SYRINGE_FULL = ITEMS.register("syringe_full", () -> new FullSyringe(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> SYRINGE_EMPTY = ITEMS.register("syringe_empty", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> SYRINGE_EMPTY = ITEMS.register("syringe_empty", () -> new EmptySyringe(new Item.Properties().tab(CutePuppyMod.itemGroup)));
 }

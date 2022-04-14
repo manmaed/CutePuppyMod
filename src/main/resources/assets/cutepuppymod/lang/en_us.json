@@ -64,7 +64,7 @@
   "entity.cutepuppymod.steve_puppy": "Steves Puppy",
   "entity.cutepuppymod.herobrine_puppy": "Herobrines Puppy",
   "entity.cutepuppymod.ender_puppy": "Ender Puppy",
-  "entity.cutepuppymod.boss_ender_puppy": "Ender Boss Puppy",
+  "entity.cutepuppymod.ender_boss_puppy": "Ender Boss Puppy",
   "entity.cutepuppymod.boss_puppy": "The Boss Puppy",
 
 
@@ -105,5 +105,7 @@
   "advancements.cutepuppymod.thebosspuppydeath.title": "I Fixed It",
   "advancements.cutepuppymod.thebosspuppydeath.description": "Kill The Boss Puppy",
 
-  "":""
+  "cutepuppymod.comment.12": "Attack",
+  "death.attack.banned": "%1$s was banned from living",
+  "death.attack.noblood": "%1$s poked them self so much they ran out of blood"
 }

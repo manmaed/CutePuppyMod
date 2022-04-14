@@ -27,8 +27,8 @@ public class CutePuppyModClient {
         event.registerEntityRenderer(CPEntityTypes.STEVE.get(), RenderSteve::new);
         event.registerEntityRenderer(CPEntityTypes.HEROBRINE.get(), RenderHerobrine::new);
         event.registerEntityRenderer(CPEntityTypes.ENDER.get(), RenderEnder::new);
-        /*event.registerEntityRenderer(CPEntityTypes.BOSS.get(), RenderBoss::new);
-        event.registerEntityRenderer(CPEntityTypes.SIX.get(), RenderSix::new);*/
+        event.registerEntityRenderer(CPEntityTypes.BOSS.get(), RenderBoss::new);
+        event.registerEntityRenderer(CPEntityTypes.SIX.get(), RenderSix::new);
         event.registerEntityRenderer(CPEntityTypes.ENDER_BOSS.get(), RenderEnderBoss::new);
     }
 

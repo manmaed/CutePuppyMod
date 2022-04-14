@@ -14,7 +14,7 @@ import java.util.function.Supplier;
  */
 public enum ToolMaterials implements Tier {
 
-    BAN(3, 3000, 2.0F, 20F, 0, () -> {
+    BAN(3, 3000, 2.0F, 0F, 0, () -> {
         return Ingredient.of(Items.AIR);
     }),
     RED_CORE(2, 450, 8.0F, 2.0F, 18, () -> {

@@ -34,36 +34,8 @@ public class CPSpawnEggs {
     public static final RegistryObject<Item> STEVE_SPAWN_EGG = ITEMS.register("steve_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.STEVE, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> HEROBRINE_SPAWN_EGG = ITEMS.register("herobrine_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.HEROBRINE, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> ENDER_SPAWN_EGG = ITEMS.register("ender_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.ENDER, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> BOSS_SPAWN_EGG = ITEMS.register("boss_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
-    public static final RegistryObject<Item> SIX_SPAWN_EGG = ITEMS.register("six_spawn_egg", () -> new Item(new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> BOSS_SPAWN_EGG = ITEMS.register("boss_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.BOSS, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
+    public static final RegistryObject<Item> SIX_SPAWN_EGG = ITEMS.register("six_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.SIX, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
     public static final RegistryObject<Item> ENDER_BOSS_SPAWN_EGG = ITEMS.register("ender_boss_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.ENDER_BOSS, COLOR, COLOR, new Item.Properties().tab(CutePuppyMod.itemGroup)));
 
-
-
-
-    /*public static void load() {
-        red_spawn_egg = new RedEgg("red_spawn_egg");
-        blue_spawn_egg = new BlueEgg("blue_spawn_egg");
-        green_spawn_egg = new GreenEgg("green_spawn_egg");
-        yellow_spawn_egg = new YellowEgg("yellow_spawn_egg");
-        purple_spawn_egg = new PurpleEgg("purple_spawn_egg");
-        steve_spawn_egg = new SteveEgg("steve_spawn_egg");
-        herobrine_spawn_egg = new HerobrineEgg("herobrine_spawn_egg");
-        ender_spawn_egg = new EnderEgg("ender_spawn_egg");
-        boss_spawn_egg = new BossEgg("boss_spawn_egg");
-        six_spawn_egg = new SixEgg("six_spawn_egg");
-        boss_ender_spawn_egg = new BossEnderEgg("boss_ender_spawn_egg");
-
-        CutePuppyMod.getRegisteryHandler().registerItem(red_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(blue_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(green_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(yellow_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(purple_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(steve_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(herobrine_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(ender_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(boss_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(six_spawn_egg);
-        CutePuppyMod.getRegisteryHandler().registerItem(boss_ender_spawn_egg);
-    }*/
 }

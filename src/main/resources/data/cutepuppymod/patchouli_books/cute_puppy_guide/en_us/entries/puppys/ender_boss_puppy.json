@@ -5,7 +5,7 @@
     "pages": [
         {
             "type": "entity",
-            "entity": "cutepuppymod:boss_ender_puppy",
+            "entity": "cutepuppymod:ender_boss_puppy",
             "title": "A Ender Puppy"
         },
         {
