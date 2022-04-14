@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " c ",
-    " c ",
-    " s "
+    "c",
+    "c",
+    "s"
   ],
   "key": {
-    "c": { "item": "cutepuppymod:yellowcore" },
+    "c": { "item": "cutepuppymod:yellow_core" },
     "s": { "item": "minecraft:stick" }
   },
   "result": {

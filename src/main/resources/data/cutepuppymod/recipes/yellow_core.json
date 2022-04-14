@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cutepuppymod:yellow_core_block"
+    }
+  ],
+  "result": {
+    "item": "cutepuppymod:yellow_core",
+    "count": 9
+  }
+}

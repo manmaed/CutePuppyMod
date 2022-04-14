@@ -6,9 +6,9 @@
     "ccc"
   ],
   "key": {
-    "c": { "item": "cutepuppymod:purplecore" }
+    "c": { "item": "cutepuppymod:blue_core" }
   },
   "result": {
-    "item": "cutepuppymod:purplecoreblock"
+    "item": "cutepuppymod:blue_core_block"
   }
 }

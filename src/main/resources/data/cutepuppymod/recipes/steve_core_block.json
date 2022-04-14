@@ -6,9 +6,9 @@
     "ccc"
   ],
   "key": {
-    "c": { "item": "cutepuppymod:endercore" }
+    "c": { "item": "cutepuppymod:steve_core" }
   },
   "result": {
-    "item": "cutepuppymod:endercoreblock"
+    "item": "cutepuppymod:steve_core_block"
   }
 }

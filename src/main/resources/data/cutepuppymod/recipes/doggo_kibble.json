@@ -1,17 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "m",
-    "w",
-    "b"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cooked_beef"
+    },
+    {
+      "item":  "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
   ],
-  "key": {
-    "m": { "item": "minecraft:cooked_beef" },
-    "w": { "item":  "minecraft:wheat" },
-    "b": { "item": "minecraft:bowl" }
-  },
   "result": {
-    "item": "cutepuppymod:doggokibble",
+    "item": "cutepuppymod:doggo_kibble",
     "count": 4
   }
 }
