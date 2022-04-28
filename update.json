@@ -1,7 +1,8 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/cutepuppymod",
   "1.18.2":{
-    "0.8.1": "Port to 1.18.2"
+    "0.8.1": "Port to 1.18.2",
+    "0.8.2": "Config Fix and other fixes"
   },
   "1.16.5": {
     "0.7.5": "fix block drops and entity spawning",
