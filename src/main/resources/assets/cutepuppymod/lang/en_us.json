@@ -89,6 +89,6 @@
   "advancements.cutepuppymod.thebosspuppydeath.title": "I Fixed It",
   "advancements.cutepuppymod.thebosspuppydeath.description": "Kill The Boss Puppy",
   "cutepuppymod.comment.12": "Attack",
-  "death.attack.banned": "%1$s was banned from living",
+  "death.attack.banned.player": "%1$s was banned from living",
   "death.attack.noblood": "%1$s poked them self so much they ran out of blood"
 }
