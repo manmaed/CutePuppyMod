@@ -1,5 +1,6 @@
 package net.manmaed.cutepuppymod.entitys;
 
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Pose;
@@ -21,7 +22,12 @@ public class EntityEnder extends EnderMan {
     }
 
     @Override
+    protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {
+        return getEyeHeight(pose);
+    }
+
+    @Override
     public float getEyeHeight(Pose pose) {
-        return 1.0F;
+        return 0.5F;
     }
 }
