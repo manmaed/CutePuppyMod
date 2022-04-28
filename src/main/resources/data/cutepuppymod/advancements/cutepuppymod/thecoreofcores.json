@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "item": "cutepuppymod:the_core_block"
+            "items": ["cutepuppymod:the_core_block"]
           }
         ]
       }
