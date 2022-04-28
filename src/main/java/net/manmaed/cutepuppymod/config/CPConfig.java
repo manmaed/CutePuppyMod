@@ -51,7 +51,6 @@ public class CPConfig {
     static {
         COMMON_BUILDER.comment("Entity Spawning Settings").push(CAT_ENITYSPWNING);
         doMobSpawningConfigs();
-        COMMON_BUILDER.pop();
         COMMON_BUILDER.comment("Entity Spawning Weights").push(CAT_ENTITY_WEIGHTS);
         mobSpawningWeights();
         COMMON_BUILDER.pop();

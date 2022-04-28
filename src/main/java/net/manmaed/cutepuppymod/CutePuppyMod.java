@@ -50,7 +50,7 @@ public class CutePuppyMod {
         CPBlocks.BLOCKS.register(event);
         CPBlocks.ITEMS.register(event);
         CPEntityTypes.ENTITY_TYPES.register(event);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CPConfig.COMMON_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CPConfig.COMMON_CONFIG);
         event.addListener(this::AttributeCreation);
         event.addListener(CutePuppyModClient::doEntityRendering);
         event.addListener(CutePuppyModClient::registerLayerDefinitions);
