@@ -1,5 +1,6 @@
 name: Bug Report
 description: Report a bug / crash
+title: "[Bug]: "
 labels: [bug]
 body:
   - type: markdown
@@ -7,7 +8,7 @@ body:
       value: |
         To help us help you, please provide as much information as you can, this helps us with debugging and reproducting the issue.
   - type: input
-    id: bg-version
+    id: cp-version
     attributes:
       label: CutePuppyMod version
       description: |
@@ -25,7 +26,7 @@ body:
   - type: input
     id: forge-version
     attributes:
-      label: Forge Version
+      label: Forge/Neo Version
       description: |
         You can get this from the main menu screen in the bottom left corner of the screen.
       placeholder: 36.0.22
