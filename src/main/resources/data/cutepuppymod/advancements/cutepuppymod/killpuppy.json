@@ -1,0 +1,65 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_sword"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.killpuppy.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.killpuppy.description"
+    }
+  },
+  "parent": "cutepuppymod:cutepuppymod/root",
+  "criteria": {
+    "blue_puppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:blue_puppy"
+        }
+      }
+    },
+    "red_puppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:red_puppy"
+        }
+      }
+    },
+    "green_puppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:green_puppy"
+        }
+      }
+    },
+    "purple_puppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:purple_puppy"
+        }
+      }
+    },
+    "yellow_puppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:yellow_puppy"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "blue_puppy",
+      "red_puppy",
+      "green_puppy",
+      "purple_puppy",
+      "yellow_puppy"
+    ]
+  ]
+}

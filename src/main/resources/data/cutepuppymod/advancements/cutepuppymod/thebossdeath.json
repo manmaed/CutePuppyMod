@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "cutepuppymod:the_core_block"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.thebosspuppydeath.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.thebosspuppydeath.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "cutepuppymod:cutepuppymod/theboss",
+  "criteria": {
+    "killed_boss_puppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:boss_puppy"
+        }
+      }
+    }
+  }
+}

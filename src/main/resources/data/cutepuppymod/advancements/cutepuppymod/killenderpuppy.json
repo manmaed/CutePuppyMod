@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:ender_pearl"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.enderpuppy.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.enderpuppy.description"
+    }
+  },
+  "parent": "cutepuppymod:cutepuppymod/killpuppy",
+  "criteria": {
+    "ender_puppy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:ender_puppy"
+        }
+      }
+    }
+  }
+}

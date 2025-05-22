@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cutepuppymod:herobrine_core_block"
+    }
+  ],
+  "result": {
+    "item": "cutepuppymod:herobrine_core",
+    "count": 9
+  }
+}

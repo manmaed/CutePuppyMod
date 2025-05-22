@@ -1,0 +1,17 @@
+{
+  "name": "Red Cores",
+  "icon": "cutepuppymod:red_core",
+  "category": "cutepuppymod:cores_category",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "cutepuppymod:red_core",
+      "text": "Drops Form Red Puppys"
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:red_core_block",
+      "recipe2": "cutepuppymod:red_core"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "The Boss Puppy",
+  "icon": "cutepuppymod:boss_spawn_egg",
+  "category": "cutepuppymod:puppys_category",
+  "pages": [
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:boss_puppy",
+      "title": "The Boss Puppy"
+    },
+    {
+      "type": "text",
+      "text": "This Puppy is a Boss."
+    },
+    {
+      "type": "text",
+      "text": "To spawn this puppy you will need a Full Syringe and The Core of Cores Block."
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:core_of_cores",
+      "recipe2": "cutepuppymod:syringe"
+    }
+  ]
+}

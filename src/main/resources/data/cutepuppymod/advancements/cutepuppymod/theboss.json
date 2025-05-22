@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "cutepuppymod:the_core_block"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.thebosspuppy.title"
+    },
+    "description": {
+      "translate": "advancements.cutepuppymod.thebosspuppy.description"
+    },
+    "frame": "goal"
+  },
+  "parent": "cutepuppymod:cutepuppymod/thecoreofcores",
+  "criteria": {
+    "summoned_boss_puppy": {
+      "trigger": "summoned_entity",
+      "conditions": {
+        "entity": {
+          "type": "cutepuppymod:boss_puppy"
+        }
+      }
+    }
+  }
+}

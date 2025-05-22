@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "prs",
+    "g b",
+    "hye"
+  ],
+  "key": {
+    "p": {
+      "item": "cutepuppymod:purple_core_block"
+    },
+    "r": {
+      "item": "cutepuppymod:red_core_block"
+    },
+    "s": {
+      "item": "cutepuppymod:steve_core_block"
+    },
+    "g": {
+      "item": "cutepuppymod:green_core_block"
+    },
+    "b": {
+      "item": "cutepuppymod:blue_core_block"
+    },
+    "h": {
+      "item": "cutepuppymod:herobrine_core_block"
+    },
+    "y": {
+      "item": "cutepuppymod:yellow_core_block"
+    },
+    "e": {
+      "item": "cutepuppymod:ender_core_block"
+    }
+  },
+  "result": {
+    "item": "cutepuppymod:the_core_block"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Core of Cores",
+  "icon": "cutepuppymod:the_core_block",
+  "category": "cutepuppymod:cores_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This Block is used to spawn The Boss Puppy"
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:core_of_cores"
+    }
+  ]
+}
