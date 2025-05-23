@@ -16,6 +16,9 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+    maven {
+        url 'https://maven.blamejared.com'
+    }
 }
 
 base {

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "c": {
+      "item": "cutepuppymod:red_core"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "ccc",
+    "ccc"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cutepuppymod:red_core_block"
+  }
+}

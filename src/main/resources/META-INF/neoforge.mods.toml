@@ -1,0 +1,18 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "All rights reserved"
+issueTrackerURL = "https://github.com/manmaed/CutePuppyMod/issues"
+[[mods]]
+modId = "cutepuppymod"
+version = "${version}"
+displayName = "CutePuppyMod"
+updateJSONURL = "https://raw.githubusercontent.com/manmaed/CutePuppyMod/main/neo/update.json"
+authors = "manmaed"
+description = '''
+Puppys!'''
+[[dependencies.cutepuppymod]]
+modId="neoforge"
+required=true
+versionRange="[21.0.0-beta,)"
+ordering="NONE"
+side="BOTH"
