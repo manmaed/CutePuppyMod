@@ -5,6 +5,7 @@ import com.google.common.base.Suppliers;
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
 import net.manmaed.cutepuppymod.tag.CutePuppyTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
@@ -20,11 +21,8 @@ public enum CutePuppyToolMaterials implements Tier {
     BLUE_CORES(CutePuppyTags.BlockTag.INCORRECT_FOR_BLUE_CORES, 450, 8.0F, 3.0F, 18, () -> Ingredient.of(CutePuppyItems.BLUE_CORE)),
     YELLOW_CORES(CutePuppyTags.BlockTag.INCORRECT_FOR_YELLOW_CORES, 450, 8.0F, 3.0F, 18, () -> Ingredient.of(CutePuppyItems.YELLOW_CORE)),
     PURPLE_CORES(CutePuppyTags.BlockTag.INCORRECT_FOR_PURPLE_CORES, 450, 8.0F, 3.0F, 18, () -> Ingredient.of(CutePuppyItems.PURPLE_CORE)),
-    GREEN_CORES(CutePuppyTags.BlockTag.INCORRECT_FOR_GREEN_CORES, 450, 8.0F, 3.0F, 18, () -> Ingredient.of(CutePuppyItems.GREEN_CORE));
-
-    /*BAN(3, 3000, 2.0F, 0F, 0, () -> {
-        return Ingredient.of(Items.AIR);
-    });*/
+    GREEN_CORES(CutePuppyTags.BlockTag.INCORRECT_FOR_GREEN_CORES, 450, 8.0F, 3.0F, 18, () -> Ingredient.of(CutePuppyItems.GREEN_CORE)),
+    BAN(CutePuppyTags.BlockTag.INCORRECT_FOR_BAN, 3000, 2.0F, 0F, 0, () -> Ingredient.of(Items.AIR));
 
     private final TagKey<Block> incorrectBlocksForDrops;
     private final int uses;

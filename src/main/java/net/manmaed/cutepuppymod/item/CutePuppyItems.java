@@ -3,6 +3,7 @@ package net.manmaed.cutepuppymod.item;
 import net.manmaed.cutepuppymod.CutePuppyMod;
 import net.manmaed.cutepuppymod.item.tools.EmptySyringe;
 import net.manmaed.cutepuppymod.item.tools.materials.CutePuppyToolMaterials;
+import net.manmaed.cutepuppymod.item.weapon.BanHammer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -40,7 +41,7 @@ public class CutePuppyItems {
     public static final DeferredItem<Item> BLUE_SWORD = ITEMS.register("blue_sword", () -> new SwordItem(CutePuppyToolMaterials.BLUE_CORES, new Item.Properties()));
     public static final DeferredItem<Item> PURPLE_SWORD = ITEMS.register("purple_sword", () -> new SwordItem(CutePuppyToolMaterials.PURPLE_CORES, new Item.Properties()));
     public static final DeferredItem<Item> YELLOW_SWORD = ITEMS.register("yellow_sword", () -> new SwordItem(CutePuppyToolMaterials.YELLOW_CORES, new Item.Properties()));
-    //public static final DeferredItem<Item> BAN_HAMMER = ITEMS.register("ban_hammer", () -> new net.manmaed.cutepuppymod.items.weapon.BanHammer(new Item.Properties()));
+    public static final DeferredItem<Item> BAN_HAMMER = ITEMS.register("ban_hammer", BanHammer::new);
 
     //Spawn Eggs
     /*

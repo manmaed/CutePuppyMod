@@ -18,6 +18,7 @@ public class CutePuppyTags {
         public static final TagKey<Block> INCORRECT_FOR_YELLOW_CORES = createBlockTag("incorrect_for_yellow_cores");
         public static final TagKey<Block> INCORRECT_FOR_PURPLE_CORES = createBlockTag("incorrect_for_purple_cores");
         public static final TagKey<Block> INCORRECT_FOR_GREEN_CORES = createBlockTag("incorrect_for_green_cores");
+        public static final TagKey<Block> INCORRECT_FOR_BAN = createBlockTag("incorrect_for_ban");
     }
 
     private static TagKey<Block> createBlockTag(String name) {
