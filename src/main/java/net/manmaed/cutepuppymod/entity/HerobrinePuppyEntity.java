@@ -63,7 +63,7 @@ public class HerobrinePuppyEntity extends TamableAnimal implements NeutralMob {
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
-        this.targetSelector.addGoal(5, new NonTameRandomTargetGoal<>(this, HumanPuppyEntity.class, false, PREY_SELECTOR));
+        this.targetSelector.addGoal(5, new CustomNonTameRandomTagetGoal<>(this, HumanPuppyEntity.class, false, PREY_SELECTOR));
         this.targetSelector.addGoal(7, new ResetUniversalAngerTargetGoal<>(this, true));
     }
 
@@ -87,6 +87,7 @@ public class HerobrinePuppyEntity extends TamableAnimal implements NeutralMob {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
+                .add(Attributes.ATTACK_DAMAGE, 1.0)
                 .add(Attributes.MAX_HEALTH, 2.5D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2D);
     }
@@ -177,9 +178,11 @@ public class HerobrinePuppyEntity extends TamableAnimal implements NeutralMob {
         super.setTame(p_21836_, p_326134_);
         if (p_21836_) {
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(5.0D);
+            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4.0D);
             this.setHealth((float) 5.0D);
         } else {
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(2.5D);
+            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(1.0D);
         }
     }
 

@@ -2,6 +2,7 @@ package net.manmaed.cutepuppymod.tab;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
+import net.manmaed.cutepuppymod.item.CutePuppySpawnEggs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -25,6 +26,23 @@ public class CutePuppyTabs {
                 for (DeferredRegister<Item> register: myItems) {
                     register.getEntries().forEach(entry -> output.accept(entry.get()));
                 }
+            })
+            .build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CUTEPUPPY_SPAWNEGG_TAB = CREATIVE_TABS.register(CutePuppyMod.MOD_ID + "_spawn_eggs", () -> CreativeModeTab.builder()
+            .icon(() -> new ItemStack(CutePuppySpawnEggs.GREEN_SPAWN_EGG.get()))
+            .title(Component.translatable("itemGroup." + CutePuppyMod.MOD_ID + ".spawn_eggs" ))
+            .displayItems((parameters, output) -> {
+                List<DeferredRegister<Item>> myItems = Arrays.asList(
+                        CutePuppySpawnEggs.ITEMS
+                );
+                for (DeferredRegister<Item> register: myItems) {
+                    register.getEntries().forEach(entry -> output.accept(entry.get()));
+                }
+                output.accept(CutePuppyItems.ENDER_SPAWN_EGG);
+                output.accept(CutePuppyItems.HEROBRINE_SPAWN_EGG);
+                output.accept(CutePuppyItems.PUPPY_SPAWN_EGG);
+                output.accept(CutePuppyItems.HUMAN_PUPPY_SPAWN_EGG);
             })
             .build());
 

@@ -1,6 +1,7 @@
 package net.manmaed.cutepuppymod.entity;
 
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
+import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -8,13 +9,14 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.ByIdMap;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -27,10 +29,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Random;
+import java.util.Arrays;
 import java.util.UUID;
+import java.util.function.IntFunction;
 
 public class HumanPuppyEntity extends TamableAnimal {
 
@@ -39,8 +43,6 @@ public class HumanPuppyEntity extends TamableAnimal {
     protected HumanPuppyEntity(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
         this.setTame(false, false);
-        Random rand = new Random();
-        setVariant(rand.nextInt(1));
     }
 
     protected void registerGoals() {
@@ -63,28 +65,36 @@ public class HumanPuppyEntity extends TamableAnimal {
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder synceddata) {
         super.defineSynchedData(synceddata);
-        //synceddata.define(VARIANT_ID, random.nextInt(1)); //Randomly set the Puppy variant
         synceddata.define(VARIANT_ID, 0);
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compoundTag) {
         super.addAdditionalSaveData(compoundTag);
-        compoundTag.putInt("puppy_variant", this.getVariant());
+        compoundTag.putInt("puppy_variant", this.getVariant().getId());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag compoundTag) {
         super.readAdditionalSaveData(compoundTag);
-        if (compoundTag.contains("puppy_variant")) {
-            this.setVariant(compoundTag.getInt("puppy_variant"));
-        }
+        this.setVariant(HumanPuppyEntity.Variant.byId(compoundTag.getInt("puppy_variant")));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
+                .add(Attributes.ATTACK_DAMAGE, 1.0)
                 .add(Attributes.MAX_HEALTH, 2.5D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2D);
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
+        RandomSource randomsource = serverLevelAccessor.getRandom();
+        spawnGroupData = new HumanPuppyEntity.PuppyGroupData(
+                HumanPuppyEntity.Variant.getSpawnVariant(randomsource)
+        );
+        this.setVariant(((HumanPuppyEntity.PuppyGroupData) spawnGroupData).getVariant(randomsource));
+        return super.finalizeSpawn(serverLevelAccessor, difficultyInstance, spawnType, spawnGroupData);
     }
 
     @Override
@@ -173,9 +183,11 @@ public class HumanPuppyEntity extends TamableAnimal {
         super.setTame(p_21836_, p_326134_);
         if (p_21836_) {
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(5.0D);
+            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4.0D);
             this.setHealth((float) 5.0D);
         } else {
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(2.5D);
+            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(1.0D);
         }
     }
 
@@ -184,33 +196,71 @@ public class HumanPuppyEntity extends TamableAnimal {
     public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
         HumanPuppyEntity puppy = new HumanPuppyEntity(CutePuppyEntityTypes.HUMAN_PUPPY.get(), serverLevel);
         UUID uuid = this.getOwnerUUID();
-        if (uuid != null) {
-            puppy.setOwnerUUID(uuid);
-            puppy.setTame(true, true);
-            puppy.setVariant(random.nextInt(1));
+        if (puppy != null) {
+            HumanPuppyEntity.Variant puppy$variant;
+            if (uuid != null) {
+                puppy$variant = this.random.nextBoolean() ? this.getVariant() : ((HumanPuppyEntity) ageableMob).getVariant();
+                puppy.setOwnerUUID(uuid);
+                puppy.setTame(true, true);
+                puppy.setVariant(puppy$variant);
+                puppy.setPersistenceRequired();
+            }
         }
         return puppy;
     }
 
-    public void setVariant(Integer variant) {
-        this.entityData.set(VARIANT_ID, variant);
+    public void setVariant(HumanPuppyEntity.Variant variant) {
+        this.entityData.set(VARIANT_ID, variant.getId());
     }
 
-    public Integer getVariant() {
-        return this.entityData.get(VARIANT_ID);
+    public HumanPuppyEntity.Variant getVariant() {
+        return HumanPuppyEntity.Variant.byId(this.entityData.get(VARIANT_ID));
     }
 
-    public String getVariantName(){
-        int type = this.getVariant();
-        String name;
-        switch (type) {
-            case 1:
-                name = "alex";
-                break;
-            default:
-                name = "steve";
-                break;
+    public static class PuppyGroupData extends AgeableMob.AgeableMobGroupData {
+        public final HumanPuppyEntity.Variant[] type;
+
+        public PuppyGroupData(HumanPuppyEntity.Variant... variants) {
+            super(true);
+            this.type = variants;
         }
-        return name;
+
+        public HumanPuppyEntity.Variant getVariant(RandomSource randomSource) {
+            return this.type[randomSource.nextInt(this.type.length)];
+        }
+    }
+    public enum Variant implements StringRepresentable {
+        STEVE(0, "steve"),
+        ALEX(1, "alex");
+        private static final IntFunction<HumanPuppyEntity.Variant> BY_ID = ByIdMap.continuous(HumanPuppyEntity.Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        private final int id;
+        private final String name;
+
+        private Variant(int variantID, String name) {
+            this.id = variantID;
+            this.name = name;
+        }
+
+        public int getId() {
+            return this.id;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        @Override
+        public String getSerializedName() {
+            return this.name;
+        }
+
+        public static HumanPuppyEntity.Variant byId(int variantID) {
+            return BY_ID.apply(variantID);
+        }
+
+        private static HumanPuppyEntity.Variant getSpawnVariant(RandomSource randomSource) {
+            HumanPuppyEntity.Variant[] puppy$variant = Arrays.stream(values()).toArray(HumanPuppyEntity.Variant[]::new);
+            return Util.getRandom(puppy$variant, randomSource);
+        }
     }
 }

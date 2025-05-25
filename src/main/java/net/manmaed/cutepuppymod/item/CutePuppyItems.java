@@ -1,11 +1,13 @@
 package net.manmaed.cutepuppymod.item;
 
 import net.manmaed.cutepuppymod.CutePuppyMod;
+import net.manmaed.cutepuppymod.entity.CutePuppyEntityTypes;
 import net.manmaed.cutepuppymod.item.tools.EmptySyringe;
 import net.manmaed.cutepuppymod.item.tools.materials.CutePuppyToolMaterials;
 import net.manmaed.cutepuppymod.item.weapon.BanHammer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -15,7 +17,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class CutePuppyItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CutePuppyMod.MOD_ID);
-
+    public static final int COLOR = 16777215;
     /**
      * Example Item:
      * public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties()));
@@ -43,16 +45,15 @@ public class CutePuppyItems {
     public static final DeferredItem<Item> YELLOW_SWORD = ITEMS.register("yellow_sword", () -> new SwordItem(CutePuppyToolMaterials.YELLOW_CORES, new Item.Properties()));
     public static final DeferredItem<Item> BAN_HAMMER = ITEMS.register("ban_hammer", BanHammer::new);
 
+    //TestEgg
+    public static final DeferredItem<Item> HEROBRINE_SPAWN_EGG = ITEMS.register("herobrine_spawn_egg", () -> new DeferredSpawnEggItem(CutePuppyEntityTypes.HEROBRINE, COLOR, COLOR, new Item.Properties()));
+    public static final DeferredItem<Item> ENDER_SPAWN_EGG = ITEMS.register("ender_spawn_egg", () -> new DeferredSpawnEggItem(CutePuppyEntityTypes.ENDER, COLOR, COLOR, new Item.Properties()));
+    public static final DeferredItem<Item> PUPPY_SPAWN_EGG = ITEMS.register("puppy_spawn_egg", () -> new DeferredSpawnEggItem(CutePuppyEntityTypes.PUPPY, COLOR, COLOR, new Item.Properties()));
+    public static final DeferredItem<Item> HUMAN_PUPPY_SPAWN_EGG = ITEMS.register("human_puppy_spawn_egg", () -> new DeferredSpawnEggItem(CutePuppyEntityTypes.HUMAN_PUPPY, COLOR, COLOR, new Item.Properties()));
+
     //Spawn Eggs
     /*
-    public static final DeferredItem<Item> RED_SPAWN_EGG = ITEMS.register("red_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.RED, COLOR, COLOR, new Item.Properties()));
-    public static final DeferredItem<Item> BLUE_SPAWN_EGG = ITEMS.register("blue_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.BLUE, COLOR, COLOR, new Item.Properties()));
-    public static final DeferredItem<Item> GREEN_SPAWN_EGG = ITEMS.register("green_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.GREEN, COLOR, COLOR, new Item.Properties()));
-    public static final DeferredItem<Item> YELLOW_SPAWN_EGG = ITEMS.register("yellow_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.YELLOW, COLOR, COLOR, new Item.Properties()));
-    public static final DeferredItem<Item> PURPLE_SPAWN_EGG = ITEMS.register("purple_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.PURPLE, COLOR, COLOR, new Item.Properties()));
-    public static final DeferredItem<Item> STEVE_SPAWN_EGG = ITEMS.register("steve_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.STEVE, COLOR, COLOR, new Item.Properties()));
-    public static final DeferredItem<Item> HEROBRINE_SPAWN_EGG = ITEMS.register("herobrine_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.HEROBRINE, COLOR, COLOR, new Item.Properties()));
-    public static final DeferredItem<Item> ENDER_SPAWN_EGG = ITEMS.register("ender_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.ENDER, COLOR, COLOR, new Item.Properties()));
+   public static final DeferredItem<Item> ENDER_SPAWN_EGG = ITEMS.register("ender_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.ENDER, COLOR, COLOR, new Item.Properties()));
     public static final DeferredItem<Item> BOSS_SPAWN_EGG = ITEMS.register("boss_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.BOSS, COLOR, COLOR, new Item.Properties()));
     public static final DeferredItem<Item> SIX_SPAWN_EGG = ITEMS.register("six_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.SIX, COLOR, COLOR, new Item.Properties()));
     public static final DeferredItem<Item> ENDER_BOSS_SPAWN_EGG = ITEMS.register("ender_boss_spawn_egg", () -> new ForgeSpawnEggItem(CPEntityTypes.ENDER_BOSS, COLOR, COLOR, new Item.Properties()));

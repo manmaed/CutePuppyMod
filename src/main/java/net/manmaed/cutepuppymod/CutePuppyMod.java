@@ -2,10 +2,13 @@ package net.manmaed.cutepuppymod;
 
 
 import net.manmaed.cutepuppymod.block.CutePuppyBlocks;
+import net.manmaed.cutepuppymod.entity.*;
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
+import net.manmaed.cutepuppymod.item.CutePuppySpawnEggs;
 import net.manmaed.cutepuppymod.tab.CutePuppyTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
 /**
  * Created by manmaed on 09/04/2021.
@@ -13,15 +16,24 @@ import net.neoforged.fml.common.Mod;
 
 @Mod(CutePuppyMod.MOD_ID)
 public class CutePuppyMod {
-    /*
-     *  TODO: Make Alex Puppy (LP)
-     */
     public static final String MOD_ID = "cutepuppymod";
 
     public CutePuppyMod(IEventBus event) {
         CutePuppyItems.ITEMS.register(event);
+        CutePuppySpawnEggs.ITEMS.register(event);
         CutePuppyBlocks.BLOCKS.register(event);
+        CutePuppyEntityTypes.ENTITY_TYPES.register(event);
         CutePuppyTabs.CREATIVE_TABS.register(event);
+        event.addListener(this::AttributeCreation);
+        event.addListener(CutePuppyModClient::doEntityRendering);
+        event.addListener(CutePuppyModClient::registerLayerDefinitions);
+    }
+
+    private void AttributeCreation(EntityAttributeCreationEvent event) {
+        event.put(CutePuppyEntityTypes.PUPPY.get(), PuppyEntity.createAttributes().build());
+        event.put(CutePuppyEntityTypes.HEROBRINE.get(), HerobrinePuppyEntity.createAttributes().build());
+        event.put(CutePuppyEntityTypes.HUMAN_PUPPY.get(), HumanPuppyEntity.createAttributes().build());
+        event.put(CutePuppyEntityTypes.ENDER.get(), EnderPuppyEntity.createAttributes().build());
     }
 
     /*public void init(final FMLCommonSetupEvent event) {

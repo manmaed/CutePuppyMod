@@ -28,6 +28,10 @@ public class CutePuppyEntityTypes {
             () -> EntityType.Builder.of(HerobrinePuppyEntity::new, MobCategory.CREATURE)
                     .sized(width, height).build("herobrine_puppy"));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<EnderPuppyEntity>> ENDER = ENTITY_TYPES.register("ender_puppy",
+            () -> EntityType.Builder.of(EnderPuppyEntity::new, MobCategory.MONSTER)
+                    .sized(width, height).build("ender_puppy"));
+
 
     /*
     public static final RegistryObject<EntityType<EntityRed>> RED = ENTITY_TYPES.register(getName("red"), () -> EntityType.Builder.of(EntityRed::new, MobCategory.CREATURE).sized(width, height).build(getName("red")));
