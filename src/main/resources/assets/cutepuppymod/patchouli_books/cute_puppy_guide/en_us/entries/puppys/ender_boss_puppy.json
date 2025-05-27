@@ -1,0 +1,26 @@
+{
+  "name": "Ender Boss Puppy",
+  "icon": "cutepuppymod:ender_spawn_egg",
+  "category": "cutepuppymod:puppys_category",
+  "pages": [
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:ender_boss_puppy",
+      "title": "A Ender Puppy"
+    },
+    {
+      "type": "text",
+      "text": "This Puppy is like the boss of the Ender Puppys"
+    },
+    {
+      "type": "text",
+      "title": "How to Spawn",
+      "text": "To spawn the Ender Boss puppy you need to craft an Ender Core Block and right click with an Ender Core"
+    },
+    {
+      "type": "crafting",
+      "title": "Crafting Ender Core Block",
+      "recipe": "cutepuppymod:ender_core_to_ender_core_block"
+    }
+  ]
+}

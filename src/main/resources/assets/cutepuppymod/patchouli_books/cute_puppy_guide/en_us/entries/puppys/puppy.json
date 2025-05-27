@@ -1,0 +1,52 @@
+{
+  "name": "Puppy variants",
+  "icon": "cutepuppymod:tab_icon",
+  "category": "cutepuppymod:puppys_category",
+  "pages": [
+    {
+      "type": "text",
+      "title": "Puppy Variants",
+      "text": "This will show you all the Puppy variants you can have."
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:bone",
+      "text": "To tame these puppys use a few bones"
+    },
+    {
+      "type": "spotlight",
+      "item": "cutepuppymod:doggo_kibble",
+      "text": "Use Doggo Kibble to heal your puppy if it gets hurt"
+    },
+    {
+      "type": "crafting",
+      "title": "Crafting Doggo Kibble",
+      "recipe": "cutepuppymod:doggo_kibble"
+    },
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:puppy{puppy_variant:0}",
+      "text": "This is the Red Puppy Variant"
+    },
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:puppy{puppy_variant:1}",
+      "text": "This is the Blue Puppy Variant"
+    },
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:puppy{puppy_variant:2}",
+      "text": "This is the Green Puppy Variant"
+    },
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:puppy{puppy_variant:3}",
+      "text": "This is the Purple Puppy Variant"
+    },
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:puppy{puppy_variant:4}",
+      "text": "This is the yellow Puppy Variant"
+    }
+  ]
+}

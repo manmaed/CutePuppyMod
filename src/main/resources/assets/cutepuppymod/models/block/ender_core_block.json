@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "cutepuppymod:block/ender_core_block"
-  }
-}

@@ -23,6 +23,10 @@ public class CutePuppyDataGeneration {
         CutePuppyTagsProvider.addTags(generator, lookupProvider, fileHelper);
         CutePuppyLangProvider.addTranslations(generator);
         generator.addProvider(true, new CutePuppyRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(true, new CutePuppyBlockStateProvider(packOutput, fileHelper));
+        generator.addProvider(true, new CutePuppyBlockModelProvider(packOutput, fileHelper));
+        generator.addProvider(true, new CutePuppyItemModelProvider(packOutput, fileHelper));
+        generator.addProvider(true, new CutePuppyLootTables(packOutput, lookupProvider));
 
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": {
+      "item": "cutepuppymod:yellow_core"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "c",
+    "c",
+    "s"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cutepuppymod:yellow_sword"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "tag": "cutepuppymod:cores"
+    }
+  ],
+  "result": {
+    "components": {
+      "patchouli:book": "cutepuppymod:cute_puppy_guide"
+    },
+    "count": 1,
+    "id": "patchouli:guide_book"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Alex Cores",
+  "icon": "cutepuppymod:alex_core",
+  "category": "cutepuppymod:cores_category",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "cutepuppymod:alex_core",
+      "text": "Drops Form Alex Puppys"
+    },
+    {
+      "type": "crafting",
+      "recipe": "cutepuppymod:alex_core_to_alex_core_block",
+      "recipe2": "cutepuppymod:alex_core_block_to_alex_core"
+    }
+  ]
+}

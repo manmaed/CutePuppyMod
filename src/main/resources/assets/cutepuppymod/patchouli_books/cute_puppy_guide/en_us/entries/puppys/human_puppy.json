@@ -1,0 +1,37 @@
+{
+  "name": "Human Puppy variants",
+  "icon": "cutepuppymod:tab_icon",
+  "category": "cutepuppymod:puppys_category",
+  "pages": [
+    {
+      "type": "text",
+      "title": "Human Puppy Variants",
+      "text": "This will show you all the Human Puppy variants you can have."
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:bone",
+      "text": "To tame these puppys use a few bones"
+    },
+    {
+      "type": "spotlight",
+      "item": "cutepuppymod:doggo_kibble",
+      "text": "Use Doggo Kibble to heal your puppy if it gets hurt"
+    },
+    {
+      "type": "crafting",
+      "title": "Crafting Doggo Kibble",
+      "recipe": "cutepuppymod:doggo_kibble"
+    },
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:human_puppy{puppy_variant:0}",
+      "text": "This is the Steve Puppy Variant"
+    },
+    {
+      "type": "entity",
+      "entity": "cutepuppymod:human_puppy{puppy_variant:1}",
+      "text": "This is the Alex Puppy Variant"
+    }
+  ]
+}

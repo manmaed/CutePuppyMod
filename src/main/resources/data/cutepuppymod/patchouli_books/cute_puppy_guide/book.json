@@ -3,7 +3,7 @@
   "landing_text": "This is the Cute Puppy Guide. It will take you through the mod",
   "version": 1,
   "book_texture": "patchouli:textures/gui/book_red.png",
-  "model": "cutepuppymod:cute_puppy_guide",
-  "creative_tab": "cutepuppymod",
-  "i18n": true
+  "creative_tab": "cutepuppymod:cutepuppymod",
+  "use_resource_pack": true,
+  "model": "cutepuppymod:cute_puppy_guide"
 }

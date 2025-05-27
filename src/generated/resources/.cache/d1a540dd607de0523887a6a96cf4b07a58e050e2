@@ -1,2 +1,6 @@
-// 1.21	2025-05-23T11:35:35.3163187	Tags for minecraft:item mod id cutepuppymod
+// 1.21	2025-05-27T21:59:09.8070814	Tags for minecraft:item mod id cutepuppymod
+a5a8206313b9b6ab805761a43b51e9b24e3fff34 data/cutepuppymod/tags/item/color_cores.json
+a0352ee90b0fe7c21f77087ef183d1452b094daa data/cutepuppymod/tags/item/color_core_blocks.json
 ed8d21d175b29fe35b56211306999f0707d836c0 data/cutepuppymod/tags/item/cores.json
+940e44bf99738c8abc7f4554b90a767d3565c06f data/cutepuppymod/tags/item/human_cores.json
+74887b39018c5a37ff3f57717d120d109bb14330 data/cutepuppymod/tags/item/human_core_blocks.json

@@ -5,8 +5,8 @@
     32
   ],
   "textures": {
-    "0": "cutepuppymod:entity/six_ban_hammer",
-    "particle": "cutepuppymod:entity/six_ban_hammer"
+    "0": "cutepuppymod:item/ban_hammer",
+    "particle": "cutepuppymod:item/ban_hammer"
   },
   "elements": [
     {

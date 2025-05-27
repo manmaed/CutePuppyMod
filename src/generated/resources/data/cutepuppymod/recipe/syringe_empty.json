@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "g": {
+      "tag": "c:glass_blocks/colorless"
+    },
+    "i": {
+      "tag": "c:ingots/iron"
+    },
+    "w": {
+      "item": "minecraft:black_wool"
+    }
+  },
+  "pattern": [
+    "iw ",
+    "wgw",
+    " ww"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cutepuppymod:syringe_empty"
+  }
+}
