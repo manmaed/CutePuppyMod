@@ -1,4 +1,4 @@
-package net.manmaed.cutepuppymod.entitys;
+package net.manmaed.cutepuppymod.entity;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -22,7 +22,7 @@ import java.util.function.Predicate;
 /**
  * Created by manmaed on 14/04/2022.
  */
-public class EntityEnderBoss extends EnderMan {
+public class EnderBossEntity extends EnderMan {
 
     private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
     private static final Predicate<LivingEntity> LIVING_ENTITY_SELECTOR = (entity) -> {
@@ -30,7 +30,7 @@ public class EntityEnderBoss extends EnderMan {
     };
     private static final TargetingConditions TARGETING_CONDITIONS = TargetingConditions.forCombat().range(20.0D).selector(LIVING_ENTITY_SELECTOR);
 
-    public EntityEnderBoss(EntityType<? extends EnderMan> type, Level level) {
+    public EnderBossEntity(EntityType<? extends EnderMan> type, Level level) {
         super(type, level);
         this.setHealth(this.getMaxHealth());
         this.xpReward = 50;

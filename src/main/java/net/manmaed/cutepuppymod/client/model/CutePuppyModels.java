@@ -12,11 +12,10 @@ public class CutePuppyModels {
     public static final ModelLayerLocation HUMAN = makeModelLayerLocation("human_puppy");
     public static final ModelLayerLocation HEROBRINE = makeModelLayerLocation("herobrine_puppy");
     public static final ModelLayerLocation ENDER = makeModelLayerLocation("ender_puppy");
-   /* public static final ModelLayerLocation ENDERBOSS = makeModelLayerLocation("ender_boss");
+    public static final ModelLayerLocation SIX = makeModelLayerLocation("six_puppy");
+    public static final ModelLayerLocation BANHAMMER = makeModelLayerLocation("ban_hammer");
+    public static final ModelLayerLocation ENDER_BOSS = makeModelLayerLocation("ender_boss");
     public static final ModelLayerLocation BOSS = makeModelLayerLocation("boss");
-    public static final ModelLayerLocation SIX = makeModelLayerLocation("six");
-    public static final ModelLayerLocation BANHAMMER = new ModelLayerLocation(new ResourceLocation(CutePuppyMod.MOD_ID, "ban_hammer"), "ban_hammer");
-*/
     public static ModelLayerLocation makeModelLayerLocation(String name) {
         return new ModelLayerLocation(RLHelper.location(name), name);
     }

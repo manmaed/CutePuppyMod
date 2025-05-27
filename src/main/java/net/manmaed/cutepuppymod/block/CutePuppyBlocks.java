@@ -31,6 +31,7 @@ public class CutePuppyBlocks {
     public static final DeferredBlock<Block> YELLOW_CORE_BLOCK = BLOCKS.register("yellow_core_block", () -> new CutePuppyBaseBlock(MapColor.COLOR_YELLOW));
     public static final DeferredBlock<Block> PURPLE_CORE_BLOCK = BLOCKS.register("purple_core_block", () -> new CutePuppyBaseBlock(MapColor.COLOR_PURPLE));
     public static final DeferredBlock<Block> STEVE_CORE_BLOCK = BLOCKS.register("steve_core_block", () -> new CutePuppyBaseBlock(MapColor.STONE));
+    public static final DeferredBlock<Block> ALEX_CORE_BLOCK = BLOCKS.register("alex_core_block", () -> new CutePuppyBaseBlock(MapColor.STONE));
     public static final DeferredBlock<Block> HEROBRINE_CORE_BLOCK = BLOCKS.register("herobrine_core_block", () -> new CutePuppyBaseBlock(MapColor.NONE));
     public static final DeferredBlock<Block> ENDER_CORE_BLOCK = BLOCKS.register("ender_core_block", EnderCoreBlock::new);
     public static final DeferredBlock<Block> THE_CORE_BLOCK = BLOCKS.register("the_core_block", TheCoreBlock::new);
@@ -41,6 +42,7 @@ public class CutePuppyBlocks {
     public static final DeferredItem<Item> YELLOW_CORE_BLOCK_ITEM = CutePuppyItems.ITEMS.register("yellow_core_block", () -> new BlockItem(YELLOW_CORE_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<Item> PURPLE_CORE_BLOCK_ITEM = CutePuppyItems.ITEMS.register("purple_core_block", () -> new BlockItem(PURPLE_CORE_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<Item> STEVE_CORE_BLOCK_ITEM = CutePuppyItems.ITEMS.register("steve_core_block", () -> new BlockItem(STEVE_CORE_BLOCK.get(), new Item.Properties()));
+    public static final DeferredItem<Item> ALEX_CORE_BLOCK_ITEM = CutePuppyItems.ITEMS.register("alex_core_block", () -> new BlockItem(ALEX_CORE_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<Item> HEROBRINE_CORE_BLOCK_ITEM = CutePuppyItems.ITEMS.register("herobrine_core_block", () -> new BlockItem(HEROBRINE_CORE_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<Item> ENDER_CORE_BLOCK_ITEM = CutePuppyItems.ITEMS.register("ender_core_block", () -> new BlockItem(ENDER_CORE_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<Item> THE_CORE_BLOCK_ITEM = CutePuppyItems.ITEMS.register("the_core_block", () -> new BlockItem(THE_CORE_BLOCK.get(), new Item.Properties()));

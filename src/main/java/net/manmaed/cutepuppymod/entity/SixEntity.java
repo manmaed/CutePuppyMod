@@ -1,4 +1,4 @@
-package net.manmaed.cutepuppymod.entitys;
+package net.manmaed.cutepuppymod.entity;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -26,14 +26,14 @@ import java.util.function.Predicate;
 /**
  * Created by manmaed on 14/04/2022.
  */
-public class EntitySix extends Monster {
+public class SixEntity extends Monster {
     private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
     private static final Predicate<LivingEntity> LIVING_ENTITY_SELECTOR = (entity) -> {
         return entity.getType() == EntityType.PLAYER;
     };
     private static final TargetingConditions TARGETING_CONDITIONS = TargetingConditions.forCombat().range(20.0D).selector(LIVING_ENTITY_SELECTOR);
 
-    protected EntitySix(EntityType<? extends Monster> entityType, Level level) {
+    protected SixEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
         this.setHealth(this.getMaxHealth());
         this.fireImmune();
@@ -49,7 +49,11 @@ public class EntitySix extends Monster {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 200.0D).add(Attributes.MOVEMENT_SPEED, 0.35D).add(Attributes.ATTACK_DAMAGE, 8.0D).add(Attributes.FOLLOW_RANGE, 64.0D);
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 200.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.35D)
+                .add(Attributes.ATTACK_DAMAGE, 8.0D)
+                .add(Attributes.FOLLOW_RANGE, 64.0D);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package net.manmaed.cutepuppymod.entitys;
+package net.manmaed.cutepuppymod.entity;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -27,14 +27,14 @@ import java.util.function.Predicate;
 /**
  * Created by manmaed on 14/04/2022.
  */
-public class EntityBoss extends Monster {
+public class BossEntity extends Monster {
     private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
     private static final Predicate<LivingEntity> LIVING_ENTITY_SELECTOR = (entity) -> {
         return entity.getType() == EntityType.PLAYER;
     };
     private static final TargetingConditions TARGETING_CONDITIONS = TargetingConditions.forCombat().range(20.0D).selector(LIVING_ENTITY_SELECTOR);
 
-    public EntityBoss(EntityType<? extends Monster> entityType, Level level) {
+    public BossEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
         this.setHealth(this.getMaxHealth());
         this.fireImmune();
@@ -46,7 +46,7 @@ public class EntityBoss extends Monster {
         this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.0D, false));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setAlertOthers(EntityHerobrine.class));
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setAlertOthers(HerobrinePuppyEntity.class));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 0, false, false, LIVING_ENTITY_SELECTOR));
     }
 

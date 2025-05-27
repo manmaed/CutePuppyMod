@@ -34,6 +34,9 @@ public class CutePuppyMod {
         event.put(CutePuppyEntityTypes.HEROBRINE.get(), HerobrinePuppyEntity.createAttributes().build());
         event.put(CutePuppyEntityTypes.HUMAN_PUPPY.get(), HumanPuppyEntity.createAttributes().build());
         event.put(CutePuppyEntityTypes.ENDER.get(), EnderPuppyEntity.createAttributes().build());
+        event.put(CutePuppyEntityTypes.SIX.get(), SixEntity.createAttributes().build());
+        event.put(CutePuppyEntityTypes.ENDER_BOSS.get(), EnderBossEntity.createAttributes().build());
+        event.put(CutePuppyEntityTypes.BOSS.get(), BossEntity.createAttributes().build());
     }
 
     /*public void init(final FMLCommonSetupEvent event) {
