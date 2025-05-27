@@ -1,6 +1,8 @@
 package net.manmaed.cutepuppymod.block;
 
 
+import net.manmaed.cutepuppymod.entity.BossEntity;
+import net.manmaed.cutepuppymod.entity.CutePuppyEntityTypes;
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -30,13 +32,13 @@ public class TheCoreBlock extends Block {
             if (itemStack.is(CutePuppyItems.SYRINGE_FULL.get())) {
                 itemStack.shrink(1);
                 level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
-                //EntityBoss boss = new EntityBoss(CPEntityTypes.BOSS.get(), level);
+                BossEntity boss = new BossEntity(CutePuppyEntityTypes.BOSS.get(), level);
                 LightningBolt boltEntity = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
                 boltEntity.setVisualOnly(true);
                 boltEntity.moveTo(blockPos, 10, 10);
-                //boss.moveTo(blockPos, 10, 10);
+                boss.moveTo(blockPos, 10, 10);
                 level.addFreshEntity(boltEntity);
-                //level.addFreshEntity(boss);
+                level.addFreshEntity(boss);
                 return ItemInteractionResult.SUCCESS;
             }
         }

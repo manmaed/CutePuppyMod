@@ -39,10 +39,6 @@ public class CutePuppyTabs {
                 for (DeferredRegister<Item> register: myItems) {
                     register.getEntries().forEach(entry -> output.accept(entry.get()));
                 }
-                output.accept(CutePuppyItems.ENDER_SPAWN_EGG);
-                output.accept(CutePuppyItems.HEROBRINE_SPAWN_EGG);
-                output.accept(CutePuppyItems.PUPPY_SPAWN_EGG);
-                output.accept(CutePuppyItems.HUMAN_PUPPY_SPAWN_EGG);
             })
             .build());
 
