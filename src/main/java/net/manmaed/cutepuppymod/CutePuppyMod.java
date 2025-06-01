@@ -6,9 +6,14 @@ import net.manmaed.cutepuppymod.entity.*;
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
 import net.manmaed.cutepuppymod.item.CutePuppySpawnEggs;
 import net.manmaed.cutepuppymod.tab.CutePuppyTabs;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 /**
  * Created by manmaed on 09/04/2021.
@@ -27,6 +32,7 @@ public class CutePuppyMod {
         event.addListener(this::AttributeCreation);
         event.addListener(CutePuppyModClient::doEntityRendering);
         event.addListener(CutePuppyModClient::registerLayerDefinitions);
+        event.addListener(this::registerSpawnPlacements);
     }
 
     private void AttributeCreation(EntityAttributeCreationEvent event) {
@@ -45,33 +51,16 @@ public class CutePuppyMod {
         }
     }*/
 
-    /*private void AttributeCreation(EntityAttributeCreationEvent event) {
-        event.put(CPEntityTypes.RED.get(), EntityRed.createAttributes().build());
-        event.put(CPEntityTypes.BLUE.get(), EntityBlue.createAttributes().build());
-        event.put(CPEntityTypes.GREEN.get(), EntityGreen.createAttributes().build());
-        event.put(CPEntityTypes.YELLOW.get(), EntityYellow.createAttributes().build());
-        event.put(CPEntityTypes.PURPLE.get(), EntityPurple.createAttributes().build());
-        event.put(CPEntityTypes.STEVE.get(), EntitySteve.createAttributes().build());
-        event.put(CPEntityTypes.HEROBRINE.get(), EntityHerobrine.createAttributes().build());
-        event.put(CPEntityTypes.ENDER.get(), EntityEnder.createAttributes().build());
-        event.put(CPEntityTypes.BOSS.get(), EntityBoss.createAttributes().build());
-        event.put(CPEntityTypes.SIX.get(), EntitySix.createAttributes().build());
-        event.put(CPEntityTypes.ENDER_BOSS.get(), EntityEnderBoss.createAttributes().build());
-    }*/
-
-    /*@SubscribeEvent
-    public void onBiomeLoad(BiomeLoadingEvent event) {
-        if (!CPConfig.DISABLE_NATUARL_SPAWNS.get()) {
-            if (event.getCategory() == Biome.BiomeCategory.THEEND) {
-                WorldGenMobs.withEndMobs(event);
-            } else if (event.getCategory() == Biome.BiomeCategory.NETHER) {
-                WorldGenMobs.withNetherMobs(event);
-            } else {
-                if (event.getCategory() != Biome.BiomeCategory.OCEAN || event.getCategory() != Biome.BiomeCategory.RIVER || event.getCategory() != Biome.BiomeCategory.MUSHROOM) {
-                    WorldGenMobs.withPassiveMobs(event);
-                    WorldGenMobs.withHostileMobs(event);
-                }
-            }
-        }
-    }*/
+    public void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(CutePuppyEntityTypes.PUPPY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(CutePuppyEntityTypes.HUMAN_PUPPY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(CutePuppyEntityTypes.HEROBRINE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(CutePuppyEntityTypes.SIX.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(CutePuppyEntityTypes.ENDER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+    }
 }

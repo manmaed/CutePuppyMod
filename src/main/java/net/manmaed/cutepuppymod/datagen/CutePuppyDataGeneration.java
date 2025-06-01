@@ -27,6 +27,7 @@ public class CutePuppyDataGeneration {
         generator.addProvider(true, new CutePuppyBlockModelProvider(packOutput, fileHelper));
         generator.addProvider(true, new CutePuppyItemModelProvider(packOutput, fileHelper));
         generator.addProvider(true, new CutePuppyLootTables(packOutput, lookupProvider));
+        generator.addProvider(true, new CutePuppyWorldGenProvider(packOutput, lookupProvider));
 
     }
 }

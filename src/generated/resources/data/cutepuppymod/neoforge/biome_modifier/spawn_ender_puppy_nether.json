@@ -1,0 +1,16 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "minecraft:nether_wastes",
+    "minecraft:crimson_forest",
+    "minecraft:warped_forest",
+    "minecraft:soul_sand_valley",
+    "minecraft:basalt_deltas"
+  ],
+  "spawners": {
+    "type": "cutepuppymod:ender_puppy",
+    "maxCount": 2,
+    "minCount": 1,
+    "weight": 2
+  }
+}
