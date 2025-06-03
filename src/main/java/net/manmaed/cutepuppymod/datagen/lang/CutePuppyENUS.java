@@ -16,7 +16,7 @@ public class CutePuppyENUS extends LanguageProvider {
 
         //Blocks
         add("block.cutepuppymod.ender_core_block", "Ender Core Bloc");;
-        add("block.cutepuppymod.the_core_block", "The Core of Cores Bloc");
+        add("block.cutepuppymod.the_core_block", "The Core of Cores Block");
         add("block.cutepuppymod.core_block.tooltip", "What are you going to do with this?");
 
         //Commpressed Cores
@@ -88,24 +88,24 @@ public class CutePuppyENUS extends LanguageProvider {
         add("itemGroup.cutepuppymod.spawn_eggs", "Cute Puppy Spawn Eggs");
 
         //Advancements
-        /*add("advancements.cutepuppymod.root.title", "CutePuppyMod");
-        add("advancements.cutepuppymod.root.description", "Go Find CutePuppys");
-        add("advancements.cutepuppymod.killpuppy.title", "How could you?");
-        add("advancements.cutepuppymod.killpuppy.description", "Kill a Puppy");
-        add("advancements.cutepuppymod.killedbosspuppy.title", "I Killed an Op!");
-        add("advancements.cutepuppymod.killedbosspuppy.description", "Kill The Boss Puppy");
-        add("advancements.cutepuppymod.enderpuppy.title", "Ender Puppys");
-        add("advancements.cutepuppymod.enderpuppy.description", "Find the Endermans Puppys!");
-        add("advancements.cutepuppymod.herobrine.title", "Herobrine Removed");
-        add("advancements.cutepuppymod.herobrine.description", "Herobrine Removed");
-        add("advancements.cutepuppymod.killedednderbosspuppy.title", "I Killed the Ender Boss Puppy");
-        add("advancements.cutepuppymod.killedednderbosspuppy.description", "Kill The Ender Boss Puppy");
-        add("advancements.cutepuppymod.thecoreofcors.title", "Ummm what are you doing with that?");
-        add("advancements.cutepuppymod.thecoreofcors.description", "Craft a Core of Cores Block");
-        add("advancements.cutepuppymod.thebosspuppy.title", "WHAT HAVE YOU DONE!?");
-        add("advancements.cutepuppymod.thebosspuppy.description", "Summon The Boss Puppy");
-        add("advancements.cutepuppymod.thebosspuppydeath.title", "I Fixed It");
-        add("advancements.cutepuppymod.thebosspuppydeath.description", "Kill The Boss Puppy");*/
+        add("advancements.cutepuppymod.root.title", "CutePuppyMod");
+        add("advancements.cutepuppymod.root.description", "Go find the Cute Puppy's");
+        add("advancements.cutepuppymod.kill_puppy.title", "How could you?");
+        add("advancements.cutepuppymod.kill_puppy.description", "Kill a Puppy");
+        add("advancements.cutepuppymod.kill_six_puppy.title", "I Killed an Op!");
+        add("advancements.cutepuppymod.kill_six_puppy.description", "Kill The Sixkiller Puppy");
+        add("advancements.cutepuppymod.kill_ender_puppy.title", "Ender Puppys");
+        add("advancements.cutepuppymod.kill_ender_puppy.description", "Find the Endermans Puppys!");
+        add("advancements.cutepuppymod.kill_herobrine.title", "Herobrine Removed");
+        add("advancements.cutepuppymod.kill_herobrine.description", "Herobrine Removed");
+        add("advancements.cutepuppymod.kill_ender_boss_puppy.title", "I Killed the Ender Boss Puppy");
+        add("advancements.cutepuppymod.kill_ender_boss_puppy.description", "Kill The Ender Boss Puppy");
+        add("advancements.cutepuppymod.craft_core_of_cores.title", "Ummm what are you doing with that?");
+        add("advancements.cutepuppymod.craft_core_of_cores.description", "Craft a Core of Cores Block");
+        add("advancements.cutepuppymod.summon_boss_puppy.title", "WHAT HAVE YOU DONE!?");
+        add("advancements.cutepuppymod.summon_boss_puppy.description", "Summon The Boss Puppy");
+        add("advancements.cutepuppymod.kill_boss_puppy.title", "I Fixed It");
+        add("advancements.cutepuppymod.kill_boss_puppy.description", "Kill The Boss Puppy");
 
         //Death Messages
         add("death.attack.cutepuppymod.banned", "%1$s was banned from living");

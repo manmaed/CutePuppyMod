@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "iron_tools": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/stone.png",
+    "description": {
+      "translate": "advancements.cutepuppymod.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cutepuppymod:tab_icon"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.cutepuppymod.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "iron_tools"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

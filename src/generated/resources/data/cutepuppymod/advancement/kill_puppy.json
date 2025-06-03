@@ -1,0 +1,52 @@
+{
+  "parent": "cutepuppymod:root",
+  "criteria": {
+    "human_puppy": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cutepuppymod:human_puppy"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "puppy": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cutepuppymod:puppy"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cutepuppymod.kill_puppy.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:iron_sword"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.kill_puppy.title"
+    }
+  },
+  "requirements": [
+    [
+      "puppy",
+      "human_puppy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

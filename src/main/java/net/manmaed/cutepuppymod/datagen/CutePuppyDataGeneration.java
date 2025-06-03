@@ -6,6 +6,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
@@ -28,6 +29,7 @@ public class CutePuppyDataGeneration {
         generator.addProvider(true, new CutePuppyItemModelProvider(packOutput, fileHelper));
         generator.addProvider(true, new CutePuppyLootTables(packOutput, lookupProvider));
         generator.addProvider(true, new CutePuppyWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(true, new CutePuppyAdvancementProvider(packOutput, lookupProvider, fileHelper));
 
     }
 }

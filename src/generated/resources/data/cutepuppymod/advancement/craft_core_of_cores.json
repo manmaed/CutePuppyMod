@@ -1,0 +1,33 @@
+{
+  "parent": "cutepuppymod:kill_puppy",
+  "criteria": {
+    "craft_core_of_cores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cutepuppymod:the_core_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cutepuppymod.craft_core_of_cores.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cutepuppymod:the_core_block"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.craft_core_of_cores.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft_core_of_cores"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

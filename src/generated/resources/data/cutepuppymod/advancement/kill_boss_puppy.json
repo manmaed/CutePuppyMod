@@ -1,0 +1,39 @@
+{
+  "parent": "cutepuppymod:summon_boss_puppy",
+  "criteria": {
+    "kill_boss_puppy": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cutepuppymod:boss_puppy"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cutepuppymod.kill_boss_puppy.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "cutepuppymod:the_core_block"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.kill_boss_puppy.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_boss_puppy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

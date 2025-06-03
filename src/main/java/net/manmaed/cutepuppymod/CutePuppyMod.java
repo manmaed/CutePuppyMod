@@ -23,11 +23,6 @@ import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 public class CutePuppyMod {
     public static final String MOD_ID = "cutepuppymod";
 
-    /*
-    TODO:
-    - Advancements
-     */
-
     public CutePuppyMod(IEventBus event) {
         CutePuppyItems.ITEMS.register(event);
         CutePuppySpawnEggs.ITEMS.register(event);

@@ -1,0 +1,37 @@
+{
+  "parent": "cutepuppymod:kill_puppy",
+  "criteria": {
+    "kill_six_puppy": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cutepuppymod:six_puppy"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cutepuppymod.kill_six_puppy.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cutepuppymod:ban_hammer"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.kill_six_puppy.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_six_puppy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

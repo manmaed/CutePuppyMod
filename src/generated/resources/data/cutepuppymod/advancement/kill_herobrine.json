@@ -1,0 +1,37 @@
+{
+  "parent": "cutepuppymod:kill_puppy",
+  "criteria": {
+    "kill_herobrine": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cutepuppymod:herobrine_puppy"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cutepuppymod.kill_herobrine.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:barrier"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.kill_herobrine.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_herobrine"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

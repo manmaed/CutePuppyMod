@@ -1,0 +1,37 @@
+{
+  "parent": "cutepuppymod:kill_ender_puppy",
+  "criteria": {
+    "kill_ender_boss_puppy": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cutepuppymod:ender_boss_puppy"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cutepuppymod.kill_ender_boss_puppy.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:ender_pearl"
+    },
+    "title": {
+      "translate": "advancements.cutepuppymod.kill_ender_boss_puppy.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_ender_boss_puppy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
