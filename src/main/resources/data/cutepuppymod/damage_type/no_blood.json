@@ -1,0 +1,7 @@
+{
+  "message_id": "cutepuppymod.no_blood",
+  "scaling": "never",
+  "exhaustion": 0,
+  "effects": "hurt",
+  "death_message_type": "default"
+}

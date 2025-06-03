@@ -22,7 +22,7 @@ public class CutePuppyModClient {
         event.registerLayerDefinition(CutePuppyModels.BOSS, ModelPuppy::createBodyLayer);
     }
 
-    public static void doEntityRendering(final  EntityRenderersEvent.RegisterRenderers event) {
+    public static void doEntityRendering(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(CutePuppyEntityTypes.PUPPY.get(), RenderPuppy::new);
         event.registerEntityRenderer(CutePuppyEntityTypes.HEROBRINE.get(), RenderHerobrine::new);
         event.registerEntityRenderer(CutePuppyEntityTypes.HUMAN_PUPPY.get(), RenderHumanPuppy::new);

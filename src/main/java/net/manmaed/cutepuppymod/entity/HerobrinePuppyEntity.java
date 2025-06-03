@@ -1,10 +1,12 @@
 package net.manmaed.cutepuppymod.entity;
 
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
+import net.manmaed.cutepuppymod.loot_table.CutePuppyCustomLootTables;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -24,6 +26,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.loot.LootTable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -116,6 +119,10 @@ public class HerobrinePuppyEntity extends TamableAnimal implements NeutralMob {
         return 0.4F;
     }
 
+    @Override
+    protected ResourceKey<LootTable> getDefaultLootTable() {
+        return CutePuppyCustomLootTables.PUPPY_HEROBRINE;
+    }
 
     @Override
     public boolean isFood(ItemStack itemStack) {

@@ -1,7 +1,9 @@
 package net.manmaed.cutepuppymod.entity;
 
+import net.manmaed.cutepuppymod.loot_table.CutePuppyCustomLootTables;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -20,6 +22,7 @@ import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -72,6 +75,11 @@ public class BossEntity extends Monster {
         } else {
             return SoundEvents.WOLF_AMBIENT;
         }
+    }
+
+    @Override
+    protected ResourceKey<LootTable> getDefaultLootTable() {
+        return CutePuppyCustomLootTables.PUPPY_BOSS;
     }
 
     @Override

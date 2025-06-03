@@ -12,6 +12,8 @@
   "block.cutepuppymod.steve_core_block": "Steve Core Block",
   "block.cutepuppymod.the_core_block": "The Core of Cores Bloc",
   "block.cutepuppymod.yellow_core_block": "Yellow Core Block",
+  "death.attack.cutepuppymod.banned": "%1$s was banned from living",
+  "death.attack.cutepuppymod.no_blood": "%1$s poked them self so much they ran out of blood",
   "entity.cutepuppymod.boss_puppy": "The Boss Puppy",
   "entity.cutepuppymod.ender_boss_puppy": "Ender Boss Puppy",
   "entity.cutepuppymod.ender_puppy": "Ender Puppy",

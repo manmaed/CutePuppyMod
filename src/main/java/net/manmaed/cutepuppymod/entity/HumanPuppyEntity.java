@@ -1,11 +1,13 @@
 package net.manmaed.cutepuppymod.entity;
 
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
+import net.manmaed.cutepuppymod.loot_table.CutePuppyCustomLootTables;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -30,6 +32,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.storage.loot.LootTable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
@@ -121,6 +124,13 @@ public class HumanPuppyEntity extends TamableAnimal {
         return 0.4F;
     }
 
+    @Override
+    protected ResourceKey<LootTable> getDefaultLootTable() {
+        return switch (this.getVariant()) {
+            case STEVE -> CutePuppyCustomLootTables.PUPPY_STEVE;
+            case ALEX -> CutePuppyCustomLootTables.PUPPY_ALEX;
+        };
+    }
 
     @Override
     public boolean isFood(ItemStack itemStack) {

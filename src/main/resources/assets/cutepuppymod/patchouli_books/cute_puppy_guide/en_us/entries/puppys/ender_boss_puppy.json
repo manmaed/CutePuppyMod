@@ -6,6 +6,8 @@
     {
       "type": "entity",
       "entity": "cutepuppymod:ender_boss_puppy",
+      "scale": 0.35,
+      "offset": 1.0,
       "title": "A Ender Puppy"
     },
     {

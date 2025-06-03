@@ -1,11 +1,13 @@
 package net.manmaed.cutepuppymod.entity;
 
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
+import net.manmaed.cutepuppymod.loot_table.CutePuppyCustomLootTables;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -30,6 +32,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.storage.loot.LootTable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
@@ -77,7 +80,7 @@ public class PuppyEntity extends TamableAnimal {
     @Override
     public void readAdditionalSaveData(CompoundTag compoundTag) {
         super.readAdditionalSaveData(compoundTag);
-        this.setVariant(PuppyEntity.Variant.byId(compoundTag.getInt("puppy_variant")));
+        this.setVariant(Variant.byId(compoundTag.getInt("puppy_variant")));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -90,10 +93,10 @@ public class PuppyEntity extends TamableAnimal {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
         RandomSource randomsource = serverLevelAccessor.getRandom();
-        spawnGroupData = new PuppyEntity.PuppyGroupData(
-                PuppyEntity.Variant.getSpawnVariant(randomsource)
+        spawnGroupData = new PuppyGroupData(
+                Variant.getSpawnVariant(randomsource)
         );
-        this.setVariant(((PuppyEntity.PuppyGroupData) spawnGroupData).getVariant(randomsource));
+        this.setVariant(((PuppyGroupData) spawnGroupData).getVariant(randomsource));
         return super.finalizeSpawn(serverLevelAccessor, difficultyInstance, spawnType, spawnGroupData);
     }
 
@@ -121,6 +124,17 @@ public class PuppyEntity extends TamableAnimal {
         return 0.4F;
     }
 
+
+    @Override
+    protected ResourceKey<LootTable> getDefaultLootTable() {
+        return switch (this.getVariant()) {
+            case RED -> CutePuppyCustomLootTables.PUPPY_RED;
+            case BLUE -> CutePuppyCustomLootTables.PUPPY_BLUE;
+            case GREEN -> CutePuppyCustomLootTables.PUPPY_GREEN;
+            case PURPLE -> CutePuppyCustomLootTables.PUPPY_PURPLE;
+            case YELLOW -> CutePuppyCustomLootTables.PUPPY_YELLOW;
+        };
+    }
 
     @Override
     public boolean isFood(ItemStack itemStack) {
@@ -195,7 +209,7 @@ public class PuppyEntity extends TamableAnimal {
         PuppyEntity puppy = new PuppyEntity(CutePuppyEntityTypes.PUPPY.get(), serverLevel);
         UUID uuid = this.getOwnerUUID();
         if (puppy != null) {
-            PuppyEntity.Variant puppy$variant;
+            Variant puppy$variant;
             if (uuid != null) {
                 puppy$variant = this.random.nextBoolean() ? this.getVariant() : ((PuppyEntity) ageableMob).getVariant();
                 puppy.setOwnerUUID(uuid);
@@ -207,47 +221,29 @@ public class PuppyEntity extends TamableAnimal {
         return puppy;
     }
 
-    public void setVariant(PuppyEntity.Variant variant) {
+    public void setVariant(Variant variant) {
         this.entityData.set(VARIANT_ID, variant.getId());
     }
 
-    public PuppyEntity.Variant getVariant() {
-        return PuppyEntity.Variant.byId(this.entityData.get(VARIANT_ID));
+    public Variant getVariant() {
+        return Variant.byId(this.entityData.get(VARIANT_ID));
     }
 
-    public static class PuppyGroupData extends AgeableMob.AgeableMobGroupData {
-        public final PuppyEntity.Variant[] type;
+    public static class PuppyGroupData extends AgeableMobGroupData {
+        public final Variant[] type;
 
-        public PuppyGroupData(PuppyEntity.Variant... variants) {
+        public PuppyGroupData(Variant... variants) {
             super(true);
             this.type = variants;
         }
 
-        public PuppyEntity.Variant getVariant(RandomSource randomSource) {
+        public Variant getVariant(RandomSource randomSource) {
             return this.type[randomSource.nextInt(this.type.length)];
         }
 
     }
 
     public enum Variant implements StringRepresentable {
-        /*
-        switch (type) {
-            case 1:
-                name = "blue";
-                break;
-            case 2:
-                name = "green";
-                break;
-            case 3:
-                name = "purple";
-                break;
-            case 4:
-                name = "yellow";
-                break;
-            default:
-                name = "red";
-                break;
-         */
         RED(0, "red"),
         BLUE(1, "blue"),
         GREEN(2, "green"),
@@ -255,11 +251,11 @@ public class PuppyEntity extends TamableAnimal {
         YELLOW(4, "yellow");
 
 
-        private static final IntFunction<PuppyEntity.Variant> BY_ID = ByIdMap.continuous(PuppyEntity.Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        private static final IntFunction<Variant> BY_ID = ByIdMap.continuous(Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
         private final int id;
         private final String name;
 
-        private Variant(int variantID, String name) {
+        Variant(int variantID, String name) {
             this.id = variantID;
             this.name = name;
         }
@@ -277,12 +273,12 @@ public class PuppyEntity extends TamableAnimal {
             return this.name;
         }
 
-        public static PuppyEntity.Variant byId(int variantID) {
+        public static Variant byId(int variantID) {
             return BY_ID.apply(variantID);
         }
 
-        private static PuppyEntity.Variant getSpawnVariant(RandomSource randomSource) {
-            PuppyEntity.Variant[] puppy$variant = Arrays.stream(values()).toArray(PuppyEntity.Variant[]::new);
+        private static Variant getSpawnVariant(RandomSource randomSource) {
+            Variant[] puppy$variant = Arrays.stream(values()).toArray(Variant[]::new);
             return Util.getRandom(puppy$variant, randomSource);
         }
     }

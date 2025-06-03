@@ -1,5 +1,6 @@
 package net.manmaed.cutepuppymod.item.tools;
 
+import net.manmaed.cutepuppymod.damage.CutePuppyCustomDamage;
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -34,6 +35,7 @@ public class EmptySyringe extends Item {
         player.awardStat(Stats.ITEM_USED.get(this));
         //TODO Redo Custom Damage
         //player.hurt(this.damageSources.banned(), 5.0F);
+        player.hurt(CutePuppyCustomDamage.no_blood(player), 5.0F);
         if (itemInHand.isEmpty()) {
             return replaceingItem;
         } else {

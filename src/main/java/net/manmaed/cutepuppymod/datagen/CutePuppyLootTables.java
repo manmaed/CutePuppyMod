@@ -49,4 +49,15 @@ public class CutePuppyLootTables extends LootTableProvider {
             return blocks;
         }
     }
+
+    /*public static class CutePuppyEntityLoot extends EntityLootSubProvider {
+
+        protected CutePuppyEntityLoot(HolderLookup.Provider lookup) {
+            super(FeatureFlags.REGISTRY.allFlags(), lookup);
+        }
+
+        @Override
+        public void generate() {
+        }
+    }*/
 }

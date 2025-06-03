@@ -107,9 +107,9 @@ public class CutePuppyENUS extends LanguageProvider {
         add("advancements.cutepuppymod.thebosspuppydeath.title", "I Fixed It");
         add("advancements.cutepuppymod.thebosspuppydeath.description", "Kill The Boss Puppy");*/
 
-        /*add("cutepuppymod.comment.12", "Attack");
-        add("death.attack.banned.player", "%1$s was banned from living");
-        add("death.attack.noblood", "%1$s poked them self so much they ran out of blood");*/
+        //Death Messages
+        add("death.attack.cutepuppymod.banned", "%1$s was banned from living");
+        add("death.attack.cutepuppymod.no_blood", "%1$s poked them self so much they ran out of blood");
 
     }
 }

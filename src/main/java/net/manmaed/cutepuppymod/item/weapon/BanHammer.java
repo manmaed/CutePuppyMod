@@ -1,6 +1,7 @@
 package net.manmaed.cutepuppymod.item.weapon;
 
 
+import net.manmaed.cutepuppymod.damage.CutePuppyCustomDamage;
 import net.manmaed.cutepuppymod.item.tools.materials.CutePuppyToolMaterials;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -28,7 +29,7 @@ public class BanHammer extends SwordItem {
     @Override
     public boolean hurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
         itemStack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
-        target.hurt(target.level().damageSources().generic(), 24.0F);
+        target.hurt(CutePuppyCustomDamage.banned(target), 24.0F);
         return true;
     }
 

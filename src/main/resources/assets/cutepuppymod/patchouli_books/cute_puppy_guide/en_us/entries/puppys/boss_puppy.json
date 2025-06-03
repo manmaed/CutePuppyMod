@@ -6,6 +6,8 @@
     {
       "type": "entity",
       "entity": "cutepuppymod:boss_puppy",
+      "scale": 0.135,
+      "offset": 3.0,
       "title": "The Boss Puppy"
     },
     {
