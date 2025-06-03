@@ -45,12 +45,6 @@ public class CutePuppyMod {
         event.put(CutePuppyEntityTypes.BOSS.get(), BossEntity.createAttributes().build());
     }
 
-    /*public void init(final FMLCommonSetupEvent event) {
-        if (CPConfig.DISABLE_HEROBRINE_SPAWN.get()) {
-            LogHelper.info("Minecraft Changelog: - Herobrine Removed!");
-        }
-    }*/
-
     public void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
         event.register(CutePuppyEntityTypes.PUPPY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);

@@ -4,7 +4,9 @@ package net.manmaed.cutepuppymod.block;
 import net.manmaed.cutepuppymod.entity.CutePuppyEntityTypes;
 import net.manmaed.cutepuppymod.entity.EnderBossEntity;
 import net.manmaed.cutepuppymod.item.CutePuppyItems;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -39,6 +41,10 @@ public class EnderCoreBlock extends Block {
                 boss.moveTo(blockPos, 10, 10);
                 level.addFreshEntity(boltEntity);
                 level.addFreshEntity(boss);
+                if (player instanceof ServerPlayer serverPlayer) {
+                    CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, boltEntity);
+                    CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, boss);
+                }
                 return ItemInteractionResult.SUCCESS;
             }
         }

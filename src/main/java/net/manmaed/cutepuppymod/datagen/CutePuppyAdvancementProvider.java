@@ -61,6 +61,7 @@ public class CutePuppyAdvancementProvider extends AdvancementProvider {
                     .addCriterion("summon_boss_puppy", summonEntity(CutePuppyEntityTypes.BOSS.get()))
                     .save(saver, getSaveLoc("summon_boss_puppy"));
 
+
             //Kill The Boss
             AdvancementHolder kill_boss_puppy = Advancement.Builder.advancement()
                     .display(info(CutePuppyBlocks.THE_CORE_BLOCK.asItem(), "kill_boss_puppy", AdvancementType.CHALLENGE, true, true,true))
@@ -111,7 +112,7 @@ public class CutePuppyAdvancementProvider extends AdvancementProvider {
                     Component.translatable(title(advancemntName)),
                     Component.translatable(desc(advancemntName)),
                     Optional.empty(),
-                    advancementType, showToast ,announceChat ,shouldBeHidden);
+                    advancementType, showToast, announceChat, shouldBeHidden);
         }
 
         protected static Criterion<InventoryChangeTrigger.TriggerInstance> inventoryChangedTrigger(Item item) {

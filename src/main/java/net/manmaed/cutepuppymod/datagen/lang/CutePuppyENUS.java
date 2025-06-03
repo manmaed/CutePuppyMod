@@ -11,11 +11,11 @@ public class CutePuppyENUS extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("a.lang.file.name", "Pirate Speak");
+        add("a.lang.file.name", "English (US)");
         add("a.lang.author.name", "manmaed");
 
         //Blocks
-        add("block.cutepuppymod.ender_core_block", "Ender Core Bloc");;
+        add("block.cutepuppymod.ender_core_block", "Ender Core Block");;
         add("block.cutepuppymod.the_core_block", "The Core of Cores Block");
         add("block.cutepuppymod.core_block.tooltip", "What are you going to do with this?");
 
@@ -31,24 +31,24 @@ public class CutePuppyENUS extends LanguageProvider {
 
         //Items
         // Colored Puppys
-        add("item.cutepuppymod.puppy_spawn_egg", "Spawn A Puppy");
-        add("item.cutepuppymod.red_spawn_egg", "Spawn A Red Puppy");
-        add("item.cutepuppymod.blue_spawn_egg", "Spawn A Blue Puppy");
-        add("item.cutepuppymod.green_spawn_egg", "Spawn A Green Puppy");
-        add("item.cutepuppymod.purple_spawn_egg", "Spawn A Purple Puppy");
-        add("item.cutepuppymod.yellow_spawn_egg", "Spawn A Yellow Puppy");
+        add("item.cutepuppymod.puppy_spawn_egg", "Spawn a Puppy");
+        add("item.cutepuppymod.red_spawn_egg", "Spawn a Red Puppy");
+        add("item.cutepuppymod.blue_spawn_egg", "Spawn a Blue Puppy");
+        add("item.cutepuppymod.green_spawn_egg", "Spawn a Green Puppy");
+        add("item.cutepuppymod.purple_spawn_egg", "Spawn a Purple Puppy");
+        add("item.cutepuppymod.yellow_spawn_egg", "Spawn a Yellow Puppy");
 
         //# Custom Puppys
-        add("item.cutepuppymod.steve_spawn_egg", "Spawn A Steve Puppy");
-        add("item.cutepuppymod.alex_spawn_egg", "Spawn A Alex Puppy");
-        add("item.cutepuppymod.human_puppy_spawn_egg", "Spawn A Human Puppy");
+        add("item.cutepuppymod.steve_spawn_egg", "Spawn a Steve Puppy");
+        add("item.cutepuppymod.alex_spawn_egg", "Spawn a Alex Puppy");
+        add("item.cutepuppymod.human_puppy_spawn_egg", "Spawn a Human Puppy");
 
         add("item.cutepuppymod.six_spawn_egg", "Spawn Sixkiller Puppy");
-        add("item.cutepuppymod.herobrine_spawn_egg", "Spawn A Herobrine Puppy");
-        add("item.cutepuppymod.ender_spawn_egg", "Spawn A Ender Puppy");
-        add("item.cutepuppymod.ender_boss_spawn_egg", "Spawn A Ender Boss Puppy");
-        add("item.cutepuppymod.boss_spawn_egg", "Spawn A Boss Puppy");
-        add("item.cutepuppymod.tab_icon", "The Icon for CutePuppyMod Creative Tab");
+        add("item.cutepuppymod.herobrine_spawn_egg", "Spawn a Herobrine Puppy");
+        add("item.cutepuppymod.ender_spawn_egg", "Spawn a Ender Puppy");
+        add("item.cutepuppymod.ender_boss_spawn_egg", "Spawn  Ender Boss Puppy");
+        add("item.cutepuppymod.boss_spawn_egg", "Spawn a Boss Puppy");
+        add("item.cutepuppymod.tab_icon", "The icon for CutePuppyMod creative tab");
 
         //PuppyCores
         add("item.cutepuppymod.blue_core", "Blue Puppy Core");
@@ -84,32 +84,32 @@ public class CutePuppyENUS extends LanguageProvider {
         add("entity.cutepuppymod.boss_puppy", "The Boss Puppy");
 
         //CreativeTabs
-        add("itemGroup.cutepuppymod", "Puppy's Tab");
+        add("itemGroup.cutepuppymod", "Puppies Tab");
         add("itemGroup.cutepuppymod.spawn_eggs", "Cute Puppy Spawn Eggs");
 
         //Advancements
         add("advancements.cutepuppymod.root.title", "CutePuppyMod");
-        add("advancements.cutepuppymod.root.description", "Go find the Cute Puppy's");
+        add("advancements.cutepuppymod.root.description", "Go find the Cute Puppies");
         add("advancements.cutepuppymod.kill_puppy.title", "How could you?");
         add("advancements.cutepuppymod.kill_puppy.description", "Kill a Puppy");
-        add("advancements.cutepuppymod.kill_six_puppy.title", "I Killed an Op!");
-        add("advancements.cutepuppymod.kill_six_puppy.description", "Kill The Sixkiller Puppy");
-        add("advancements.cutepuppymod.kill_ender_puppy.title", "Ender Puppys");
-        add("advancements.cutepuppymod.kill_ender_puppy.description", "Find the Endermans Puppys!");
+        add("advancements.cutepuppymod.kill_six_puppy.title", "I killed an Op!");
+        add("advancements.cutepuppymod.kill_six_puppy.description", "Kill the Sixkiller Puppy");
+        add("advancements.cutepuppymod.kill_ender_puppy.title", "Ender Puppies");
+        add("advancements.cutepuppymod.kill_ender_puppy.description", "Find the Enderman Puppies!");
         add("advancements.cutepuppymod.kill_herobrine.title", "Herobrine Removed");
         add("advancements.cutepuppymod.kill_herobrine.description", "Herobrine Removed");
-        add("advancements.cutepuppymod.kill_ender_boss_puppy.title", "I Killed the Ender Boss Puppy");
-        add("advancements.cutepuppymod.kill_ender_boss_puppy.description", "Kill The Ender Boss Puppy");
+        add("advancements.cutepuppymod.kill_ender_boss_puppy.title", "I killed the Ender Boss Puppy");
+        add("advancements.cutepuppymod.kill_ender_boss_puppy.description", "Kill the Ender Boss Puppy");
         add("advancements.cutepuppymod.craft_core_of_cores.title", "Ummm what are you doing with that?");
         add("advancements.cutepuppymod.craft_core_of_cores.description", "Craft a Core of Cores Block");
         add("advancements.cutepuppymod.summon_boss_puppy.title", "WHAT HAVE YOU DONE!?");
-        add("advancements.cutepuppymod.summon_boss_puppy.description", "Summon The Boss Puppy");
-        add("advancements.cutepuppymod.kill_boss_puppy.title", "I Fixed It");
+        add("advancements.cutepuppymod.summon_boss_puppy.description", "Summon the Boss Puppy");
+        add("advancements.cutepuppymod.kill_boss_puppy.title", "I fixed it");
         add("advancements.cutepuppymod.kill_boss_puppy.description", "Kill The Boss Puppy");
 
         //Death Messages
         add("death.attack.cutepuppymod.banned", "%1$s was banned from living");
-        add("death.attack.cutepuppymod.no_blood", "%1$s poked them self so much they ran out of blood");
+        add("death.attack.cutepuppymod.no_blood", "%1$s poked themselves so much, they ran out of blood");
 
     }
 }
