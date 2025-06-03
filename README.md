@@ -35,13 +35,13 @@ Will Drop Colored Cores but can you live with your self if you do?
 ### Herobrine Puppy
 ![](https://media.forgecdn.net/attachments/thumbnails/1201/829/310/172/herobrine_puppy.png) 
 
-Hunts Steve Puppys
+Hunts Steve & Alex Puppys
 
 ---
 ### Sixkiller Puppy
 ![](https://media.forgecdn.net/attachments/thumbnails/1201/833/310/172/sixkiller_puppy.png)
 
-Randomly Drops his ban hammer
+Has a 25% chance to drop his ban hammer
 
 ---
 ### Ender Puppy
