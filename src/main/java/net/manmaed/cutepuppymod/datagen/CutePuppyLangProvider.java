@@ -1,6 +1,9 @@
 package net.manmaed.cutepuppymod.datagen;
 
+import net.manmaed.cutepuppymod.datagen.lang.CutePuppyENPT;
+import net.manmaed.cutepuppymod.datagen.lang.CutePuppyENUD;
 import net.manmaed.cutepuppymod.datagen.lang.CutePuppyENUS;
+import net.manmaed.cutepuppymod.datagen.lang.CutePuppyLOLUS;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 
@@ -19,5 +22,8 @@ public class CutePuppyLangProvider {
          * add("a.lang.author.name", "manmaed");
          */
         generator.addProvider(true, new CutePuppyENUS(output));
+        generator.addProvider(true, new CutePuppyENPT(output));
+        generator.addProvider(true, new CutePuppyENUD(output));
+        generator.addProvider(true, new CutePuppyLOLUS(output));
     }
 }
