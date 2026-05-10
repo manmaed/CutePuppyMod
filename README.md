@@ -5,7 +5,7 @@ CutePuppyMod
 
 | Curseforge | Modrinth |
 | -| - |
-| [![Curseforge Downloads](https://cf.way2muchnoise.eu/229525.svg)](https://www.curseforge.com/minecraft/mc-mods/cutepuppymod) | [![Modrinth Downloads](https://img.shields.io/modrinth/dt/-TBA-)](https://modrinth.com/mod/cutepuppymod/)|
+| [![Curseforge Downloads](https://cf.way2muchnoise.eu/229525.svg)](https://www.curseforge.com/minecraft/mc-mods/cutepuppymod) | [![Modrinth Downloads](https://img.shields.io/modrinth/dt/cutepuppymod)](https://modrinth.com/mod/cutepuppymod/)|
 | Available Versions | Available Versions  
 | All |  All
 
